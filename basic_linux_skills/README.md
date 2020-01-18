@@ -575,7 +575,7 @@ In the example below, we use the star wildcard to list all files ending in `.out
 -rw-rw---- 1 mthomas heart 984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
 -rw-rw---- 1 mthomas heart 656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
 ```
-
+ 
 [Back to Top](#top)
 <hr>
 
