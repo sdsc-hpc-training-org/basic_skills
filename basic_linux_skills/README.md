@@ -54,23 +54,82 @@ DESCRIPTION
 The unix command `env` will print out the _environment_ settings for your login session.
 The list below is an edited summary of all the information
 ```
-[mthomas@comet-ln2 ~]$ env
+(base) [mthomas@comet-ln2:~] env
+MKLROOT=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl
+MANPATH=/opt/intel/2018.1.163/documentation_2018/en/man/common:/usr/share/man:/usr/local/share/man
+PDSHROOT=/opt/pdsh
+XDG_SESSION_ID=11111609
 HOSTNAME=comet-ln2.sdsc.edu
+IPPROOT=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp
+INTEL_LICENSE_FILE=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/licenses:/opt/intel/licenses:/root/intel/licenses
+L_MKL_TEMP=M_VERS
 TERM=xterm-256color
 SHELL=/bin/bash
-HISTSIZE=1000
-SSH_CLIENT=169.228.90.10 53640 22
-LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/../compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/ipp/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/compiler/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64:/opt/intel/composer_xe_2013_sp1.2.144/tbb/lib/intel64/gcc4.4
+HISTSIZE=5000
+GDBSERVER_MIC=/opt/intel/2018.1.163/debugger_YEAR/gdb/targets/mic/bin/gdbserver
+SSH_CLIENT=76.176.117.51 58136 22
+CONDA_SHLVL=1
+LIBRARY_PATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/intel64_lin:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/../compiler/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/intel64/gcc4.4
+CONDA_PROMPT_MODIFIER=(base) 
+FPATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/include
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+MIC_LD_LIBRARY_PATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/mic:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/lib/mic:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/mic
+ROCKSROOT=/opt/rocks/share/devel
+SSH_TTY=/dev/pts/103
+ANT_HOME=/opt/rocks
+QT_GRAPHICSSYSTEM_CHECKED=1
 USER=mthomas
-CPATH=/opt/intel/composer_xe_2013_sp1.2.144/ipp/include:/opt/intel/composer_xe_2013_sp1.2.144/mkl/include:/opt/intel/composer_xe_2013_sp1.2.144/tbb/include
+LD_LIBRARY_PATH=/opt/mvapich2/intel/ib/lib:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/intel64_lin:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/../compiler/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/intel64/gcc4.4
+LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+CONDA_EXE=/home/mthomas/miniconda3/bin/conda
+MIC_LIBRARY_PATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/mic:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/mic
+ROCKS_ROOT=/opt/rocks
+CPATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/include:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/include:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/include
+_CE_CONDA=
+NLSPATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/intel64_lin/locale/%l_%t/%N:/opt/intel/2018.1.163/debugger_YEAR/gdb/intel64/share/locale/%l_%t/%N
+MV2_ALLTOALL_TUNING=2
+MAIL=/var/spool/mail/mthomas
+PATH=/home/mthomas/miniconda3/bin:/home/mthomas/miniconda3/condabin:/opt/mvapich2/intel/ib/bin:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/bin/intel64:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/sdsc/bin:/opt/sdsc/sbin:/opt/ibutils/bin:/opt/pdsh/bin:/opt/rocks/bin:/opt/rocks/sbin:/home/mthomas/bin
+SDSCDEVEL=/opt/sdsc/devel
+CONDA_PREFIX=/home/mthomas/miniconda3
+TBBROOT=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb
 PWD=/home/mthomas
-MODULEPATH=/opt/modulefiles/mpi/.intel:/opt/modulefiles/applications/.intel:/opt/modulefiles/mpi:/opt/modulefiles/compilers:/opt/modulefiles/applications:/usr/share/Modules/modulefiles:/etc/modulefiles
-LOADEDMODULES=intel/2013_sp1.2.144:mvapich2_ib/2.1:gnutools/2.69
+_LMFILES_=/opt/modulefiles/compilers/intel/2018.1.163:/opt/modulefiles/mpi/mvapich2_ib/2.3.2
+JAVA_HOME=/usr/java/latest
+GDB_CROSS=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/bin/intel64/gdb-mic
+LANG=en_US.UTF-8
+MODULEPATH=/opt/modulefiles/mpi/.intel:/opt/modulefiles/mpi:/opt/modulefiles/compilers:/opt/modulefiles/applications:/usr/share/Modules/modulefiles:/etc/modulefiles
+LOADEDMODULES=intel/2018.1.163:mvapich2_ib/2.3.2
+JUPYTER_CONFIG_DIR=/home/mthomas/.jupyter
+LM_LICENSE_FILE=/opt/flexlm/license/license.dat
+_CE_M=
+MPM_LAUNCHER=/opt/intel/2018.1.163/debugger_YEAR/mpm/intel64_igfx/bin/start_mpm.sh
+HISTCONTROL=ignoredups
+INTEL_PYTHONHOME=/opt/intel/2018.1.163/debugger_YEAR/gdb/intel64/share/gdb/python
+SHLVL=1
 HOME=/home/mthomas
+ROLLSROOT=/opt/rocks/share/devel/src/roll
+MPIHOME=/opt/mvapich2/intel/ib
 SDSCHOME=/opt/sdsc
+CONDA_PYTHON_EXE=/home/mthomas/miniconda3/bin/python
+PYTHONPATH=/opt/sdsc/lib
 LOGNAME=mthomas
-SSH_CONNECTION=169.228.90.10 53640 198.202.113.253 22
-DISPLAY=localhost:24.0
+QTLIB=/usr/lib64/qt-3.3/lib
+CVS_RSH=ssh
+XDG_DATA_DIRS=/home/mthomas/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+SSH_CONNECTION=76.176.117.51 58136 198.202.113.253 22
+MODULESHOME=/usr/share/Modules
+CONDA_DEFAULT_ENV=base
+MKL_ROOT=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+INFOPATH=/opt/intel/2018.1.163/documentation_YEAR/en/debugger/gdb-ia/info/:/opt/intel/2018.1.163/documentation_YEAR/en/debugger/gdb-mic/info
+XDG_RUNTIME_DIR=/run/user/15294
+INCLUDE=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/include
+INTELHOME=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+_=/bin/env
 ```
 It is often useful to print out (or use) environment variables. To print them out, use the `echo` command, and `$` sign (which extracts the value of the shell variable):
 ```
@@ -95,7 +154,7 @@ Mary Thomas
 Unix has the concept of users and groups. Users can be in more than one group. To see which groups you are a member of, use the `group` command:
 ```
 [mthomas@comet-ln2 OPENMP]$ groups
-use300 pet heart scicom-docs grdclus webwrt scwpf ...
+use300 pet heart scicom-docs ...
 ```
 
 [Back to Top](#top)
@@ -122,6 +181,11 @@ In every Unix directory, there are \"hidden\" files (just like on Macs and Windo
 In Unix, sometimes it is hard tell if a file is also a directory. To see file details (including timestamp and size), run the `ls -l` command:
 ```
 [mthomas@comet-ln2 ~]$ ls -l
+drwxr-xr-x  2 mthomas use300        4 Apr 10  2019 bigdatafiles
+drwxr-xr-x  5 mthomas use300        7 Jan  7  2019 comet-examples
+-rw-r--r--  1 mthomas use300   265000 Oct  9 17:52 comet.share.tree.txt
+drwxr-xr-x  7 mthomas use300        7 Aug 20 09:27 cuda
+[snip extra lines]
 -rw-r--r-- 1 mthomas use300 1543 Jul 17 21:04 filelisting.txt
 drwxr-xr-x 3 mthomas use300   3 Jun 22  2017 intel
 -rwx------ 1 mthomas use300 101 Jun 27  2017 loadgccomgnuenv.sh
@@ -132,23 +196,36 @@ drwxr-xr-x 2 mthomas use300   4 Jun 30  2017 tools
 You can combine the two commands above and use it to see the full directory and file information:
 ```
 [mthomas@comet-ln2 ~]$ ls -al
-total 166
-drwx------   7 mthomas use300    23 Jul 17 19:33 .
-drwxr-xr-x 143 root    root       0 Jul 17 20:01 ..
--rw-r--r--   1 mthomas use300  2487 Jun 23  2017 .alias
--rw-------   1 mthomas use300 14247 Jul 17 12:11 .bash_history
--rw-r--r--   1 mthomas use300    18 Jun 19  2017 .bash_logout
--rw-r--r--   1 mthomas use300   176 Jun 19  2017 .bash_profile
--rw-r--r--   1 mthomas use300   159 Jul 17 18:24 .bashrc
-drwx------   3 mthomas use300     3 Oct 23  2017 .config
--rw-r--r--   1 mthomas use300  1543 Jul 17 21:04 filelisting.txt
--rw-r--r--   1 mthomas use300  1641 Jun 22  2017 .gccomrc
--rw-r--r--   1 mthomas use300   245 Jun 28  2017 .gitconfig
-drwxr-xr-x   3 mthomas use300     3 Jun 22  2017 intel
--rw-r--r--   1 mthomas use300   171 Jun 19  2017 .kshrc
--rwx------   1 mthomas use300   101 Jun 27  2017 loadgccomgnuenv.sh
--rwx------   1 mthomas use300    77 Oct 16  2017 loadgnuenv.sh
--rwxr-xr-x   1 mthomas use300   125 Oct 16  2017 loadintelenv.sh
+total 74296
+drwxr-x---  47 mthomas use300       73 Jan 18 14:42 .
+drwxr-xr-x 133 root    root          0 Jan 18 15:05 ..
+-rw-r--r--   1 mthomas use300     1001 Jul 11  2019 .bash_aliases
+-rw-------   1 mthomas use300    38292 Jan 18 15:04 .bash_history
+-rw-r--r--   1 mthomas use300       18 Jun 19  2017 .bash_logout
+-rw-r--r--   1 mthomas use300      214 Aug  5 01:07 .bash_profile
+-rw-r--r--   1 mthomas use300     1193 Aug  5 01:11 .bashrc
+drwxr-xr-x   2 mthomas use300        4 Apr 10  2019 bigdatafiles
+drwxr-xr-x   4 mthomas use300        4 Nov 13 13:32 .cache
+drwxr-xr-x   5 mthomas use300        7 Jan  7  2019 comet-examples
+-rw-r--r--   1 mthomas use300   265000 Oct  9 17:52 comet.share.tree.txt
+[snip extra lines]
+drwxr-xr-x   5 mthomas use300        5 Jun 12  2019 .ipython
+drwxr-xr-x   3 mthomas use300        6 Nov  1 14:02 .jupyter
+drwxr-xr-x   2 mthomas use300       29 Jan 16 14:25 jupyterhub-tst
+-rw-r--r--   1 mthomas use300      550 Dec 10 15:01 jupyter_notebook_config.py
+drwxr-xr-x   3 mthomas use300        5 Apr 23  2019 KANDES
+drwxr-xr-x   2 mthomas use300        3 Jun 12  2019 .keras
+-rw-r--r--   1 mthomas use300      171 Jun 19  2017 .kshrc
+-rw-------   1 mthomas use300       62 Jul 31 12:46 .lesshst
+-rwx------   1 mthomas use300      146 Apr 10  2019 loadgccomgnuenv.sh
+-rwx------   1 mthomas use300      122 Apr 10  2019 loadgnuenv.sh
+-rwx------   1 mthomas use300       96 Apr 10  2019 loadgpuenv.sh
+-rwx------   1 mthomas use300      169 Apr 10  2019 loadintelenv.sh
+-rwx------   1 mthomas use300      192 Apr 10  2019 loadRenv.sh
+-rw-r--r--   1 mthomas use300      164 Jul 30 11:16 load.singularity.notebook.sh
+drwx------   3 mthomas use300        3 Jun 12  2019 .local
+drwxr-xr-x  57 mthomas use300       58 Jul 31 16:40 miniconda3
+-rw-r--r--   1 mthomas use300 75257002 Jul 29 07:25 Miniconda3-latest-Linux-x86_64.sh
 [snip extra lines]
 ```
 There are several things to notice in the above listing: the first column of data is information about the file "permissions\", which controls who can see/read/modify what files (`r`=read, `w`=write,`x`=execute,`-`=no permission); the next 2 columns are the username and groupID; the 3rd and 4th columns are the size and date. This is discussed in more detail in the [Permissions](#permissions) section below. Also, note that two files have `dots` for their names: in unix the "dot" is a component of a filename. When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an `ls` will not normally show. But also, the single dot, `.` represents the current working directory, and the double dots, `..` represent the directory above. You use these as arguments to unix commands dealing with directories.
@@ -156,38 +233,39 @@ There are several things to notice in the above listing: the first column of dat
 To create directories, use the `mkdir`, make directory command:
 ```
 [mthomas@comet-ln2 ~]$ mkdir testdir
-[mthomas@comet-ln2 ~]$ ls -l
-total 12
-drwxr-xr-x 3 mthomas use300   3 Jun 22  2017 intel
--rwx------ 1 mthomas use300 101 Jun 27  2017 loadgccomgnuenv.sh
--rwx------ 1 mthomas use300  77 Oct 16  2017 loadgnuenv.sh
--rwxr-xr-x 1 mthomas use300 125 Oct 16  2017 loadintelenv.sh
-drwxr-xr-x 2 mthomas use300   2 Jul 17 20:49 testdir
-drwxr-xr-x 2 mthomas use300   4 Jun 30  2017 tools
+(base) [mthomas@comet-ln2:~] ls -l testdir
+total 84
+drwxr-xr-x  2 mthomas use300    4 Jul 17  2018 .
+drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
+-rw-r--r--  1 mthomas use300 1543 Jul 17  2018 filelisting.txt
+-rw-r--r--  1 mthomas use300    0 Jul 17  2018 newfile.txt
 ```
 To move into that directory, use the `cd`, change directory command:
 ```
 [mthomas@comet-ln2 ~]$ cd testdir/
 [mthomas@comet-ln2 testdir]$ ls -al
 total 20
-drwxr-xr-x 2 mthomas use300  2 Jul 17 20:49 .
-drwxr-x--- 9 mthomas use300 25 Jul 17 20:49 ..
+drwxr-xr-x  2 mthomas use300    4 Jan 18 15:10 .
+drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
 [mthomas@comet-ln2 testdir]$
 ```
 From this directory, you can use the `..` command to see the contents of the directory above:
 
 ```
 [mthomas@comet-ln2 testdir]$ ls -l ..
-[mthomas@comet-ln2 testdir]$ /bin/ls -l ..
-total 22
-drwxr-xr-x 4 mthomas use300    5 Jul 17 20:43 comet-examples
--rw-r--r-- 1 mthomas use300 1543 Jul 17 21:04 filelisting.txt
-drwxr-xr-x 3 mthomas use300    3 Jun 22  2017 intel
--rwx------ 1 mthomas use300  101 Jun 27  2017 loadgccomgnuenv.sh
--rwx------ 1 mthomas use300   77 Oct 16  2017 loadgnuenv.sh
--rwxr-xr-x 1 mthomas use300  125 Oct 16  2017 loadintelenv.sh
-drwxr-xr-x 2 mthomas use300    4 Jul 17 20:53 testdir
-drwxr-xr-x 2 mthomas use300    4 Jun 30  2017 tools
+total 74296
+drwxr-x---  47 mthomas use300       73 Jan 18 14:42 .
+drwxr-xr-x 131 root    root          0 Jan 18 15:05 ..
+-rw-r--r--   1 mthomas use300     1001 Jul 11  2019 .bash_aliases
+-rw-------   1 mthomas use300    38292 Jan 18 15:04 .bash_history
+-rw-r--r--   1 mthomas use300       18 Jun 19  2017 .bash_logout
+-rw-r--r--   1 mthomas use300      214 Aug  5 01:07 .bash_profile
+-rw-r--r--   1 mthomas use300     1193 Aug  5 01:11 .bashrc
+drwxr-xr-x   2 mthomas use300        4 Apr 10  2019 bigdatafiles
+drwxr-xr-x   4 mthomas use300        4 Nov 13 13:32 .cache
+drwxr-xr-x   5 mthomas use300        7 Jan  7  2019 comet-examples
+-rw-r--r--   1 mthomas use300   265000 Oct  9 17:52 comet.share.tree.txt
+[snip extra lines]
 ```
 
 [Back to Top](#top)
@@ -201,42 +279,49 @@ Continuing with the `testdir` we created above, we can create files in many ways
 [mthomas@comet-ln2 testdir]$ touch myfile1.txt
 [mthomas@comet-ln2 testdir]$ touch myfile2.txt
 [mthomas@comet-ln2 testdir]$ ls -l
-total 21
-drwxr-xr-x 2 mthomas use300  4 Jul 17 20:53 .
-drwxr-x--- 9 mthomas use300 25 Jul 17 20:49 ..
--rw-r--r-- 1 mthomas use300  0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 mthomas use300  0 Jul 17 20:53 myfile2.txt
+total 85
+drwxr-xr-x  2 mthomas use300    6 Jan 18 15:12 .
+drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
+-rw-r--r--  1 mthomas use300    0 Jan 18 15:12 myfile1.txt
+-rw-r--r--  1 mthomas use300    0 Jan 18 15:12 myfile2.txt
 ```
 
-To copy a file from another directory  to the current directory, use the full path. In this example, we will copy the _filelisting.txt_ file from the directory above, using the `..` (\"dot-dot\") variable for the directory location:
+To copy a file from another directory  to the current directory, use the full path. In this example, we will copy a file named  _filelisting.txt_ file from the directory above, using the `..` (\"dot-dot\") variable for the directory location:
 
 ```java
 [mthomas@comet-ln2 testdir]$ cp ../filelisting.txt .
-[mthomas@comet-ln2 testdir]$ ls -l
-total 11
--rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 myfile2.txt
+[mthomas@comet-ln2 testdir]$ ls -al
+total 85
+drwxr-xr-x  2 mthomas use300    6 Jan 18 15:12 .
+drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
+-rw-r--r--  1 mthomas use300 1543 Jul 17  2018 filelisting.txt
+-rw-r--r--  1 mthomas use300    0 Jan 18 15:12 myfile1.txt
+-rw-r--r--  1 mthomas use300    0 Jan 18 15:12 myfile2.txt
 ```
 
 To rename a file, use the `mv` (move) command:
 
 ```java
-[mthomas@comet-ln2 testdir]$ mv myfile2.txt newfile.txt
-[mthomas@comet-ln2 testdir]$ ls -l
-total 11
--rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 newfile.txt
+(base) [mthomas@comet-ln2:~/testdir] mv myfile2.txt newfile.txt
+(base) [mthomas@comet-ln2:~/testdir] ls -al
+total 85
+drwxr-xr-x  2 mthomas use300    5 Jan 18 15:13 .
+drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
+-rw-r--r--  1 mthomas use300 1543 Jul 17  2018 filelisting.txt
+-rw-r--r--  1 mthomas use300    0 Jan 18 15:12 myfile1.txt
+-rw-r--r--  1 mthomas use300    0 Jan 18 15:12 newfile.txt
 ```
 To delete a file, use the `rm` (remove command):
 
-```java
+```
 [mthomas@comet-ln2 testdir]$ rm myfile1.txt
-[mthomas@comet-ln2 testdir]$  ls -l
-total 10
--rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 newfile.txt
+(base) [mthomas@comet-ln2:~/testdir] rm myfile1.txt 
+(base) [mthomas@comet-ln2:~/testdir] ls -al
+total 84
+drwxr-xr-x  2 mthomas use300    4 Jan 18 15:15 .
+drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
+-rw-r--r--  1 mthomas use300 1543 Jul 17  2018 filelisting.txt
+-rw-r--r--  1 mthomas use300    0 Jan 18 15:12 newfile.txt
 ```
 
 [Back to Top](#top)
