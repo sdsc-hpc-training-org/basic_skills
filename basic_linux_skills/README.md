@@ -329,7 +329,8 @@ drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
 
 ### Copying directories
 
-A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Comet, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. Suppose you are interested in working with one of the files or directories in the /share/apps/examples/ directory.
+A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Comet, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. 
+We will copy files from the HPCT user training directory.
 
 First, we will make a folder to hold comet examples and then `cd` into that new directory. This is done using the `mkdir` command:
 ```
@@ -351,22 +352,35 @@ drwxr-xr-x   2 mthomas use300     2 Jul 17 20:20 comet-examples
 [mthomas@comet-ln2 comet-examples]$
 ```
 
-Next, we will look at the directory where the OPENMP code is stored:
+Next, we will look at the directory where some course examples are locacted: 
 ```
-[mthomas@comet-ln2 ~]$ ls -al /share/apps/examples/OPENMP/
-total 740
-drwxrwxr-x  2 mahidhar use300   4096 Mar 12 08:54 .
-drwxrwxr-x 56 mahidhar use300   4096 May 14 18:11 ..
--rwxr-xr-x  1 mahidhar use300 728112 Apr 15  2015 hello_openmp
--rw-r--r--  1 mahidhar use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-r--r--  1 mahidhar use300    247 Apr 15  2015 hello_openmp.f90
--rw-r--r--  1 mahidhar use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
--rw-r--r--  1 mahidhar use300    310 Apr 15  2015 openmp-slurm.sb
--rw-r--r--  1 mahidhar use300    347 Apr 22  2015 openmp-slurm-shared.sb
+(base) [mthomas@comet-ln2:~/HPCT] ls -al /home/mthomas/HPCT
+total 131
+drwxr-xr-x  5 mthomas use300  5 Jan 18 15:31 .
+drwxr-x--- 49 mthomas use300 75 Jan 18 15:44 ..
+drwxr-xr-x  2 mthomas use300 15 Jan 18 15:31 CUDA
+drwxr-xr-x  2 mthomas use300  7 Jan 18 15:45 MPI
+drwxr-xr-x  2 mthomas use300 10 Jan 18 15:30 OPENMP
 ```
-Copies of files and directories use the same command: `cp`. To copy a single file to the `comet-examples` directory, we need to use the full path:
+To copy a single file to the `comet-examples` directory, we need to use the full path for the "source" file. Suppose we want to just copy an MPI file:
+```
+(base) [mthomas@comet-ln2:~/HPCT] ls -al /home/mthomas/HPCT/MPI
+total 506
+drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
+drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
+-rwxr-xr-x 1 mthomas use300 750288 Jan 18 15:35 hello_mpi
+-rw-r--r-- 1 mthomas use300   2786 Jan 18 15:45 hello_mpi.30939844.comet-14-02.out
+-rw-r--r-- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
+-rw-r--r-- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
+-rw-r--r-- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
+```
+(base) [mthomas@comet-ln2:~/HPCT] ls -al /home/mthomas/HPCT/MPI/hello_mpi.f90 
+-rw-r--r-- 1 mthomas use300 336 Jan 18 15:35 /home/mthomas/HPCT/MPI/hello_mpi.f90
+```
+Copies of files and directories use the same command: `cp`. 
 
-```sh
+
+```
 [mthomas@comet-ln2 comet-examples]$ cp /share/apps/examples/OPENMP/hello_openmp.f90 hello_openmp.f90
 [mthomas@comet-ln2 comet-examples]$ ls -al
 total 29
