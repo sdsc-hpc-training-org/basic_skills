@@ -414,6 +414,9 @@ drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
 -rw-r--r--  1 mthomas use300 336 Jan 18 16:12 hello_mpi.f90
 -rw-r--r--  1 mthomas use300 336 Jan 18 16:13 hello_mpi_V2.f90
 ```
+[Back to Top](#top)
+<hr>
+
 In this case we have a copy of one file from the training files. To copy a large number files, we can copy the director and subdirectories if desired. Copies of directories use the same command: `cp`. 
 For a large number of files, it is easier to copy the entire directory using the `-R` or `-r` recursive command.
 ```
@@ -543,18 +546,22 @@ drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
 In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a group member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
 
 ```
-[mthomas@comet-ln2 OPENMP]$ ls -l hello_openmp
-total 479
-drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
--rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] ls -al
+total 506
+drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
+drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
+-rwxr-xr-x 1 mthomas use300 750288 Jan 18 15:35 hello_mpi
+-rw-r--r-- 1 mthomas use300   2786 Jan 18 15:45 hello_mpi.30939844.comet-14-02.out
+-rw-r--r-- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
+-rw-r--r-- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
+-rw-r--r-- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
 ```
 The order of the markers are grouped into 4 fields:
 `-` `rwx` `r-x` `r-x`
-Field 1 == directory, a `d` or `-` means directory or not a directory
-Field 2 == owner permissions 'rwx' means the owner can read, write, and exectute
-Field 3 == group permissions 'rwx' means the owner can read and exectute, but not modify
-Field 4 == other/world permissions 'r-x' means the others can read and exectute, but not modiry
+* Field 1 == directory, a `d` or `-` means directory or not a directory
+* Field 2 == owner permissions 'rwx' means the owner can read, write, and exectute
+* Field 3 == group permissions 'rwx' means the owner can read and exectute, but not modify
+* Field 4 == other/world permissions 'r-x' means the others can read and exectute, but not modiry
 
 To change the file access permissions, use the `chmod` command. In the example below, only user mthomas has permission to edit (`rw-`) the files, members of the group use300 and others have read only permission (`--`). There are several ways to modify permissions, we will use the binary representation where the rwx status represents a binary number 2^n, where n is the position of the permission starting from the right. For example:
 ```
