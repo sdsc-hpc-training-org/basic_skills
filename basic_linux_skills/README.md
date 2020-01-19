@@ -456,7 +456,8 @@ There are several things to observe with this command:
 2. The use of the `-r` argument is a recursive copy, which gets all files in the directory.
 3. The use of the `-p` arguement preserves the date/timestamp, which can be helpful but not always required.
 4. The use of one of the special _dot_ characters,  \. in the command above: the syntax tells the operating system to copy all contents of the _/home/mthomas/HPCT/_ directory to the `.` directory, or the current directory.
-```
+
+
 To copy a directory and give it a new name:
 ```
 (base) [mthomas@comet-ln2:~/comet-examples] cp -r -p /home/mthomas/HPCT FOOBAR
