@@ -61,38 +61,7 @@ MANPATH=/opt/intel/2018.1.163/documentation_2018/en/man/common:/usr/share/man:/u
 PDSHROOT=/opt/pdsh
 XDG_SESSION_ID=11111609
 HOSTNAME=comet-ln2.sdsc.edu
-IPPROOT=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp
-INTEL_LICENSE_FILE=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/licenses:/opt/intel/licenses:/root/intel/licenses
-L_MKL_TEMP=M_VERS
-TERM=xterm-256color
-SHELL=/bin/bash
-HISTSIZE=5000
-GDBSERVER_MIC=/opt/intel/2018.1.163/debugger_YEAR/gdb/targets/mic/bin/gdbserver
-SSH_CLIENT=76.176.117.51 58136 22
-CONDA_SHLVL=1
-LIBRARY_PATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/intel64_lin:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/../compiler/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/intel64/gcc4.4
-CONDA_PROMPT_MODIFIER=(base) 
-FPATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/include
-QTDIR=/usr/lib64/qt-3.3
-QTINC=/usr/lib64/qt-3.3/include
-MIC_LD_LIBRARY_PATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/mic:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/lib/mic:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/mic
-ROCKSROOT=/opt/rocks/share/devel
-SSH_TTY=/dev/pts/103
-ANT_HOME=/opt/rocks
-QT_GRAPHICSSYSTEM_CHECKED=1
-USER=mthomas
-LD_LIBRARY_PATH=/opt/mvapich2/intel/ib/lib:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/intel64_lin:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/../compiler/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/lib/intel64:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/intel64/gcc4.4
-LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
-CONDA_EXE=/home/mthomas/miniconda3/bin/conda
-MIC_LIBRARY_PATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/mic:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/lib/mic
-ROCKS_ROOT=/opt/rocks
-CPATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/ipp/include:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/include:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb/include
-_CE_CONDA=
-NLSPATH=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/compiler/lib/intel64_lin/locale/%l_%t/%N:/opt/intel/2018.1.163/debugger_YEAR/gdb/intel64/share/locale/%l_%t/%N
-MV2_ALLTOALL_TUNING=2
-MAIL=/var/spool/mail/mthomas
-PATH=/home/mthomas/miniconda3/bin:/home/mthomas/miniconda3/condabin:/opt/mvapich2/intel/ib/bin:/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/bin/intel64:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/sdsc/bin:/opt/sdsc/sbin:/opt/ibutils/bin:/opt/pdsh/bin:/opt/rocks/bin:/opt/rocks/sbin:/home/mthomas/bin
-SDSCDEVEL=/opt/sdsc/devel
+[snip lines]
 CONDA_PREFIX=/home/mthomas/miniconda3
 TBBROOT=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/tbb
 PWD=/home/mthomas
@@ -112,23 +81,7 @@ SHLVL=1
 HOME=/home/mthomas
 ROLLSROOT=/opt/rocks/share/devel/src/roll
 MPIHOME=/opt/mvapich2/intel/ib
-SDSCHOME=/opt/sdsc
-CONDA_PYTHON_EXE=/home/mthomas/miniconda3/bin/python
-PYTHONPATH=/opt/sdsc/lib
-LOGNAME=mthomas
-QTLIB=/usr/lib64/qt-3.3/lib
-CVS_RSH=ssh
-XDG_DATA_DIRS=/home/mthomas/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-SSH_CONNECTION=76.176.117.51 58136 198.202.113.253 22
-MODULESHOME=/usr/share/Modules
-CONDA_DEFAULT_ENV=base
-MKL_ROOT=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl
-LESSOPEN=||/usr/bin/lesspipe.sh %s
-INFOPATH=/opt/intel/2018.1.163/documentation_YEAR/en/debugger/gdb-ia/info/:/opt/intel/2018.1.163/documentation_YEAR/en/debugger/gdb-mic/info
-XDG_RUNTIME_DIR=/run/user/15294
-INCLUDE=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux/mkl/include
-INTELHOME=/opt/intel/2018.1.163/compilers_and_libraries_2018.1.163/linux
-BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+[snip]
 }
 _=/bin/env
 ```
@@ -231,6 +184,7 @@ drwxr-xr-x  57 mthomas use300       58 Jul 31 16:40 miniconda3
 ```
 There are several things to notice in the above listing: the first column of data is information about the file "permissions\", which controls who can see/read/modify what files (`r`=read, `w`=write,`x`=execute,`-`=no permission); the next 2 columns are the username and groupID; the 3rd and 4th columns are the size and date. This is discussed in more detail in the [Permissions](#permissions) section below. Also, note that two files have `dots` for their names: in unix the "dot" is a component of a filename. When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an `ls` will not normally show. But also, the single dot, `.` represents the current working directory, and the double dots, `..` represent the directory above. You use these as arguments to unix commands dealing with directories.
 
+
 To create directories, use the `mkdir`, make directory command:
 ```
 [mthomas@comet-ln2 ~]$ mkdir testdir
@@ -271,6 +225,33 @@ drwxr-xr-x   5 mthomas use300        7 Jan  7  2019 comet-examples
 
 [Back to Top](#top)
 <hr>
+
+
+## <a name="wildcards">Wildcards</a>
+
+\"A wildcard is a character that can be used as a substitute for any of a class of characters in a search, thereby greatly increasing the flexibility and efficiency of searches."  The wildcards are very powerful, and there is not room in this document for all of them, so we recommend that you check out this site:  http://www.linfo.org/wildcard.html for more information.
+
+In the example below, we filter the file listing of _/dev_ with the use of the star wildcard to list all _tty_ files:
+
+```
+
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] ls /dev/*tty*
+crw-rw-rw- 1 root tty     5,  0 Jan 18 16:54 /dev/tty
+crw--w---- 1 root tty     4,  0 Dec  3 13:53 /dev/tty0
+crw--w---- 1 root tty     4,  1 Dec  3 13:53 /dev/tty1
+crw--w---- 1 root tty     4, 10 Dec  3 13:53 /dev/tty10
+crw--w---- 1 root tty     4, 11 Dec  3 13:53 /dev/tty11
+crw--w---- 1 root tty     4, 12 Dec  3 13:53 /dev/tty12
+[snip lines]
+crw--w---- 1 root tty     4,  8 Dec  3 13:53 /dev/tty8
+crw--w---- 1 root tty     4,  9 Dec  3 13:53 /dev/tty9
+crw-rw---- 1 root dialout 4, 64 Dec  3 13:53 /dev/ttyS0
+crw-rw---- 1 root dialout 4, 65 Dec  3 13:53 /dev/ttyS1
+crw-rw---- 1 root dialout 4, 66 Dec  3 13:53 /dev/ttyS2
+crw-rw---- 1 root dialout 4, 67 Dec  3 13:53 /dev/ttyS3
+```
+You will see this command used often.
+
 
 ## <a name="files">Manipulating Files</a>
 
@@ -460,7 +441,6 @@ There are several things to observe with this command:
 3. The use of the `-p` arguement preserves the date/timestamp, which can be helpful but not always required.
 4. The use of one of the special _dot_ characters,  \. in the command above: the syntax tells the operating system to copy all contents of the _/home/mthomas/HPCT/_ directory to the `.` directory, or the current directory.
 
-
 To copy a directory and give it a new name:
 ```
 (base) [mthomas@comet-ln2:~/comet-examples] cp -r -p /home/mthomas/HPCT FOOBAR
@@ -563,7 +543,9 @@ The order of the markers are grouped into 4 fields:
 * Field 3 == group permissions 'rwx' means the owner can read and exectute, but not modify
 * Field 4 == other/world permissions 'r-x' means the others can read and exectute, but not modiry
 
-To change the file access permissions, use the `chmod` command. In the example below, only user mthomas has permission to edit (`rw-`) the files, members of the group use300 and others have read only permission (`--`). There are several ways to modify permissions, we will use the binary representation where the rwx status represents a binary number 2^n, where n is the position of the permission starting from the right. For example:
+To change the file access permissions, use the `chmod` command. In the file listing above:
+* only user mthomas has permission to edit (`rw-`) the text files or to execute (`rwx`) the binary (hello_mpi) files, 
+* members of the groups "use300" and "others" have read only permission ("r--"). There are several ways to modify permissions, we will use the binary representation where the rwx status represents a binary number 2^n, where n is the position of the permission starting from the right. For example:
 ```
   r-- = 2^2 + 0 + 0 = 4 + 0 + 0 = 4
   rw- = 2^2 + 2^1 + 0 = 4 + 2 + 0 = 6
@@ -573,57 +555,33 @@ To change the file access permissions, use the `chmod` command. In the example b
 
 In the example below, we will set read and write permissions to the owner and the group, and limit the other/world group to read only:
 ```
-[mthomas@comet-ln2 OPENMP]$ ls -l
-total 479
-drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
--rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
--rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
--rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
--rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
-[mthomas@comet-ln2 OPENMP]$ chmod 660 *
-[mthomas@comet-ln2 OPENMP]$ ls -l
-total 460
-drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
--rw-rw-r-- 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-rw---- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-rw---- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
--rw-rw---- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
--rw-rw---- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
--rw-rw---- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
-
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] chmod 660 *
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] ls -al
+total 506
+drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
+drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
+-rw-rw---- 1 mthomas use300 750288 Jan 18 15:35 hello_mpi
+-rw-rw---- 1 mthomas use300   2786 Jan 18 15:45 hello_mpi.30939844.comet-14-02.out
+-rw-rw---- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
+-rw-rw---- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
+-rw-rw---- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
 ```
-In the example above, we use the star wildcard, \" \* \" to represent all the files in the directory (See the section on wildcards below). We can use the wildcard to **change the group** of some of the files. For example, to change the group of only the \*.out files:
+In the example above, we use the star wildcard, \" \* \" to represent all the files in the directory (See the section on wildcards below). We can use the wildcard to **change the group** of some of the files. For example, to change the group of only the \*.out files so that the members of a group can access the files, and no others:
 
 ```
 [mthomas@comet-ln2 OPENMP]$ groups
-use300 pet heart scicom-docs grdclus webwrt ...
-[mthomas@comet-ln2 OPENMP]$ chgrp heart *.out
-[mthomas@comet-ln2 OPENMP]$ ls -l
-total 460
-drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
--rw-rw-r-- 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-rw---- 1 mthomas heart     984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-rw---- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
--rw-rw---- 1 mthomas heart     656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
--rw-rw---- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
--rw-rw---- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
-```
+use300 sdsc sdu233 [snip] ...
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] chgrp sdu233 *.out
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] ls -al
+total 506
+drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
+drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
+-rw-rw---- 1 mthomas use300 750288 Jan 18 15:35 hello_mpi
+-rw-rw---- 1 mthomas sdu233   2786 Jan 18 15:45 hello_mpi.30939844.comet-14-02.out
+-rw-rw---- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
+-rw-rw---- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
+-rw-rw---- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
 
-[Back to Top](#top)
-<hr>
-
-## <a name="wildcards">Wildcards</a>
-
-\"A wildcard is a character that can be used as a substitute for any of a class of characters in a search, thereby greatly increasing the flexibility and efficiency of searches."  The wildcards are very powerful, and there is not room in this document for all of them, so we recommend that you check out this site:  http://www.linfo.org/wildcard.html for more information.
-
-In the example below, we use the star wildcard to list all files ending in `.out`
-
-```
-[mthomas@comet-ln2 OPENMP]$ ls -al *.out
--rw-rw---- 1 mthomas heart 984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-rw---- 1 mthomas heart 656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
 ```
  
 [Back to Top](#top)
