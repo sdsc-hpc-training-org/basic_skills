@@ -1,4 +1,4 @@
-# Accessing HPC Systems:  Basic Linux Skills
+# Accessing HPC Systems: Basic Linux Skills on Comet
 [//]: # " Comment example "
 
 [//]: # ( Comment2 )
