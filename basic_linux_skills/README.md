@@ -16,6 +16,7 @@ Notes:
 * [Basic Environment](#basic-env)
 * [Directories and Navigation](#dirs-and-nav)
 * [Files](#files)
+* [Directories](#directories)
 * [Permissions](#permissions)
 * [Wildcards](#wildcards)
 * [Common Utilities](#common-utilities)
@@ -160,7 +161,7 @@ use300 pet heart scicom-docs ...
 [Back to Top](#top)
 <hr>
 
-## <a name="dirs-and-nav">Directories and Navigation</a>
+## <a name="dirs-and-nav">Files, Directories and Navigation</a>
 In unix, everything is a file, which can be confusing at first. The locations for where files are stored are also called directories (which is equivalent to folders). To find out where you are in the system, use the `pwd` command, which prints the full path to the current/working directory:
 ```
 [mthomas@comet-ln2 ~]$ pwd
@@ -301,7 +302,7 @@ drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
 
 To rename a file, use the `mv` (move) command:
 
-```java
+```
 (base) [mthomas@comet-ln2:~/testdir] mv myfile2.txt newfile.txt
 (base) [mthomas@comet-ln2:~/testdir] ls -al
 total 85
@@ -327,10 +328,9 @@ drwxr-x--- 47 mthomas use300   73 Jan 18 14:42 ..
 [Back to Top](#top)
 <hr>
 
-### Copying directories
+### <a name="directories">Directories</a>
 
-A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Comet, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. 
-We will copy files from the HPCT user training directory.
+A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Comet, there is a large suite of applications that you can work with. In this example, we will copy files from the HPCT user training directory.
 
 First, we will make a folder to hold comet examples and then `cd` into that new directory. This is done using the `mkdir` command:
 ```
@@ -351,7 +351,6 @@ drwxr-xr-x   2 mthomas use300     2 Jul 17 20:20 comet-examples
 /home/mthomas/comet-examples
 [mthomas@comet-ln2 comet-examples]$
 ```
-
 Next, we will look at the directory where some course examples are locacted: 
 ```
 (base) [mthomas@comet-ln2:~/HPCT] ls -al /home/mthomas/HPCT
@@ -362,7 +361,7 @@ drwxr-xr-x  2 mthomas use300 15 Jan 18 15:31 CUDA
 drwxr-xr-x  2 mthomas use300  7 Jan 18 15:45 MPI
 drwxr-xr-x  2 mthomas use300 10 Jan 18 15:30 OPENMP
 ```
-To copy a single file to the `comet-examples` directory, we need to use the full path for the "source" file. Suppose we want to just copy an MPI file:
+To copy a single file to the `comet-examples` directory, we need to use the full path for the "source" file. Suppose we want to just copy the MPI fortran file:
 ```
 (base) [mthomas@comet-ln2:~/HPCT] ls -al /home/mthomas/HPCT/MPI
 total 506
@@ -373,24 +372,32 @@ drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
 -rw-r--r-- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
 -rw-r--r-- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
 -rw-r--r-- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
-```
 (base) [mthomas@comet-ln2:~/HPCT] ls -al /home/mthomas/HPCT/MPI/hello_mpi.f90 
 -rw-r--r-- 1 mthomas use300 336 Jan 18 15:35 /home/mthomas/HPCT/MPI/hello_mpi.f90
 ```
+In this example, we will copy a single mpi file from the `source` directory, /home/mthomas/HPCT/MPI/, to
+the `destination` directory, which in this case is the current working directory. You can discover what the current working directory using the `pwd` command (print working directory):
+```
+(base) [mthomas@comet-ln2:~/comet-examples] cd ~/comet-examples
+(base) [mthomas@comet-ln2:~/comet-examples] pwd
+/home/mthomas/comet-examples
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al
+total 74
+drwxr-xr-x  2 mthomas use300  2 Jan 18 15:22 .
+drwxr-x--- 49 mthomas use300 75 Jan 18 15:44 ..
+```
+To copy the source file to this directory, use the `cp` command:
+```
+(base) [mthomas@comet-ln2:~/comet-examples] cp /home/mthomas/HPCT/MPI/hello_mpi.f90  /home/mthomas/comet-examples/hello_mpi.f90 
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al
+total 84
+drwxr-xr-x  2 mthomas use300   3 Jan 18 16:06 .
+drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:06 hello_mpi.f90
+```
+XXXXXXXXXXXXXXX
 Copies of files and directories use the same command: `cp`. 
-
-
-```
-[mthomas@comet-ln2 comet-examples]$ cp /share/apps/examples/OPENMP/hello_openmp.f90 hello_openmp.f90
-[mthomas@comet-ln2 comet-examples]$ ls -al
-total 29
-drwxr-xr-x 2 mthomas use300   3 Jul 17 20:24 .
-drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
--rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
-
-```
 For a large number of files, it is easier to copy the entire directory using the `-R` or `-r` recursive command:
-
 ```
 [mthomas@comet-ln2 comet-examples]$ cp -r -p /share/apps/examples/OPENMP/ .
 [mthomas@comet-ln2 comet-examples]$ ll
