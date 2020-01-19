@@ -395,123 +395,144 @@ drwxr-xr-x  2 mthomas use300   3 Jan 18 16:06 .
 drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
 -rw-r--r--  1 mthomas use300 336 Jan 18 16:06 hello_mpi.f90
 ```
-XXXXXXXXXXXXXXX
-Copies of files and directories use the same command: `cp`. 
-For a large number of files, it is easier to copy the entire directory using the `-R` or `-r` recursive command:
+Note that for the file copy, we used the `full path` for both the `source` file and the `destination file.` Recall that for Unix/Linux a single dot, `.` represents the current working directory, and  double dots, `..` represent the directory above. This can be used to simplify commands like the copy command:
 ```
-[mthomas@comet-ln2 comet-examples]$ cp -r -p /share/apps/examples/OPENMP/ .
-[mthomas@comet-ln2 comet-examples]$ ll
-total 48
-drwxr-xr-x 3 mthomas use300   4 Jul 17 20:26 .
-drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
--rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
-drwxr-xr-x 2 mthomas use300   8 Jul 17 20:26 OPENMP
-[mthomas@comet-ln2 comet-examples]$ ls -al OPENMP/
-total 479
-drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
-drwxr-xr-x 3 mthomas use300      4 Jul 17 20:32 ..
--rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
--rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
--rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
--rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+(base) [mthomas@comet-ln2:~/comet-examples] cp /home/mthomas/HPCT/MPI/hello_mpi.f90  .
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al
+total 84
+drwxr-xr-x  2 mthomas use300   3 Jan 18 16:06 .
+drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:12 hello_mpi.f90
+```
+You can also copy and rename the source file:
+```
+(base) [mthomas@comet-ln2:~/comet-examples] cp /home/mthomas/HPCT/MPI/hello_mpi.f90  hello_mpi_V2.f90
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al
+total 84
+drwxr-xr-x  2 mthomas use300   4 Jan 18 16:13 .
+drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:12 hello_mpi.f90
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:13 hello_mpi_V2.f90
+```
+In this case we have a copy of one file from the training files. To copy a large number files, we can copy the director and subdirectories if desired. Copies of directories use the same command: `cp`. 
+For a large number of files, it is easier to copy the entire directory using the `-R` or `-r` recursive command.
+```
+(base) [mthomas@comet-ln2:~/comet-examples] cp -r /home/mthomas/HPCT .
+(base) [mthomas@comet-ln2:~/comet-examples] ll
+total 94
+drwxr-xr-x  3 mthomas use300   5 Jan 18 16:16 .
+drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:12 hello_mpi.f90
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:13 hello_mpi_V2.f90
+drwxr-xr-x  5 mthomas use300   5 Jan 18 16:16 HPCT
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al HPCT/
+total 58
+drwxr-xr-x 5 mthomas use300  5 Jan 18 16:16 .
+drwxr-xr-x 3 mthomas use300  5 Jan 18 16:16 ..
+drwxr-xr-x 2 mthomas use300 15 Jan 18 16:16 CUDA
+drwxr-xr-x 2 mthomas use300  7 Jan 18 16:16 MPI
+drwxr-xr-x 2 mthomas use300 10 Jan 18 16:16 OPENMP
+```
+Add the `-p` option to preserve the file dates:
+```
+(base) [mthomas@comet-ln2:~/comet-examples] cp -r -p /home/mthomas/HPCT .
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al
+total 94
+drwxr-xr-x  3 mthomas use300   5 Jan 18 16:16 .
+drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:12 hello_mpi.f90
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:13 hello_mpi_V2.f90
+drwxr-xr-x  5 mthomas use300   5 Jan 18 15:31 HPCT
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al HPCT/
+total 58
+drwxr-xr-x 5 mthomas use300  5 Jan 18 15:31 .
+drwxr-xr-x 3 mthomas use300  5 Jan 18 16:16 ..
+drwxr-xr-x 2 mthomas use300 15 Jan 18 15:31 CUDA
+drwxr-xr-x 2 mthomas use300  7 Jan 18 15:45 MPI
+drwxr-xr-x 2 mthomas use300 10 Jan 18 15:30 OPENMP
 ```
 There are several things to observe with this command:
 1. The owner of these new files is the user who ran the commands (mthomas).
 2. The use of the `-r` argument is a recursive copy, which gets all files in the directory.
 3. The use of the `-p` arguement preserves the date/timestamp, which can be helpful but not always required.
-4. The use of one of the special _dot_ characters,  \. in the command above: the syntax tells the operating system to copy all contents of the _/share/apps/examples/OPENMP/_ directory to the `.` directory, or the current directory, which in this case is:
-
-```java
-[mthomas@comet-ln2 comet-examples]$ pwd
-/home/mthomas/comet-examples
-[mthomas@comet-ln2 comet-examples]$ ls -al  
-total 48
-drwxr-xr-x 3 mthomas use300   4 Jul 17 20:32 .
-drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
--rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
-drwxr-xr-x 2 mthomas use300   8 Jul 17 20:26 OPENMP
-[mthomas@comet-ln2 comet-examples]$ ls -al .
-total 48
-drwxr-xr-x 3 mthomas use300   4 Jul 17 20:32 .
-drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
--rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
-drwxr-xr-x 2 mthomas use300   8 Jul 17 20:26 OPENMP
+4. The use of one of the special _dot_ characters,  \. in the command above: the syntax tells the operating system to copy all contents of the _/home/mthomas/HPCT/_ directory to the `.` directory, or the current directory.
 ```
-You can also copy a file or directory and give it a new name:
+To copy a directory and give it a new name:
 ```
-[mthomas@comet-ln2 comet-examples]$  cp -r -p /share/apps/examples/OPENMP/ FOOBAR  
-[mthomas@comet-ln2 comet-examples]$ ll
-total 49
-drwxr-xr-x 4 mthomas use300   5 Jul 17 21:19 .
-drwxr-x--- 9 mthomas use300  26 Jul 17 21:04 ..
--rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
-drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 OPENMP
-drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 FOOBAR
-[mthomas@comet-ln2 comet-examples]$ ll FOOBAR
-total 488
-drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
-drwxr-xr-x 4 mthomas use300      5 Jul 17 21:19 ..
--rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
--rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
--rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
--rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+(base) [mthomas@comet-ln2:~/comet-examples] cp -r -p /home/mthomas/HPCT FOOBAR
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al
+total 94
+drwxr-xr-x  4 mthomas use300   6 Jan 18 16:20 .
+drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
+drwxr-xr-x  5 mthomas use300   5 Jan 18 15:31 FOOBAR
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:12 hello_mpi.f90
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:13 hello_mpi_V2.f90
+drwxr-xr-x  5 mthomas use300   5 Jan 18 15:31 HPCT
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al FOOBAR/
+total 58
+drwxr-xr-x 5 mthomas use300  5 Jan 18 15:31 .
+drwxr-xr-x 4 mthomas use300  6 Jan 18 16:20 ..
+drwxr-xr-x 2 mthomas use300 15 Jan 18 15:31 CUDA
+drwxr-xr-x 2 mthomas use300  7 Jan 18 15:45 MPI
+drwxr-xr-x 2 mthomas use300 10 Jan 18 15:30 OPENMP
 ```
 You can rename a directory using the `mv` command:
 ```
-[mthomas@comet-ln2 comet-examples]$ mv FOOBAR/ OPENMP_DUP
-[mthomas@comet-ln2 comet-examples]$ /bin/ls -l
-total 48
--rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
-drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 OPENMP
-drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 OPENMP_DUP
-[mthomas@comet-ln2 comet-examples]$
+(base) [mthomas@comet-ln2:~/comet-examples] mv FOOBAR/  HPCT_DUP
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al
+total 94
+drwxr-xr-x  4 mthomas use300   6 Jan 18 16:21 .
+drwxr-x--- 49 mthomas use300  75 Jan 18 15:44 ..
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:12 hello_mpi.f90
+-rw-r--r--  1 mthomas use300 336 Jan 18 16:13 hello_mpi_V2.f90
+drwxr-xr-x  5 mthomas use300   5 Jan 18 15:31 HPCT
+drwxr-xr-x  5 mthomas use300   5 Jan 18 15:31 HPCT_DUP
+(base) [mthomas@comet-ln2:~/comet-examples] ls -al HPCT_DUP/
+total 58
+drwxr-xr-x 5 mthomas use300  5 Jan 18 15:31 .
+drwxr-xr-x 4 mthomas use300  6 Jan 18 16:21 ..
+drwxr-xr-x 2 mthomas use300 15 Jan 18 15:31 CUDA
+drwxr-xr-x 2 mthomas use300  7 Jan 18 15:45 MPI
+drwxr-xr-x 2 mthomas use300 10 Jan 18 15:30 OPENMP
 ```
-
 To move to the directory, use the `cd` (change directory)
 ```
-[mthomas@comet-ln2 comet-examples]$ pwd
+(base) [mthomas@comet-ln2:~/comet-examples] pwd
 /home/mthomas/comet-examples
-[mthomas@comet-ln2 comet-examples]$ cd OPENMP/
-[mthomas@comet-ln2 OPENMP]$ pwd
-/home/mthomas/comet-examples/OPENMP
-[mthomas@comet-ln2 OPENMP]$ ls -al
-total 479
-drwxr-xr-x 2 mthomas use300      8 Jul 17 20:26 .
-drwxr-xr-x 3 mthomas use300      4 Jul 17 20:32 ..
--rwxr-xr-x 1 mthomas use300 728112 Jul 17 20:26 hello_openmp
--rw-r--r-- 1 mthomas use300    984 Jul 17 20:26 hello_openmp.500005.comet-27-01.out
--rw-r--r-- 1 mthomas use300    247 Jul 17 20:26 hello_openmp.f90
--rw-r--r-- 1 mthomas use300    656 Jul 17 20:26 hello_openmp_shared.508392.comet-11-01.out
--rw-r--r-- 1 mthomas use300    310 Jul 17 20:26 openmp-slurm.sb
--rw-r--r-- 1 mthomas use300    347 Jul 17 20:26 openmp-slurm-shared.sb
+(base) [mthomas@comet-ln2:~/comet-examples] cd HPCT/MPI
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] pwd
+/home/mthomas/comet-examples/HPCT/MPI
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] ls -al
+total 506
+drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
+drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
+-rwxr-xr-x 1 mthomas use300 750288 Jan 18 15:35 hello_mpi
+-rw-r--r-- 1 mthomas use300   2786 Jan 18 15:45 hello_mpi.30939844.comet-14-02.out
+-rw-r--r-- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
+-rw-r--r-- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
+-rw-r--r-- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
 ```
 You can sort the order of the file listings by date (or size or other fields -- see the `man` pages). The default file listing in alphabetic, to  see the files in chronological order (or reverse):
 ```
-[mthomas@comet-ln2 comet-examples]$ ls -alt OPENMP/
-total 479
-drwxr-xr-x 4 mthomas use300      5 Jul 17 20:43 ..
-drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
--rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
--rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
--rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
--rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] ls -alt
+total 506
+-rw-r--r-- 1 mthomas use300   2786 Jan 18 15:45 hello_mpi.30939844.comet-14-02.out
+drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
+-rw-r--r-- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
+-rwxr-xr-x 1 mthomas use300 750288 Jan 18 15:35 hello_mpi
+-rw-r--r-- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
+drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
+-rw-r--r-- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
 
-[mthomas@comet-ln2 comet-examples]$ ls -altr OPENMP/
-total 479
--rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
--rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
--rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
--rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
--rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
--rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
-drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
-drwxr-xr-x 4 mthomas use300      5 Jul 17 20:43 ..
+(base) [mthomas@comet-ln2:~/comet-examples/HPCT/MPI] ls -alrt
+total 506
+-rw-r--r-- 1 mthomas use300    393 Jan 18 15:30 hello_mpi_SI19.sb
+drwxr-xr-x 5 mthomas use300      5 Jan 18 15:31 ..
+-rw-r--r-- 1 mthomas use300    336 Jan 18 15:35 hello_mpi.f90
+-rwxr-xr-x 1 mthomas use300 750288 Jan 18 15:35 hello_mpi
+-rw-r--r-- 1 mthomas use300    341 Jan 18 15:44 hello_mpi.sb
+drwxr-xr-x 2 mthomas use300      7 Jan 18 15:45 .
+-rw-r--r-- 1 mthomas use300   2786 Jan 18 15:45 hello_mpi.30939844.comet-14-02.out
 ```
 
 [Back to Top](#top)
