@@ -1,6 +1,9 @@
-## Notes on Interactive Computing
+# Interactive Computing on the Comet Cluster
 
-## To Obtain an Interactive Node on Comet
+## Obtain an Interactive Nodes on Comet
+There are two ways to obtain interactive nodes: 
+1. via the command line
+2. via a batch script
 
 ### Log onto comet.sdsc.edu  
 ```
