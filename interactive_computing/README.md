@@ -1,4 +1,16 @@
 # Interactive Computing on the Comet Cluster
+<!-- adding TOC -->
+
+<!-- toc -->
+
+- [Obtain an Interactive Nodes on Comet](#obtain-an-interactive-nodes-on-comet)
+  * [Log onto comet.sdsc.edu](#log-onto-cometsdscedu)
+  * [Request an interactive node from the command line:](#request-an-interactive-node-from-the-command-line)
+- [Obtain interactive shared GPU node on SDSC Comet](#obtain-interactive-shared-gpu-node-on-sdsc-comet)
+
+<!-- tocstop -->
+
+;
 
 ## Obtain an Interactive Nodes on Comet
 There are two ways to obtain interactive nodes: 
