@@ -75,4 +75,23 @@ srun -t 00:30:00 --partition=gpu-shared --nodes=1 --ntasks-per-node=7 \
      --gres=gpu:p100:1 --reservation=sccgpures --pty --wait=0 /bin/bash
 ```
 
+The SLURM launch command below to obtain an interactive node with access to 1 K80 GPU on the shared GPU nodes for 3h. You can also execute this command directly on the command line:
+```
+srun --partition=gpu-shared --reservation=gputraining \
+     --nodes=1 --ntasks-per-node=6 --gres=gpu:k80:1 \
+     -t 03:00:00 --pty --wait=0 /bin/bash
+```
 It may take some time to get the interactive node.
+
+Load the CUDA and PGI compiler modules
+```
+module purge
+module load gnutools
+module load cuda
+module load pgi
+```
+If you get a license error when executing the PGI compilers, execute the following:
+
+```
+export LM_LICENSE_FILE=40200@elprado.sdsc.edu:$LM_LICENSE_FILE
+```
