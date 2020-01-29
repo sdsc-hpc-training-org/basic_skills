@@ -1,6 +1,4 @@
-# Preparing to Work on SDSC HPC Resources: Accounts and Connecting
-
-
+# Connecting to your Comet.sdsc.edu Account
 [//]: # " Comment example "
 
 [//]: # ( Comment2 )
