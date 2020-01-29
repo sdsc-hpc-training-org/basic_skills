@@ -13,9 +13,14 @@ In this exercise, you must use your SDSC or XSEDE account to log onto the Comet 
     - [Windows Users](#term-app-windows-users)
     - [Terminal Connection Example](#term-app-example)
     - [Getting Domain Name & Host Information](#term-app-dn-info)
-* [Expand your knowledge using Comet User guide](#comet-user-guide)
+* [Connect via Passwordless SSH](passwordless)
 
 Note: if you have any difficulties completing this task, please contact Institute staff at <consult@sdsc.edu>.
+
+### Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules.
+
+Comet User Guide: http://www.sdsc.edu/support/user_guides/comet.html
+ 
 
 ## <a name="obtain-your-comet-account"></a>Obtain your comet account:
 
@@ -66,41 +71,18 @@ Windows users will need to run an X Server and an ssh-like client. [Cygwin](http
 
 ## <a name="term-app-example"></a>Example of a terminal connection:
 ```
-[localuser@localhost]: ssh -X username@comet.sdsc.edu
-Warning: untrusted X11 forwarding setup failed: xauth key data not generated
-Last login: Tue Jul 17 12:15:18 2018 from wireless-169-228-90-10.ucsd.edu
-Rocks 6.2 (SideWinder)
-Profile built 16:44 08-Feb-2016
+Rocks 7.0 (Manzanita)
+Profile built 12:32 03-Dec-2019
 
-Kickstarted 17:18 08-Feb-2016
-
-                      WELCOME TO
+Kickstarted 13:47 03-Dec-2019
+                                                                       
+                      WELCOME TO 
       __________________  __  _______________
         -----/ ____/ __ \/  |/  / ____/_  __/
           --/ /   / / / / /|_/ / __/   / /
            / /___/ /_/ / /  / / /___  / /
            \____/\____/_/  /_/_____/ /_/
 
-*******************************************************************************
-
-[1] Example Scripts: /share/apps/examples
-
-[2] Filesystems:
-
-     (a) Lustre scratch filesystem : /oasis/scratch/comet/$USER/temp_project
-         (Preferred: Scalable large block I/O)
-
-     (b) Compute/GPU node local SSD storage: /scratch/$USER/$SLURM_JOBID
-         (Meta-data intensive jobs, high IOPs)
-
-     (c) Lustre projects filesystem: /oasis/projects/nsf
-
-     (d) /home/$USER : Only for source files, libraries, binaries.
-         *Do not* use for I/O intensive jobs.
-
-[3] Comet User Guide: http://www.sdsc.edu/support/user_guides/comet.html
-******************************************************************************
-[username@comet-ln2 ~]$
 ```
 
 [Back to Top](#top)
@@ -130,8 +112,7 @@ The IP address is the  line labeled "Address" and for Comet there are two. YOu c
 
 <hr>
 
-## <a name="comet-user-guide"></a>Comet User Guide
+## <a name="passwordless"></a>Connect via Passwordless SSH
+Suggestion:  Make it easier to connect to Comet using passwordless SSH:   
+* https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps
 
-Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
-
-http://www.sdsc.edu/support/user_guides/comet.html
