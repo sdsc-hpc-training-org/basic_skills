@@ -10,7 +10,9 @@ In this exercise, you must use your SDSC or XSEDE account to log onto the Comet 
 * [Obtain your Comet account](#obtain-your-comet-account)
 * [Using the Terminal Application to connect to Comet](#term-app)
     - [Mac Users](#term-app-mac-users)
-    - [Windows Users](#term-app-windows-users)
+    - [Windows Users](#term-app-windows)
+        - [Windows 10 Users](#term-app-windows10)
+        - [Windows Users (older)](#term-app-windows-older)
     - [Terminal Connection Example](#term-app-example)
     - [Getting Domain Name & Host Information](#term-app-dn-info)
 * [Connect via Passwordless SSH](passwordless)
@@ -53,17 +55,17 @@ For Mac users, the Terminal application is typically used for connections. This 
 
      ssh -v -X username@hostname
 
-To configure your login using *passwordless ssh*, see this tutorial:
-https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
 
 [Back to Top](#top)
 <hr>
+         - [Windows 10 Users](#term-app-windows10)
+        - [Windows Users (older)](#term-app-windows-older)
 
 
-## <a name="term-app-windows"></a>Windows Users
+## <a name="term-app-windows"></a>MSFT Windows 
 All windows users will need to run a terminal emulation application capable of supporting an X Server and an ssh-like client.
 
-### <a name="term-app-windows10-users"></a>Windows 10 Users
+### <a name="term-app-windows10"></a>Windows 10
 Windows Terminal is a terminal emulator for Windows 10 written by Microsoft. It includes support for the Command Prompt, PowerShell, WSL and SSH. The terminal emulator is described here: https://en.wikipedia.org/wiki/Windows_Terminal.
 
 <img src="./images/windows-10-powershell-commands.png" alt="Win10 Powershell" width="350px" />
@@ -73,7 +75,7 @@ To download and install the PowerShell application, see here [ Available Jan 30,
 [Back to Top](#top)
 <hr>
 
-### <a name="term-app-windows-users"></a>Older Windows Users
+### <a name="term-app-windows-older"></a> Windows (pre-Win10)
 Older  [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Putty will also work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
 
 * http://www.cygwin.com/
@@ -127,6 +129,7 @@ The IP address is the  line labeled "Address" and for Comet there are two. YOu c
 <hr>
 
 ## <a name="passwordless"></a>Connect via Passwordless SSH
-Suggestion:  Make it easier to connect to Comet using passwordless SSH:   
+
+To configure your login using *passwordless ssh*, see this tutorial:
 * https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps
 
