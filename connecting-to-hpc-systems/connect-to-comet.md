@@ -59,8 +59,22 @@ https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
 [Back to Top](#top)
 <hr>
 
-## <a name="term-app-windows-users"></a>Windows users
-Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Putty will also work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
+
+## <a name="term-app-windows"></a>Windows Users
+All windows users will need to run a terminal emulation application capable of supporting an X Server and an ssh-like client.
+
+### <a name="term-app-windows10-users"></a>Windows 10 Users
+Windows Terminal is a terminal emulator for Windows 10 written by Microsoft. It includes support for the Command Prompt, PowerShell, WSL and SSH. The terminal emulator is described here: https://en.wikipedia.org/wiki/Windows_Terminal.
+
+<img src="./images/windows-10-powershell-commands.png" alt="Win10 Powershell" width="350px" />
+
+To download and install the PowerShell application, see here [ Available Jan 30, 2020: ] : https://docs.microsoft.com/en-us/skypeforbusiness/set-up-your-computer-for-windows-powershell/download-and-install-windows-powershell-5-1
+
+[Back to Top](#top)
+<hr>
+
+### <a name="term-app-windows-users"></a>Older Windows Users
+Older  [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Putty will also work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
 
 * http://www.cygwin.com/
 * http://x.cygwin.com/
