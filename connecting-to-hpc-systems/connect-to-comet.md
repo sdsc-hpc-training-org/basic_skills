@@ -11,11 +11,11 @@ In this exercise, you must use your SDSC or XSEDE account to log onto the Comet 
 * [Using the Terminal Application to connect to Comet](#term-app)
     - [Mac Users](#term-app-mac-users)
     - [Windows Users](#term-app-windows)
-        - [Windows 10 Users](#term-app-windows10)
-        - [Windows Users (older)](#term-app-windows-older)
+        - [Windows 10](#term-app-windows10)
+        - [Windows (pre-Win10)](#term-app-windows-older)
     - [Terminal Connection Example](#term-app-example)
     - [Getting Domain Name & Host Information](#term-app-dn-info)
-* [Connect via Passwordless SSH](passwordless)
+* [Connect via Passwordless SSH](#passwordless)
 
 Note: if you have any difficulties completing this task, please contact Institute staff at <consult@sdsc.edu>.
 
