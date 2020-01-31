@@ -58,9 +58,6 @@ For Mac users, the Terminal application is typically used for connections. This 
 
 [Back to Top](#top)
 <hr>
-         - [Windows 10 Users](#term-app-windows10)
-        - [Windows Users (older)](#term-app-windows-older)
-
 
 ## <a name="term-app-windows"></a>MSFT Windows 
 All windows users will need to run a terminal emulation application capable of supporting an X Server and an ssh-like client.
