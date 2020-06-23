@@ -130,6 +130,5 @@ The IP address is the  line labeled "Address" and for Comet there are two. YOu c
 
 ## <a name="passwordless"></a>Connect via Passwordless SSH
 
-To configure your login using *passwordless ssh*, see this tutorial:
-* https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps
+This is not recommended for SDSC HPC systems
 
