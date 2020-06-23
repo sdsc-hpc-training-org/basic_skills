@@ -55,6 +55,9 @@ For Mac users, the Terminal application is typically used for connections. This 
 
      ssh -v -X username@hostname
 
+ Another way to connect using your username:
+
+     ssh -l username hostname
 
 [Back to Top](#top)
 <hr>
