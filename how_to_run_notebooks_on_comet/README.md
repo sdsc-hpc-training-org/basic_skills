@@ -2,7 +2,7 @@
 **By** [Mary Thomas, SDSC](https://www.sdsc.edu/research/researcher_spotlight/thomas_mary.html)
 **Updated:**  July 14, 2020
 
-This quick-start guide will show you how to run/edit a jupyter notebooks, from the command line for CPU computing. 
+This quick-start guide will show you how to run jupyter notebooks on Comet using the [SDSC Reverse Proxy Service (RPS)](https://comet-notebooks-101.readthedocs.io/en/comet/methods/reverseProxy.html). RPS is a prototype system that will allow users to launch standard Jupyter Services on on any Comet compute node using a simple bash script called *start_notebook*. The notebooks will be made available to the user outside of the cluster firewall using a *secure* HTTPS connection between the external users web browser and the reverse proxy server.
 
 ## Set up a SECURE (HTTPS) Jupyter Notebook environment on Comet:
 
