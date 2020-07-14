@@ -1,7 +1,12 @@
 # Using Jupyter Notebooks on the SDSC Comet Cluster
 **By** [Mary Thomas, SDSC](https://hpc-students.sdsc.edu/instr_bios/mary_thomas.html)
 
-## This tutorial will show you how to run/edit a jupyter notebooks, from the command link.
+**This tutorial will show you how to run/edit a jupyter notebooks, from the command link.**
+
+## Setting up Jupyter Notebooks on Comet
+
+See the full instructions and tutorials here:  [Running Notebooks on Comet](https://comet-notebooks-101.readthedocs.io/en/comet/index.html)
+
 * Log onto comet.sdsc.edu  (for more help, see https://github.com/sdsc-hpc-training-org/basic_skills/tree/master/connecting-to-hpc-systems)
 ```
 ssh -Y -l <username> comet.sdsc.edu
