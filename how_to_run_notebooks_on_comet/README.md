@@ -33,7 +33,7 @@ git clone git@github.com:sinkovit/PythonSeries.git
 ```
 start-notebook
 ```
-For more information and help, see https://comet-notebooks-101.readthedocs.io/en/comet/methods/reverseProxy.html
+For more information on using ```start-notebook``` including configuration and installation, see https://comet-notebooks-101.readthedocs.io/en/comet/methods/reverseProxy.html
 
 ## NOTE: The instructions below are for running *INSECURE* notebooks over HTTP (not HTTPS).
 This method is not supported or recommended by SDSC. Your notebooks will run over HTTP, and be vulnerable to explotation
