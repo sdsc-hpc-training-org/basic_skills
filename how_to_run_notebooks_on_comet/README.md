@@ -8,18 +8,28 @@ This quick-start guide will show you how to run/edit a jupyter notebooks, from t
 See the full instructions and tutorials here:  [Running Notebooks on Comet](https://comet-notebooks-101.readthedocs.io/en/comet/index.html)
 
 
-* Log onto comet.sdsc.edu  (for more help, see https://github.com/sdsc-hpc-training-org/basic_skills/tree/master/connecting-to-hpc-systems)
+## Log onto comet.sdsc.edu  
+For more help, see https://github.com/sdsc-hpc-training-org/basic_skills/tree/master/connecting-to-hpc-systems
 ```
 ssh -Y -l <username> comet.sdsc.edu
 ```
 
-* create a test directory, or ```cd``` into one you have already created
-* Clone this repository (developed by Bob Sinkovits):   [https://github.com/sinkovit/PythonSeries](https://github.com/sinkovit/PythonSeries)
+## Create a test directory
+
+Clone one of these repositories or use one you have already created
+* [SDSC HPC Notebook Examples](https://github.com/sdsc-hpc-training-org/notebook-examples)
+```
+git clone https://github.com/sdsc-hpc-training-org/notebook-examples.git
+```
+
+* [Bob Sinkovit's Python Series](https://github.com/sinkovit/PythonSeries)
 ```
 git clone git@github.com:sinkovit/PythonSeries.git
 ```
 
-Get an interactive node:
+## Obtain an interactive node:
+For more help see the [Interactive Computing Guide](https://github.com/sdsc-hpc-training-org/basic_skills/tree/master/interactive_computing)
+
 ```
 srun --pty --nodes=1 --ntasks-per-node=24 -p compute -t 02:00:00 --wait 0 /bin/bash
 srun: job 24000544 queued and waiting for resources
