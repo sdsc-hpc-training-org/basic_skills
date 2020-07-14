@@ -2,7 +2,7 @@
 **By** [Mary Thomas, SDSC](https://www.sdsc.edu/research/researcher_spotlight/thomas_mary.html)
 **Updated:**  July 14, 2020
 
-This quick-start guide will show you how to run jupyter notebooks on Comet using the [SDSC Reverse Proxy Service (RPS)](https://comet-notebooks-101.readthedocs.io/en/comet/methods/reverseProxy.html). RPS is a prototype system that will allow users to launch standard Jupyter Services on on any Comet compute node using a simple bash script called *start_notebook*. The notebooks will be made available to the user outside of the cluster firewall using a *secure* HTTPS connection between the external users web browser and the reverse proxy server.
+This quick-start guide will show you how to run jupyter notebooks on Comet using the [SDSC Reverse Proxy Service (RPS)](https://comet-notebooks-101.readthedocs.io/en/comet/methods/reverseProxy.html). RPS is a prototype system that will allow users to launch secure (HTTPS) Jupyter Services on on any Comet compute node using a simple bash script called *start_notebook*. The notebooks will be made available to the user outside of the cluster firewall using a *secure* HTTPS connection between the external users web browser and the reverse proxy server.
 
 ## Set up a SECURE (HTTPS) Jupyter Notebook environment on Comet:
 
@@ -66,12 +66,12 @@ http://comet-14-0-4:8888/?token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 You can then paste it into your browser. You will see a running Jupyter
 notebook and a listing of the notebooks in your directory. From there everything should be working as a regular notebook.
+
 Notes:
 1. This notebook is hosted over HTTP, which is INSECURE, for a secure notebook use the [Reverse Proxy Service](https://comet-notebooks-101.readthedocs.io/en/comet/methods/reverseProxy.html)
 2. This token is your auth so don't email/send it around. It will go away when you stop the notebook. 
-
-To learn about Python, run the ```Python basics.ipynb```   notebook.
-To see an example of remote visualization, run the  ```Matplotlib.ipynb```  notebook!
+3. To learn about Python, see the tutorials [here](https://github.com/sdsc-hpc-training-org/notebook-examples/tree/master/Boring_Python) and [here](https://github.com/sinkovit/PythonSeries).
+4. To see an example of remote visualization, run the  ```Matplotlib.ipynb```  notebook from the Sinkovits collection.
 
 
 
