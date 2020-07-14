@@ -2,7 +2,7 @@
 **By** [Mary Thomas, SDSC](https://hpc-students.sdsc.edu/instr_bios/mary_thomas.html)
 
 ## This tutorial will show you how to run/edit a jupyter notebooks, from the command link.
-* Log onto comet.sdsc.edu  
+* Log onto comet.sdsc.edu  (for more help, see https://github.com/sdsc-hpc-training-org/basic_skills/tree/master/connecting-to-hpc-systems)
 ```
 ssh -Y -l <username> comet.sdsc.edu
 ```
