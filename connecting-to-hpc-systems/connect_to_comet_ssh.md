@@ -9,8 +9,6 @@ In this exercise, you must use your SDSC or XSEDE account to log onto the Comet 
 
 <a name="top">In this document, we will show you how to:
     
-* [Obtain your Comet account](#obtain-your-comet-account)
-* [Getting Domain Name & Host Information](#term-app-dn-info)
 * [Using a Terminal Application to Connect to Comet](#term-app)
     - [Mac Users](#term-app-mac-users)
     - [Windows Users](#term-app-windows-users)
@@ -19,39 +17,11 @@ In this exercise, you must use your SDSC or XSEDE account to log onto the Comet 
 
 Note: if you have any difficulties completing this task, please contact HPC consulting at <consult@sdsc.edu>.
 
-## <a name="obtain-your-comet-account"></a>Obtain your comet account:
-
-To obtain a trial Comet account see the Comet user guide at  http://www.sdsc.edu/support/user_guides/comet.html#trial_accounts
-
-You will be directed to the XSEDE portal, where you will create a Portal User account. Information from that account will be used to set up your *trial* Comet account. Note that the Portal account and the Comet account may be different, so keep track of them both. The Comet account can then be used for other Comet allocations.
 
 [Back to Top](#top)
 <hr>
 
-## <a name="term-app-dn-info"></a>Getting Domain Name & Host Information
-Each machine you work with will have a `<domain_name>`,  `<hostname>` or `<ip_address>`. You can learn about IP addresses and domain names here: https://computer.howstuffworks.com/dns.htm.
 
-* NOTE: The *DN* (domain name) for Comet is    `comet.sdsc.edu`
-
-You may need to know the physical IP address of the cluster. To do this, run the `nslookup` command from the command line of your local terminal window (or on comet if are logged in)
-```
-[username@laptop:] nslookup comet.sdsc.edu
-Server:		192.168.86.1
-Address:	192.168.86.1#53
-
-Non-authoritative answer:
-Name:	comet.sdsc.edu
-Address: 198.202.113.252
-Name:	comet.sdsc.edu
-Address: 198.202.113.253
-```
-
-The public IP address appears under the line labeled "Non-authoritative answer:" and for Comet there are two. * Comet's DN is. comet.sdsc.edu
-* Comet's IP address is 198.202.113.252 and 198.202.113.253. 
-* You can log onto Comet using either the DN or the IP addresses. 
-
-[Back to Top](#top)
-<hr>
 
 ## <a name="term-app"></a>Using a Terminal Application to Connect to Comet:
 
@@ -134,8 +104,4 @@ Now that you are logged onto Comet, you can begin working with your code. If you
 <hr>
 
 
-## <a name="comet-user-guide"></a>Comet User Guide
 
-Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
-
-http://www.sdsc.edu/support/user_guides/comet.html
