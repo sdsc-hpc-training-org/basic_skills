@@ -25,7 +25,7 @@ If you are new to Unix, please see the [Basic Linux Skills](https://github.com/s
         - [Windows 10](#term-windows10)
         - [Windows (pre-Win10)](#term-windows-older)
 * [Step 4: Install/Locate Secure Shell (SSH) App](#ssh)
-* [Step 5: Terminal Connction Example](#connect-example)
+* [Step 5: Terminal Connection Example](#connect-example)
     - [Getting Domain Name & Host Information](#dn-info)
     - [Making the Connction](#connection)
 
@@ -136,12 +136,11 @@ The public IP address appears under the line labeled "Non-authoritative answer:"
 You can log onto Comet using either the DN or the IP addresses. 
 
 [Back to Top](#top)
-
 <hr>
 
 
 
-### Making the Connction <a name="connection"></a>
+### Making the Connection <a name="connection"></a>
 ```
 [localuser@localhost]: ssh -X username@comet.sdsc.edu
 Password: 
