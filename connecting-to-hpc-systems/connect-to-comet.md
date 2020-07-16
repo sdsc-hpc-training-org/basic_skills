@@ -19,10 +19,11 @@ If you are new to Unix, please see the [Basic Linux Skills](https://github.com/s
 * [Comet User Guide](#comet-guide)
 * [Obtain your Comet account](#comet-account)
 * [Using the Terminal Application to connect to Comet](#term-app)
-    - [Mac & Linux Users](#term-app-mac-users)
-    - [Windows Users](#term-app-windows)
-        - [Windows 10](#term-app-windows10)
-        - [Windows (pre-Win10)](#term-app-windows-older)
+    - [Linux ](#term-linux)
+    - [Mac](#term-mac)
+    - [Windows ](#term-windows)
+        - [Windows 10](#term-windows10)
+        - [Windows (pre-Win10)](#term-windows-older)
     - [Getting Domain Name & Host Information](#dn-info)
 * [Using Secure Shell (SSH)](#ssh)
 * [Terminal Connction Example](#connect-example)
@@ -59,16 +60,27 @@ SSH provides a secure channel over any network in a client-server architecture. 
 [Back to Top](#top)
 <hr>
 
-## <a name="term-app-mac-users"></a>Mac & Linux Users
-For Mac & Linux users, the *Terminal* application is typically used for connections. This is done from the command line:
+## <a name="term-linux"></a>Linux 
+There are a lot of terminal emulators available for Linux. See http://www.linuxandubuntu.com/home/10-best-linux-terminals-for-ubuntu-and-fedora for a 'Top 10' List. A very popular terminal is the [Gnome]() terminal, which is included in the Linux distribution software. 
+
+<img src="./images/gnome-terminal_lightweight_Desktop.png" alt="SSH Connection" width="350px" />
+(Image Source from http://www.necopost.com/2011/11/gnome-terminal-as-lightweight-desktop.html)
+
+
+## <a name="term-mac"></a>Mac 
+For Mac  users, the *Terminal* application is typically used for connections. The application can be found in the */Applications/Utilities* folder.
+
+<img src="./images/mac-term-app-listing.png" alt="Mac terminal listing" width="350px" />
+
+
 
 [Back to Top](#top)
 <hr>
 
-### <a name="term-app-windows"></a>MSFT Windows Users
+### <a name="term-windows"></a>MSFT Windows 
 All windows users will need to run a terminal emulation application capable of supporting an X Server and an ssh-like client.
 
-**Windows 10** <a name="term-app-windows10"></a>
+**Windows 10** <a name="term-windows10"></a>
 Windows 10 has a new terminal app called *Windows Terminal*, which is a terminal emulator for Windows 10 written by Microsoft. It includes support for the Command Prompt, PowerShell, WSL and SSH and other commands. While not a full Unix OS, it has shown to be very popular and useful within the HPC community. MSFT has created a GitHub repo with source code, installation and documentation here:
    * https://github.com/Microsoft/Terminal
 
@@ -77,7 +89,7 @@ Windows 10 has a new terminal app called *Windows Terminal*, which is a terminal
 [Back to Top](#top)
 <hr>
 
-**Windows** (pre-Win10) <a name="term-app-windows-older"></a> 
+**Windows** (pre-Win10) <a name="term-windows-older"></a> 
 Older Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Putty will also work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
 
    * http://www.cygwin.com/
