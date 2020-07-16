@@ -14,40 +14,41 @@ This tutorial can be used to verify that your account is working, that your lapt
 
 If you are new to Unix, please see the [Basic Linux Skills](https://github.com/sdsc-hpc-training-org/basic_skills) tutorial.
 
-<a name="top">In this document, we will show you how to:
+<a name="top">Contents:
     
-* [Comet User Guide](#comet-guide)
-* [Obtain your Comet account](#comet-account)
-* [Using the Terminal Application to connect to Comet](#term-app)
+* [Step 1: Read the Comet User Guide](#comet-guide)
+* [Step 2: Obtain your Comet account](#comet-account)
+* [Step 3: Install/Locate the Terminal App](#term-app)
     - [Linux ](#term-linux)
     - [Mac](#term-mac)
     - [Windows ](#term-windows)
         - [Windows 10](#term-windows10)
         - [Windows (pre-Win10)](#term-windows-older)
+* [Step 4: Install/Locate Secure Shell (SSH) App](#ssh)
+* [Step 5: Terminal Connction Example](#connect-example)
     - [Getting Domain Name & Host Information](#dn-info)
-* [Using Secure Shell (SSH)](#ssh)
-* [Terminal Connction Example](#connect-example)
+    - [Making the Connction](#connection)
 
 Note: if you have any difficulties completing these tasks, please contact Institute staff at <consult@sdsc.edu>.
 
-## Comet User Guide <a name="comet-guide"></a>
+## Step 1: Read the Comet User Guide <a name="comet-guide"></a>
 
 Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
 http://www.sdsc.edu/support/user_guides/comet.html
 
 Once you are logged onto Comet, you can begin working with your code. For more help on using Comet, see the [Comet 101](https://github.com/sdsc-hpc-training-org/comet-101) tutorial
  
-## <a name="comet-account"></a>Obtain your comet account:
+## Step  2: Obtain your Comet account <a name="comet-account"></a>
 
 To obtain a trial Comet account see the Comet user guide at  http://www.sdsc.edu/support/user_guides/comet.html#trial_accounts
 
-You will be directed to the XSEDE portal, where you will create a Portal User account. Information from that account will be used to set up your *trial* Comet account. Note that the Portal account name and the Comet account name may be different, so keep track of them both. The Comet account can then be used for all Comet allocations.
+You will be directed to the *XSEDE portal*, where you will create a *Portal User account*. Information from that account will be used to set up your *trial* Comet account. Note that the Portal account name and the Comet account name may be different, so keep track of them both. The Comet account can then be used for all Comet allocations.
 
 [Back to Top](#top)
 <hr>
 
 
-## </a>Using a Terminal Application to Connect to Comet <a name="term-app">
+## Step 3: Locate/Install the Terminal App <a name="term-app"></a>
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection. Terminals are interactive: you type in a command to run, and the outputs are displayed on the terminal. Executing any command is done by typing it and pressing Enter.
 
@@ -100,16 +101,17 @@ Older Windows users will need to run an X Server and an ssh-like client. [Cygwin
 <hr>
 
 
-## Secure Shell Connection (SSH) <a name="ssh"></a>
+## Step 4: Locate/Install Secure Shell (SSH) App <a name="ssh"></a>
 For connecting to SDSC systems, we recommend using [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). 
 
 *NOTE:* Using Null passphrase SSH public keys is *not* recommended for SDSC HPC systems; to automate your connections use the SSH-Agent command. For more information, see the [SDSC Security Repo](https://github.com/sdsc-hpc-training-org/hpc-security)
  
+[Back to Top](#top)
+<hr>
 
-## </a>Terminal connection Example <a name="term-example">
-```
+## Step 5: Terminal Connction Example <a name="connect-example"></a>
 
-## <a name="dn-info"></a>Getting Domain Name & Host Information
+### Getting Domain Name & Host Information <a name="dn-info"></a>
 Each machine you work with will have a `<domain_name>`,  `<hostname>` or `<ip_address>`. You can learn about IP addresses and domain names here: https://computer.howstuffworks.com/dns.htm.
 
 * NOTE: The *DN* (domain name) for Comet is    `comet.sdsc.edu`
@@ -139,7 +141,7 @@ You can log onto Comet using either the DN or the IP addresses.
 
 
 
-## Terminal connection <a name="connect-example"></a>
+### Making the Connction <a name="connection"></a>
 ```
 [localuser@localhost]: ssh -X username@comet.sdsc.edu
 Password: 
