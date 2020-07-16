@@ -52,8 +52,6 @@ You will be directed to the *XSEDE portal*, where you will create a *Portal User
 
 ## Locate/Install the Terminal App <a name="term-app"></a>
 
-
-
 *NOTE: The `hostname` for Comet is `comet.sdsc.edu`
 
 <img src="./images/cluster-connection-diagram.png" alt="SSH Connection" width="350px" />
@@ -74,6 +72,7 @@ For Mac  users, the *Terminal* application is typically used for connections. Th
 <img src="./images/mac-term-app-listing.png" alt="Mac terminal listing" width="350px" />
 
 The terminal launches on the Mac Desktop like other applications, and uses an interactive command-line based interface:
+
 <img src="./images/mac-os-terminal.png" alt="Mac terminal desktop" width="350px" />
 
 Note that for macs, if you want to run applications on the remote that involves visualization or user GUIs such as Jupyter Notebooks, R-Studio, or Matlab, you will need to install [XQuartz](https://www.xquartz.org/) which launches an X11-type app. For more info, see 
