@@ -19,7 +19,7 @@ In this exercise, you must use your SDSC or XSEDE account to log onto the Comet 
 
 Note: if you have any difficulties completing this task, please contact Institute staff at <consult@sdsc.edu>.
 
-### Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules.
+## Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules.
 
 Comet User Guide: http://www.sdsc.edu/support/user_guides/comet.html
  
