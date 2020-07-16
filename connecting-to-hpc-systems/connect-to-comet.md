@@ -5,7 +5,7 @@
 
 To connect to an SDSC HPC system, you need the following:
 * A `comet` account.
-* A 'terminal' application running on your laptop that can be used to connect to Comet. 
+* A 'terminal' client running on your laptop that can be used to connect to Comet. 
 * An application running in the terminal to make the connection. 
 
 <img src="./images/ssh-login-comet.png" alt="SSH Connection" width="300px" />
