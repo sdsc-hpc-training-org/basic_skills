@@ -6,7 +6,7 @@
 To connect to an SDSC HPC system, you need the following:
 * A *comet* account.
 * A *terminal* client running on your laptop that can be used to connect to Comet. 
-* SSH application running in the terminal to make the connection. 
+* The *SSH* application running in the terminal to make the connection. 
 
 <img src="./images/ssh-login-comet.png" alt="SSH Connection" width="300px" />
 
@@ -69,11 +69,14 @@ There are a lot of terminal emulators available for Linux. See http://www.linuxa
 
 
 ## <a name="term-mac"></a>Mac 
-For Mac  users, the *Terminal* application is typically used for connections. The application can be found in the */Applications/Utilities* folder.
+For Mac  users, the *Terminal* application is typically used for connections. The application can be found in the */Applications/Utilities* folder:
 
 <img src="./images/mac-term-app-listing.png" alt="Mac terminal listing" width="350px" />
 
+The terminal launches on the Mac Desktop like other applications, and uses an interactive command-line based interface:
+<img src="./images/mac-os-terminal.png" alt="Mac terminal desktop" width="350px" />
 
+Note that for macs, if you want to run applications on the remote that involves visualization or user GUIs such as Jupyter Notebooks, R-Studio, or Matlab, you will need to install [XQuartz](https://www.xquartz.org/) which launches an X11-type app. For more info, see 
 
 [Back to Top](#top)
 <hr>
@@ -101,7 +104,7 @@ Older Windows users will need to run an X Server and an ssh-like client. [Cygwin
 <hr>
 
 
-## Locate/Install Secure Shell (SSH) App <a name="ssh"></a>
+## InstallLocate Secure Shell (SSH) App <a name="ssh"></a>
 For connecting to SDSC systems, we recommend using [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). 
 
 *NOTE:* Using Null passphrase SSH public keys is *not* recommended for SDSC HPC systems; to automate your connections use the SSH-Agent command. For more information, see the [SDSC Security Repo](https://github.com/sdsc-hpc-training-org/hpc-security)
