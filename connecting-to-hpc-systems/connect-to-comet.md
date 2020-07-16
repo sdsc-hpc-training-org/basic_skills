@@ -10,35 +10,37 @@ To connect to an SDSC HPC system, you need the following:
 
 <img src="./images/ssh-login-comet.png" alt="SSH Connection" width="300px" />
 
-This tutorial can be used to verify that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup. This exercise verifies that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup.
+Terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Terminal_emulator for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection. Terminals are interactive: you type in a command to run, and the outputs are displayed on the terminal. Executing any command is done by typing it and pressing Enter.
 
-If you are new to Unix, please see the [Basic Linux Skills](https://github.com/sdsc-hpc-training-org/basic_skills) tutorial.
+SSH provides a secure channel over any network in a client-server architecture (see https://en.wikipedia.org/wiki/Secure_Shell). You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
+
+This tutorial can be used to verify that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup. If you are new to Unix, please see the [Basic Linux Skills](https://github.com/sdsc-hpc-training-org/basic_skills) tutorial.
 
 <a name="top">Contents:
     
-* [Step 1: Read the Comet User Guide](#comet-guide)
-* [Step 2: Obtain your Comet account](#comet-account)
-* [Step 3: Install/Locate the Terminal App](#term-app)
+* [Read the Comet User Guide](#comet-guide)
+* [Obtain your Comet account](#comet-account)
+* [Install/Locate the Terminal App](#term-app)
     - [Linux ](#term-linux)
     - [Mac](#term-mac)
     - [Windows ](#term-windows)
         - [Windows 10](#term-windows10)
         - [Windows (pre-Win10)](#term-windows-older)
-* [Step 4: Install/Locate Secure Shell (SSH) App](#ssh)
-* [Step 5: Terminal Connection Example](#connect-example)
+* [Install/Locate Secure Shell (SSH) App](#ssh)
+* [Terminal Connection Example](#connect-example)
     - [Getting Domain Name & Host Information](#dn-info)
     - [Making the Connction](#connection)
 
 Note: if you have any difficulties completing these tasks, please contact Institute staff at <consult@sdsc.edu>.
 
-## Step 1: Read the Comet User Guide <a name="comet-guide"></a>
+## Read the Comet User Guide <a name="comet-guide"></a>
 
 Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
 http://www.sdsc.edu/support/user_guides/comet.html
 
 Once you are logged onto Comet, you can begin working with your code. For more help on using Comet, see the [Comet 101](https://github.com/sdsc-hpc-training-org/comet-101) tutorial
  
-## Step  2: Obtain your Comet account <a name="comet-account"></a>
+## Obtain your Comet account <a name="comet-account"></a>
 
 To obtain a trial Comet account see the Comet user guide at  http://www.sdsc.edu/support/user_guides/comet.html#trial_accounts
 
@@ -48,11 +50,9 @@ You will be directed to the *XSEDE portal*, where you will create a *Portal User
 <hr>
 
 
-## Step 3: Locate/Install the Terminal App <a name="term-app"></a>
+## Locate/Install the Terminal App <a name="term-app"></a>
 
-The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection. Terminals are interactive: you type in a command to run, and the outputs are displayed on the terminal. Executing any command is done by typing it and pressing Enter.
 
-SSH provides a secure channel over any network in a client-server architecture. You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
 
 *NOTE: The `hostname` for Comet is `comet.sdsc.edu`
 
@@ -101,7 +101,7 @@ Older Windows users will need to run an X Server and an ssh-like client. [Cygwin
 <hr>
 
 
-## Step 4: Locate/Install Secure Shell (SSH) App <a name="ssh"></a>
+## Locate/Install Secure Shell (SSH) App <a name="ssh"></a>
 For connecting to SDSC systems, we recommend using [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). 
 
 *NOTE:* Using Null passphrase SSH public keys is *not* recommended for SDSC HPC systems; to automate your connections use the SSH-Agent command. For more information, see the [SDSC Security Repo](https://github.com/sdsc-hpc-training-org/hpc-security)
@@ -109,7 +109,7 @@ For connecting to SDSC systems, we recommend using [Secure Shell (SSH)](https://
 [Back to Top](#top)
 <hr>
 
-## Step 5: Terminal Connction Example <a name="connect-example"></a>
+## Terminal Connection Example <a name="connect-example"></a>
 
 ### Getting Domain Name & Host Information <a name="dn-info"></a>
 Each machine you work with will have a `<domain_name>`,  `<hostname>` or `<ip_address>`. You can learn about IP addresses and domain names here: https://computer.howstuffworks.com/dns.htm.
