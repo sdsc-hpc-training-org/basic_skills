@@ -103,10 +103,11 @@ Older Windows users will need to run an X Server and an ssh-like client. [Cygwin
 <hr>
 
 
-## InstallLocate Secure Shell (SSH) App <a name="ssh"></a>
-For connecting to SDSC systems, we recommend using [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). 
+## Install/Locate Secure Shell (SSH) App <a name="ssh"></a>
 
-*NOTE:* Using Null passphrase SSH public keys is *not* recommended for SDSC HPC systems; to automate your connections use the SSH-Agent command. For more information, see the [SDSC Security Repo](https://github.com/sdsc-hpc-training-org/hpc-security)
+For connecting to SDSC systems, we recommend using [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). SSH provides a secure and ecnrypted channel over an unsecured network by using a client–server architecture, connecting an SSH client application with an SSH server. SSH typically comes pre-installed on most terminal emulators.
+
+For more information, see the [SDSC Security Repo](https://github.com/sdsc-hpc-training-org/hpc-security)
  
 [Back to Top](#top)
 <hr>
