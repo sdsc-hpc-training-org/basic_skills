@@ -3,22 +3,27 @@
 
 [//]: # ( Comment2 )
 
-In this exercise, you must use your SDSC or XSEDE account to log onto the Comet cluster. This exercise verifies that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup.
+To connect to an SDSC HPC system, you need the following:
+* A `comet` account.
+* A 'terminal' application running on your laptop that can be used to connect to Comet. 
+* An application running in the terminal to make the connection. 
+
+<img src="./images/ssh-login-comet.png" alt="SSH Connection" width="300px" />
+
+We recommend using [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell). This tutorial can be used to verify that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup. This exercise verifies that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup.
 
 <a name="top">In this document, we will show you how to:
     
 * [Obtain your Comet account](#comet-account)
-
 * [Using the Terminal Application to connect to Comet](#term-app)
     - [Mac & Linux Users](#term-app-mac-users)
     - [Windows Users](#term-app-windows)
         - [Windows 10](#term-app-windows10)
         - [Windows (pre-Win10)](#term-app-windows-older)
         
-* ssh info here??
     - [Getting Domain Name & Host Information](#dn-info)
-    - [Terminal Connection Example](#term-app-example)
 * [Connect via SSH with null passphrase ](#empty-passphrase)
+* [Terminal Connection Example](#term-app-example)
 
 Note: if you have any difficulties completing these tasks, please contact Institute staff at <consult@sdsc.edu>.
 
@@ -42,8 +47,6 @@ You will be directed to the XSEDE portal, where you will create a Portal User ac
 ## </a>Using a Terminal Application to Connect to Comet <a name="term-app">
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection. Terminals are interactive: you type in a command to run, and the outputs are displayed on the terminal. Executing any command is done by typing it and pressing Enter.
-
-<img src="./images/ssh-login-comet.png" alt="SSH Connection" width="300px" />
 
 SSH provides a secure channel over any network in a client-server architecture. You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
 
@@ -147,7 +150,7 @@ xxxxx
 This is not recommended for SDSC HPC systems; to automate your connections use the SSH-Agent command
 
 
-## <a name="term-app-example"></a>Example of a terminal connection:
+## Example of a terminal connection <a name="term-app-example"></a>
 ```
 [localuser@localhost]: ssh -X username@comet.sdsc.edu
 Last login: Wed Apr 15 09:58:45 2020 from 12.345.67.89
