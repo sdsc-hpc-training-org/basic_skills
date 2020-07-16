@@ -15,7 +15,7 @@ In this exercise, you must use your SDSC or XSEDE account to log onto the Comet 
         - [Windows (pre-Win10)](#term-app-windows-older)
     - [Terminal Connection Example](#term-app-example)
     - [Getting Domain Name & Host Information](#term-app-dn-info)
-* [Connect via Passwordless SSH](#passwordless)
+* [Connect via SSH with null passphrase ](#empty-passphrase)
 
 Note: if you have any difficulties completing this task, please contact Institute staff at <consult@sdsc.edu>.
 
@@ -128,7 +128,7 @@ The IP address is the  line labeled "Address" and for Comet there are two. YOu c
 
 <hr>
 
-## <a name="passwordless"></a>Connect via Passwordless SSH
+## Connect via SSH with empty passphrase <a name="empty-passphrase"></a>
 
 This is not recommended for SDSC HPC systems
 
