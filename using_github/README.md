@@ -85,7 +85,7 @@ this week, then simply follow the installation directions for Linux given above.
     * copy the link in the box
   * In your terminal window, type the following command
 ```
-$ git clone git@github.com:sdsc/sdsc-summer-institute-2019.git
+$ git clone https://github.com/sdsc/sdsc-summer-institute-2020.git
 ```
 
 The repository should start downloading onto your laptop.
