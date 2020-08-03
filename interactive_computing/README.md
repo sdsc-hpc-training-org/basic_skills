@@ -1,4 +1,6 @@
 # Interactive Computing on the Comet Cluster
+Interactive HPC systems allow real-time user inputs in order to facilitate code development, real-time data exploration, and visualizations. An interactive job (also referred as interactive session) will provide you with a shell on a compute node in which you can launch your jobs. In this tutorial we show you how to obtain interactive nodes on SDSC HPC systems
+
 <!-- adding TOC -->
 
 <!-- toc -->
