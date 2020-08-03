@@ -144,6 +144,13 @@ You can log onto Comet using either the DN or the IP addresses.
 
 
 ### Making the Connection <a name="connection"></a>
+comet.sdsc.edu 
+The following are examples of Secure Shell (ssh) commands that may be used to log in to Comet:
+```
+ssh <your_username>@comet.sdsc.edu
+ssh -l <your_username> comet.sdsc.edu 
+```
+
 ```
 [localuser@localhost]: ssh -X username@comet.sdsc.edu
 Password: 
