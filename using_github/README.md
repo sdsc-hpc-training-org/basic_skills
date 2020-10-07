@@ -100,4 +100,6 @@ The repository should start downloading in the directory from which you ran the 
 
 * Authenticated cloning
 This method requires that you create a [GitHub](https://github.com/) account and then you must be added to the repository project team. 
+If you do not currently have a GitHub account, please consider obtaining one prior to attending the Summer Institute. How you can integrate git and GitHub into your work will be discussed in many SDSC tutorials.
+
 
