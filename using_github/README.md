@@ -15,6 +15,8 @@ Make sure your local system or laptop can run git.
 * [Install Git on Linux](#git-install-linux)
 * [Install Git on Mac](#git-install-mac)
 * [Install Git on Windows](#git-install-windows)
+* [Clone the Git repository](#git-clone)
+
 
 
 ## Create a GitHub Account: <a name="git-acct"></a>
@@ -76,17 +78,26 @@ binary executable is available for download on the `git` website:
 However, if you've chosen to work on the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about)
 this week, then simply follow the installation directions for Linux given above.
 
-## Cloning a Repository:
+## Cloning a Repository:<a name="git-clone"></a>
 
-* To clone the SI19 repository:
+GitHub supports two ways to clone a repository: (1) Anonymous HTTPS cloning (no account required);  (2) Authenticated method using a SSH, which requires authentication to a GitHub account associated with the repository.
+As an example, we will download the SDSC Jupyter "Notebook Examples" Repository:
+[https://github.com/sdsc-hpc-training-org/notebook-examples](https://github.com/sdsc-hpc-training-org/notebook-examples)
+
+* Anonymous HTTPS Method:
+
+* To clone the Notebook repository:
   * Open a terminal window on your laptop. Optionally, create a directory to save the repo; cd into that directory
-  * In your browser, open the link to the repository: [https://github.com/sdsc/sdsc-summer-institute-2019](https://github.com/sdsc/sdsc-summer-institute-2019)
-  * Click on the green "Clone or Download" and select the "Clone with SSH" option
-    * copy the link in the box
+  * In your browser, open the link to the repository web page: [https://github.com/sdsc-hpc-training-org/notebook-examples](https://github.com/sdsc-hpc-training-org/notebook-examples)
+  * Click on the green "Clone or Download" and select the "Clone with HTTPS" option
+  * copy the  repository link in the box
   * In your terminal window, type the following command
 ```
-$ git clone https://github.com/sdsc/sdsc-summer-institute-2020.git
+$ git clone https://github.com/sdsc-hpc-training-org/notebook-examples.git
 ```
 
-The repository should start downloading onto your laptop.
+The repository should start downloading in the directory from which you ran the ```clone``` command.
+
+* Authenticated cloning
+This method requires that you create a [GitHub](https://github.com/) account and then you must be added to the repository project team. 
 
