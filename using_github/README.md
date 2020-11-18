@@ -106,7 +106,7 @@ This method requires that you create a [GitHub](https://github.com/) account and
 * Make sure you have the main repository cloned locally. Then change to the root of the local repository.
 
 ```
-(base) [mthomas@login01 ~]$ git clone https://github.com/sdsc-hpc-training-org/basic_skills.git
+(base) [username@login01 ~]$ git clone https://github.com/sdsc-hpc-training-org/basic_skills.git
 Cloning into 'basic_skills'...
 remote: Enumerating objects: 330, done.
 remote: Counting objects: 100% (330/330), done.
@@ -114,12 +114,12 @@ remote: Compressing objects: 100% (240/240), done.
 remote: Total 330 (delta 152), reused 160 (delta 58), pack-reused 0
 Receiving objects: 100% (330/330), 4.10 MiB | 12.21 MiB/s, done.
 Resolving deltas: 100% (152/152), done.
-(base) [mthomas@login01 ~]$ cd basic_skills/
+(base) [username@login01 ~]$ cd basic_skills/
 ```
 * List all available branches:
 
 ```
-(base) [mthomas@login01 basic_skills]$ git branch -a
+(base) [username@login01 basic_skills]$ git branch -a
 * master
   remotes/origin/HEAD -> origin/master
   remotes/origin/basic_skills_branch
@@ -128,18 +128,18 @@ Resolving deltas: 100% (152/152), done.
 
 * Notice that it lists both the branches that are local and the remote branches on Bitbucket. Using the list as reference, choose the branch you want to checkout.  In this example, we want ```basic_skills_branch.```
 ```
-(base) [mthomas@login01 basic_skills]$ git checkout basic_skills_branch
+(base) [username@login01 basic_skills]$ git checkout basic_skills_branch
 Branch 'basic_skills_branch' set up to track remote branch 'basic_skills_branch' from 'origin'.
 Switched to a new branch 'basic_skills_branch'
-(base) [mthomas@login01 basic_skills]$ 
-(base) [mthomas@login01 basic_skills]$ 
+(base) [username@login01 basic_skills]$ 
+(base) [username@login01 basic_skills]$ 
 ```
 * Verify that you have checkout the right branch:
 ```
-(base) [mthomas@login01 basic_skills]$ 
-(base) [mthomas@login01 basic_skills]$ git branch
+(base) [username@login01 basic_skills]$ 
+(base) [username@login01 basic_skills]$ git branch
 * basic_skills_branch
   master
-(base) [mthomas@login01 basic_skills]$ 
+(base) [username@login01 basic_skills]$ 
 ```
 * At this point, all changes made will affect the branch, not the master
