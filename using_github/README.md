@@ -120,7 +120,6 @@ Resolving deltas: 100% (152/152), done.
 
 ```
 (base) [mthomas@login01 basic_skills]$ git branch -a
-```
 * master
   remotes/origin/HEAD -> origin/master
   remotes/origin/basic_skills_branch
