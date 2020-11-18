@@ -128,3 +128,18 @@ Resolving deltas: 100% (152/152), done.
 
 * Notice that it lists both the branches that are local and the remote branches on Bitbucket. Using the list as reference, choose the branch you want to checkout.  In this example, we want ```basic_skills_branch.```
 
+(base) [mthomas@login01 basic_skills]$ git checkout basic_skills_branch
+Branch 'basic_skills_branch' set up to track remote branch 'basic_skills_branch' from 'origin'.
+Switched to a new branch 'basic_skills_branch'
+(base) [mthomas@login01 basic_skills]$ 
+(base) [mthomas@login01 basic_skills]$ 
+```
+* Verify that you have checkout the right branch:
+```
+(base) [mthomas@login01 basic_skills]$ 
+(base) [mthomas@login01 basic_skills]$ git branch
+* basic_skills_branch
+  master
+(base) [mthomas@login01 basic_skills]$ 
+```
+* At this point, all changes made will affect the branch, not the master
