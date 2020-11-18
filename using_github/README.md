@@ -16,7 +16,7 @@ Make sure your local system or laptop can run git.
 * [Install Git on Mac](#git-install-mac)
 * [Install Git on Windows](#git-install-windows)
 * [Clone the Git repository](#git-clone)
-
+* [Checkout a branch](#git-branch)
 
 
 ## Create a GitHub Account: <a name="git-acct"></a>
@@ -101,5 +101,62 @@ The repository should start downloading in the directory from which you ran the 
 * Authenticated cloning
 This method requires that you create a [GitHub](https://github.com/) account and then you must be added to the repository project team. 
 
+## Checkout a Branch:<a name="git-branch"></a>
 
+*Make sure you have the main repository cloned locally. Then change to the root of the local repository.
+
+```
+(base) [mthomas@login01 ~]$ git clone https://github.com/sdsc-hpc-training-org/basic_skills.git
+Cloning into 'basic_skills'...
+remote: Enumerating objects: 330, done.
+remote: Counting objects: 100% (330/330), done.
+remote: Compressing objects: 100% (240/240), done.
+remote: Total 330 (delta 152), reused 160 (delta 58), pack-reused 0
+Receiving objects: 100% (330/330), 4.10 MiB | 12.21 MiB/s, done.
+Resolving deltas: 100% (152/152), done.
+(base) [mthomas@login01 ~]$ cd basic_skills/
+```
+*List all your branches:
+
+```
+(base) [mthomas@login01 basic_skills]$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/basic_skills_branch
+  remotes/origin/master   
+```
+
+* Notice that it lists both the branches that are local and the remote branches on Bitbucket. Using the list as reference, choose the branch you want to checkout.  In this example, we want ```basic_skills_branch.```
+
+```
+(base) [mthomas@login01 basic_skills]$ git checkout basic_skills_branch
+Branch 'basic_skills_branch' set up to track remote branch 'basic_skills_branch' from 'origin'.
+Switched to a new branch 'basic_skills_branch'
+```
+* Verify that you are working on the right branch:
+```
+(base) [mthomas@login01 basic_skills]$ 
+(base) [mthomas@login01 basic_skills]$ git branch
+* basic_skills_branch
+  master
+```
+
+* NOTE: all changes that you make will be made to this branch.
+
+
+
+
+
+
+Confirm you are now working on that branch:
+
+$ git branch      
+
+You should see something similar to the following:
+
+$ git branch 
+* <feature_branch>
+  master     
+
+Going forward, all your Git commands apply to the branch.  When you push the changes to your remote Bitbucket repository, those changes apply to the repository's branch.
 
