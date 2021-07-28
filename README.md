@@ -6,6 +6,8 @@
 
 This repository hosts all material for the HPC Training Basic Skill Training Series
 
+## For information about accessing SDSC HPC systems *securely* see the [SDSC HPC Security Repo](https://github.com/sdsc-hpc-training-org/hpc-security)
+
 ## License
 
 All the teaching material in this repository is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
