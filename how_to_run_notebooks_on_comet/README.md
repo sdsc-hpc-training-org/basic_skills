@@ -1,6 +1,6 @@
 # Using Jupyter Notebooks on the SDSC Comet Cluster
 **By** [Mary Thomas, SDSC](https://www.sdsc.edu/research/researcher_spotlight/thomas_mary.html)
-**Updated:**  July 14, 2020
+**Updated:**  July 28, 2021
 
 This quick-start guide will show you how to run jupyter notebooks on Comet using the [SDSC Reverse Proxy Service (RPS)](https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html). RPS is a prototype system that will allow users to launch secure (HTTPS) Jupyter Services on on any Comet compute node using a simple bash script called *start_notebook*. The notebooks will be made available to the user outside of the cluster firewall using a *secure* HTTPS connection between the external users web browser and the reverse proxy server.
 
