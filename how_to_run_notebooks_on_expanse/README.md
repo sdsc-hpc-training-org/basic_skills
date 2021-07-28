@@ -2,7 +2,7 @@
 **By** [Mary Thomas, SDSC](https://www.sdsc.edu/research/researcher_spotlight/thomas_mary.html)
 **Updated:**  July 28, 2021
 
-This quick-start guide will show you how to run jupyter notebooks on Expanse using the [SDSC Reverse Proxy Service (RPS)](https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html). RPS is a prototype system that will allow users to launch secure (HTTPS) Jupyter Services on on any Expanse compute node using a simple bash script called *start_notebook*. The notebooks will be made available to the user outside of the cluster firewall using a *secure* HTTPS connection between the external users web browser and the reverse proxy server.
+This quick-start guide will show you how to run jupyter notebooks on Expanse using the [SDSC Satellite Reverse Proxy Service (RPS)](https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html). Satellite is a prototype system that will allow users to launch secure (HTTPS) Jupyter Services on any Expanse compute node using a simple bash script called *galyleo* or *start_notebook*. The notebooks will be made available to the user outside of the cluster firewall using a *secure* HTTPS connection between the external users web browser and the reverse proxy server.
 
 ## Set up a SECURE (HTTPS) Jupyter Notebook environment on Expanse:
 
