@@ -240,7 +240,7 @@ A common task in computing is to work with examples and collaborator files. Supp
 
 First, we will make a folder to hold expanse examples and then `cd` into that new directory. This is done using the `mkdir` command:
 ```
-[username@login02 ~]$ mkdir comet-examples
+[username@login02 ~]$ mkdir expanse-examples
 [username@login02 ~]$ ls -al            
 total 166
 drwxr-x---   8 username abc123    24 Jul 17 20:20 .
@@ -252,10 +252,10 @@ drwxr-xr-x 139 root    root       0 Jul 17 20:17 ..
 -rw-r--r--   1 username abc123   159 Jul 17 18:24 .bashrc
 drwxr-xr-x   2 username abc123     2 Jul 17 20:20 expanse-examples
 [snip extra lines]
-[username@login02 ~]$ cd comet-examples/
-[username@login02 comet-examples]$ pwd
+[username@login02 ~]$ cd expanse-examples/
+[username@login02 expanse-examples]$ pwd
 /home/username/expanse-examples
-[username@login02 comet-examples]$
+[username@login02 expanse-examples]$
 ```
 
 Next, we will look at the directory where the OPENMP code is stored:
@@ -274,8 +274,8 @@ drwxrwxr-x 56 mahidhar abc123   4096 May 14 18:11 ..
 Copies of files and directories use the same command: `cp`. To copy a single file to the `expanse-examples` directory, we need to use the full path:
 
 ```sh
-[username@login02 comet-examples]$ cp /share/apps/examples/OPENMP/hello_openmp.f90 hello_openmp.f90
-[username@login02 comet-examples]$ ls -al
+[username@login02 expanse-examples]$ cp /share/apps/examples/OPENMP/hello_openmp.f90 hello_openmp.f90
+[username@login02 expanse-examples]$ ls -al
 total 29
 drwxr-xr-x 2 username abc123   3 Jul 17 20:24 .
 drwxr-x--- 8 username abc123  24 Jul 17 20:20 ..
@@ -285,14 +285,14 @@ drwxr-x--- 8 username abc123  24 Jul 17 20:20 ..
 For a large number of files, it is easier to copy the entire directory using the `-R` or `-r` recursive command:
 
 ```
-[username@login02 comet-examples]$ cp -r -p /share/apps/examples/OPENMP/ .
-[username@login02 comet-examples]$ ll
+[username@login02 expanse-examples]$ cp -r -p /share/apps/examples/OPENMP/ .
+[username@login02 expanse-examples]$ ll
 total 48
 drwxr-xr-x 3 username abc123   4 Jul 17 20:26 .
 drwxr-x--- 8 username abc123  24 Jul 17 20:20 ..
 -rw-r--r-- 1 username abc123 247 Jul 17 20:24 hello_openmp.f90
 drwxr-xr-x 2 username abc123   8 Jul 17 20:26 OPENMP
-[username@login02 comet-examples]$ ls -al OPENMP/
+[username@login02 expanse-examples]$ ls -al OPENMP/
 total 479
 drwxrwxr-x 2 username abc123      8 Mar 12 08:54 .
 drwxr-xr-x 3 username abc123      4 Jul 17 20:32 ..
@@ -310,15 +310,15 @@ There are several things to observe with this command:
 4. The use of one of the special _dot_ characters,  \. in the command above: the syntax tells the operating system to copy all contents of the _/share/apps/examples/OPENMP/_ directory to the `.` directory, or the current directory, which in this case is:
 
 ```java
-[username@login02 comet-examples]$ pwd
+[username@login02 expanse-examples]$ pwd
 /home/username/expanse-examples
-[username@login02 comet-examples]$ ls -al  
+[username@login02 expanse-examples]$ ls -al  
 total 48
 drwxr-xr-x 3 username abc123   4 Jul 17 20:32 .
 drwxr-x--- 8 username abc123  24 Jul 17 20:20 ..
 -rw-r--r-- 1 username abc123 247 Jul 17 20:24 hello_openmp.f90
 drwxr-xr-x 2 username abc123   8 Jul 17 20:26 OPENMP
-[username@login02 comet-examples]$ ls -al .
+[username@login02 expanse-examples]$ ls -al .
 total 48
 drwxr-xr-x 3 username abc123   4 Jul 17 20:32 .
 drwxr-x--- 8 username abc123  24 Jul 17 20:20 ..
@@ -327,15 +327,15 @@ drwxr-xr-x 2 username abc123   8 Jul 17 20:26 OPENMP
 ```
 You can also copy a file or directory and give it a new name:
 ```
-[username@login02 comet-examples]$  cp -r -p /share/apps/examples/OPENMP/ FOOBAR  
-[username@login02 comet-examples]$ ll
+[username@login02 expanse-examples]$  cp -r -p /share/apps/examples/OPENMP/ FOOBAR  
+[username@login02 expanse-examples]$ ll
 total 49
 drwxr-xr-x 4 username abc123   5 Jul 17 21:19 .
 drwxr-x--- 9 username abc123  26 Jul 17 21:04 ..
 -rw-r--r-- 1 username abc123 247 Jul 17 20:24 hello_openmp.f90
 drwxrwxr-x 2 username abc123   8 Mar 12 08:54 OPENMP
 drwxrwxr-x 2 username abc123   8 Mar 12 08:54 FOOBAR
-[username@login02 comet-examples]$ ll FOOBAR
+[username@login02 expanse-examples]$ ll FOOBAR
 total 488
 drwxrwxr-x 2 username abc123      8 Mar 12 08:54 .
 drwxr-xr-x 4 username abc123      5 Jul 17 21:19 ..
@@ -348,20 +348,20 @@ drwxr-xr-x 4 username abc123      5 Jul 17 21:19 ..
 ```
 You can rename a directory using the `mv` command:
 ```
-[username@login02 comet-examples]$ mv FOOBAR/ OPENMP_DUP
-[username@login02 comet-examples]$ /bin/ls -l
+[username@login02 expanse-examples]$ mv FOOBAR/ OPENMP_DUP
+[username@login02 expanse-examples]$ /bin/ls -l
 total 48
 -rw-r--r-- 1 username abc123 247 Jul 17 20:24 hello_openmp.f90
 drwxrwxr-x 2 username abc123   8 Mar 12 08:54 OPENMP
 drwxrwxr-x 2 username abc123   8 Mar 12 08:54 OPENMP_DUP
-[username@login02 comet-examples]$
+[username@login02 expanse-examples]$
 ```
 
 To move to the directory, use the `cd` (change directory)
 ```
-[username@login02 comet-examples]$ pwd
+[username@login02 expanse-examples]$ pwd
 /home/username/expanse-examples
-[username@login02 comet-examples]$ cd OPENMP/
+[username@login02 expanse-examples]$ cd OPENMP/
 [username@login02 OPENMP]$ pwd
 /home/username/expanse-examples/OPENMP
 [username@login02 OPENMP]$ ls -al
@@ -377,7 +377,7 @@ drwxr-xr-x 3 username abc123      4 Jul 17 20:32 ..
 ```
 You can sort the order of the file listings by date (or size or other fields -- see the `man` pages). The default file listing in alphabetic, to  see the files in chronological order (or reverse):
 ```
-[username@login02 comet-examples]$ ls -alt OPENMP/
+[username@login02 expanse-examples]$ ls -alt OPENMP/
 total 479
 drwxr-xr-x 4 username abc123      5 Jul 17 20:43 ..
 drwxrwxr-x 2 username abc123      8 Mar 12 08:54 .
@@ -388,7 +388,7 @@ drwxrwxr-x 2 username abc123      8 Mar 12 08:54 .
 -rw-r--r-- 1 username abc123    247 Apr 15  2015 hello_openmp.f90
 -rw-r--r-- 1 username abc123    310 Apr 15  2015 openmp-slurm.sb
 
-[username@login02 comet-examples]$ ls -altr OPENMP/
+[username@login02 expanse-examples]$ ls -altr OPENMP/
 total 479
 -rw-r--r-- 1 username abc123    310 Apr 15  2015 openmp-slurm.sb
 -rw-r--r-- 1 username abc123    247 Apr 15  2015 hello_openmp.f90
