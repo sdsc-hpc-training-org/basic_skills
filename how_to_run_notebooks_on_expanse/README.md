@@ -17,7 +17,7 @@ For details on using ```galyleo,``` see:  https://github.com/mkandes/galyleo
 
 _______
 ## Using the start_notebook script 
-Note: the *start_notebook* scripting system will be deprecated and replaced with the newer *galyleo* script
+Note: the *start_notebook* scripting system will be deprecated in 2022 and replaced with the newer *galyleo* script
 
 ### Set up a SECURE (HTTPS) Jupyter Notebook environment on Expanse:
 
