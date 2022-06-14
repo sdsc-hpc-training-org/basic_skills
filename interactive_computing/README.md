@@ -1,32 +1,31 @@
-# Interactive Computing on the Comet Cluster
+# Interactive Computing on the Expanse Cluster
 Interactive HPC systems allow real-time user inputs in order to facilitate code development, real-time data exploration, and visualizations. An interactive job (also referred as interactive session) will provide you with a shell on a compute node in which you can launch your jobs. In this tutorial we show you how to obtain interactive nodes on SDSC HPC systems
 
-<!-- adding TOC -->
+**Note** For more details on using Expanse, see the user guide: https://www.sdsc.edu/support/user_guides/expanse.html
 
-<!-- toc -->
-
-- [Obtain an Interactive Nodes on Comet](#obtain-an-interactive-nodes-on-comet)
-  * [Log onto comet.sdsc.edu](#log-onto-cometsdscedu)
+<!-- TOC -->
+<a name="top">Contents
+* [Obtaining Interactive Nodes](#interactive-nodes)
+  * [Log onto expanse.sdsc.edu](#log-onto-expanse)
   * [Request an interactive node from the command line:](#request-an-interactive-node-from-the-command-line)
-- [Obtain interactive shared GPU node on SDSC Comet](#obtain-interactive-shared-gpu-node-on-sdsc-comet)
+* [Obtain interactive shared GPU node on Expanse](#obtain-interactive-shared-gpu-node-on-expanse)
 
 <!-- tocstop -->
 
-;
 
-## Obtain an Interactive Nodes on Comet
+## Obtaining Interactive Nodes<a name="interactive-nodes"></a>
 There are two ways to obtain interactive nodes: 
 1. via the command line
 2. via a batch script
 
-### Log onto comet.sdsc.edu  
+### Log onto expanse.sdsc.edu  
 ```
-ssh -Y -l <username> comet.sdsc.edu
+ssh -Y -l <username> expanse.sdsc.edu
 ```
 
 ### Request an interactive node from the command line:
 ```
-(base) [mthomas@comet-ln2:~] srun --pty --nodes=1 --ntasks-per-node=24 -p debug -t 00:30:00 --wait 0 /bin/bash
+(base) [users@expanse-ln2:~] srun --pty --nodes=1 --ntasks-per-node=24 -p debug -t 00:30:00 --wait 0 /bin/bash
 srun: job 31023522 queued and waiting for resources
 . . . .  
 ```
@@ -35,17 +34,17 @@ This may take a long time, depending on how busy the system is.
 When you have your node, you will get a message like this:
 ```
 srun: job 31023522 has been allocated resources
-(base) [mthomas@comet-14-01:~] 
+(base) [mthomas@expanse-14-01:~] 
 ```
 Notice that you are logged onto a different node than the login node.
 Run some commands to learn about the node:
 ```
-(base) [mthomas@comet-14-01:~] hostname
-comet-14-01.sdsc.edu
-(base) [mthomas@comet-14-01:~] who
-(base) [mthomas@comet-14-01:~] whoami
+(base) [mthomas@expanse-14-01:~] hostname
+expanse-14-01.sdsc.edu
+(base) [mthomas@expanse-14-01:~] who
+(base) [mthomas@expanse-14-01:~] whoami
 mthomas
-(base) [mthomas@comet-14-01:~] 
+(base) [mthomas@expanse-14-01:~] 
 (base) [mthomas@comet-14-01:~] top
 top - 21:37:07 up 15 days, 15:58,  0 users,  load average: 0.03, 0.06, 0.05
 Tasks: 620 total,   1 running, 619 sleeping,   0 stopped,   0 zombie
@@ -97,3 +96,5 @@ If you get a license error when executing the PGI compilers, execute the followi
 ```
 export LM_LICENSE_FILE=40200@elprado.sdsc.edu:$LM_LICENSE_FILE
 ```
+[Back to Top](#top)
+<hr>
