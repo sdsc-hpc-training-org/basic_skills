@@ -18,34 +18,44 @@ There are two ways to obtain interactive nodes:
 1. via the command line
 2. via a batch script
 
-### Log onto expanse.sdsc.edu  
+### First, Log onto expanse.sdsc.edu  <a name="X"></a>
 ```
 ssh -Y -l <username> expanse.sdsc.edu
 ```
 
-### Request an interactive node from the command line:
+* To learn more about logging onto the Expase cluster, see these instructions: https://github.com/sdsc-hpc-training-org/hpc-security/blob/master/connecting-to-hpc-systems/connect-to-expanse.md
+ 
+[Back to Top](#top)
+<hr>
+ 
+### Request an interactive node from the command line:  <a name="X"></a>
+ * You can request an interactive session using the srun command. The following example will request one regular compute node, 4 cores,  in the debug partition for 30 minutes.
+
 ```
-(base) [users@expanse-ln2:~] srun --pty --nodes=1 --ntasks-per-node=24 -p debug -t 00:30:00 --wait 0 /bin/bash
-srun: job 31023522 queued and waiting for resources
-. . . .  
+srun --partition=debug --qos=debug-normal --pty   --nodes=1 --ntasks-per-node=128 --mem=248 -t 00:30:00 --wait=0 --export=ALL --account=<<ACCT>> /bin/bash
 ```
-Wait for your node to be allocated.
-This may take a long time, depending on how busy the system is.
-When you have your node, you will get a message like this:
-```
-srun: job 31023522 has been allocated resources
-(base) [mthomas@expanse-14-01:~] 
-```
-Notice that you are logged onto a different node than the login node.
-Run some commands to learn about the node:
-```
-(base) [mthomas@expanse-14-01:~] hostname
-expanse-14-01.sdsc.edu
-(base) [mthomas@expanse-14-01:~] who
-(base) [mthomas@expanse-14-01:~] whoami
-mthomas
-(base) [mthomas@expanse-14-01:~] 
-(base) [mthomas@exp-9-99:~] top
+
+* Wait for your node to be allocated.
+* This may take a long time, depending on how busy the system is.
+* When you have your node, you will get a message like this:
+
+ ```
+srun: job 13469789 queued and waiting for resources
+srun: job 13469789 has been allocated resources
+[user@exp-9-55 ~]$  
+ ```
+ 
+*Notice that you are logged onto a different node than the login node.
+* Run some commands to learn about the node:
+
+ ```
+[user@exp-9-55 ~]$   hostname
+exp-9-55.sdsc.edu
+[user@exp-9-55 ~]$  who
+[user@exp-9-55 ~]$  whoami
+user
+[user@exp-9-55 ~]$ 
+[user@exp-9-55 ~]$  
 top - 21:37:07 up 15 days, 15:58,  0 users,  load average: 0.03, 0.06, 0.05
 Tasks: 620 total,   1 running, 619 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
@@ -65,6 +75,9 @@ KiB Swap:        0 total,        0 free,        0 used. 12866142+avail Mem
 At this point, you can edit, compile, run code, including MPI, OpenMP, or jupyter notebooks.
 For an example of running a notebook, see the __How to Run Notebooks on Expanse__ tutorial:
 https://github.com/sdsc-hpc-training/basic_skills/tree/master/how_to_run_notebooks_on_expanse
+
+[Back to Top](#top)
+<hr>
  
 ## Obtain interactive shared GPU node on SDSC Expanse 
 This works the same way, but you need to access the GPU nodes
