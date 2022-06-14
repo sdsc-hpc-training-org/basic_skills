@@ -45,7 +45,7 @@ expanse-14-01.sdsc.edu
 (base) [mthomas@expanse-14-01:~] whoami
 mthomas
 (base) [mthomas@expanse-14-01:~] 
-(base) [mthomas@comet-14-01:~] top
+(base) [mthomas@exp-9-99:~] top
 top - 21:37:07 up 15 days, 15:58,  0 users,  load average: 0.03, 0.06, 0.05
 Tasks: 620 total,   1 running, 619 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
@@ -63,10 +63,10 @@ KiB Swap:        0 total,        0 free,        0 used. 12866142+avail Mem
    10 root      20   0       0      0      0 S   0.0  0.0   4:00.35 rcu_sched       
 ```
 At this point, you can edit, compile, run code, including MPI, OpenMP, or jupyter notebooks.
-For an example of running a notebook, see the __How to Run Notebooks on Comet__ tutorial:
-https://github.com/sdsc-hpc-training/basic_skills/tree/master/how_to_run_notebooks_on_comet
+For an example of running a notebook, see the __How to Run Notebooks on Expanse__ tutorial:
+https://github.com/sdsc-hpc-training/basic_skills/tree/master/how_to_run_notebooks_on_expanse
  
-## Obtain interactive shared GPU node on SDSC Comet 
+## Obtain interactive shared GPU node on SDSC Expanse 
 This works the same way, but you need to access the GPU nodes
 
 The command below will launch the command ```srun```
