@@ -7,8 +7,8 @@ Interactive HPC systems allow real-time user inputs in order to facilitate code 
 <a name="top">Contents
 * [Obtaining Interactive Nodes](#interactive-nodes)
   * [Log onto expanse.sdsc.edu](#log-onto-expanse)
-  * [Request an interactive node from the command line:](#request-an-interactive-node-from-the-command-line)
-* [Obtain interactive shared GPU node on Expanse](#obtain-interactive-shared-gpu-node-on-expanse)
+  * [Request an interactive node from the command line:](#interactive-node-command-line)
+* [Obtain interactive shared GPU node on Expanse](#interactive-gpu-command-line)
 
 <!-- tocstop -->
 
@@ -28,7 +28,7 @@ ssh -Y -l <username> expanse.sdsc.edu
 [Back to Top](#top)
 <hr>
  
-### Request an interactive node from the command line:  <a name="X"></a>
+### Request an interactive node from the command line:  <a name="interactive-node-command-line"></a>
  * You can request an interactive session using the srun command. The following example will request one regular compute node, 4 cores,  in the debug partition for 30 minutes.
 
 ```
@@ -79,7 +79,7 @@ https://github.com/sdsc-hpc-training/basic_skills/tree/master/how_to_run_noteboo
 [Back to Top](#top)
 <hr>
  
-## Obtain interactive shared GPU node on SDSC Expanse 
+## Obtain interactive shared GPU node on SDSC Expanse <a name="interactive-gpu-command-line"></a>
 This works the same way, but you need to access the GPU nodes
 
 The command below will launch the command ```srun```
