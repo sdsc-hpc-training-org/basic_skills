@@ -7,7 +7,7 @@ Interactive HPC systems allow real-time user inputs in order to facilitate code 
 <a name="top">Contents
 * [Obtaining Interactive Nodes](#interactive-nodes)
   * [Log onto expanse.sdsc.edu](#log-onto-expanse)
-  * [Request an interactive node from the command line:](#interactive-node-command-line)
+* [Request an interactive CPU node from the command line:](#interactive-node-command-line)
 * [Obtain interactive shared GPU node on Expanse](#interactive-gpu-command-line)
 
 <!-- tocstop -->
@@ -18,7 +18,7 @@ There are two ways to obtain interactive nodes:
 1. via the command line
 2. via a batch script
 
-### First, Log onto expanse.sdsc.edu  <a name="X"></a>
+### Log onto expanse.sdsc.edu  <a name="X"></a>
 ```
 ssh -Y -l <username> expanse.sdsc.edu
 ```
@@ -28,7 +28,7 @@ ssh -Y -l <username> expanse.sdsc.edu
 [Back to Top](#top)
 <hr>
  
-### Request an interactive node from the command line:  <a name="interactive-node-command-line"></a>
+## Request an interactive CPU node from the command line:  <a name="interactive-node-command-line"></a>
  * You can request an interactive session using the srun command. The following example will request one regular compute node, 4 cores,  in the debug partition for 30 minutes.
 
 ```
