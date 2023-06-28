@@ -233,7 +233,7 @@ To delete a file, use the `rm` (remove command):
 
 ```java
 [mthomas@comet-ln2 testdir]$ rm myfile1.txt
-[mthomas@comet-ln2 testdir]$  ls -l
+[mthomas@comet-ln2 testdir]$ ls -l
 total 10
 -rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
 -rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 newfile.txt
@@ -335,7 +335,7 @@ drwxr-xr-x 2 mthomas use300   8 Jul 17 20:26 OPENMP
 ```
 You can also copy a file or directory and give it a new name:
 ```
-[mthomas@comet-ln2 comet-examples]$  cp -r -p /share/apps/examples/OPENMP/ FOOBAR  
+[mthomas@comet-ln2 comet-examples]$ cp -r -p /share/apps/examples/OPENMP/ FOOBAR  
 [mthomas@comet-ln2 comet-examples]$ ll
 total 49
 drwxr-xr-x 4 mthomas use300   5 Jul 17 21:19 .
