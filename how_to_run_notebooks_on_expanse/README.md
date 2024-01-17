@@ -4,7 +4,7 @@
 
 ## [Contents](#top)
 * [Using the galyleo script](#galyleo)
-* [Using the start-notebook script](#stntbk)
+* [Running CONDA Environments and Jupyter Notebook on Expanse](#conda)
 * [Notebook Examples](#ntbk-ex)
 
 This quick-start guide will show you how to run [Jupyter notebooks on Expanse](https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html) using the [Satellite Reverse Proxy Service](https://github.com/sdsc-hpc-training-org/satellite). Satellite is a prototype system that will allow users to launch secure (HTTPS) Jupyter Services on any Expanse compute node using a simple bash script called *galyleo* or *start_notebook*. The notebooks will be made available to the user outside of the cluster firewall using a *secure* HTTPS connection between the external users web browser and the reverse proxy server.
@@ -16,35 +16,18 @@ _______
 For details on using ```galyleo,``` see:  https://github.com/mkandes/galyleo
 
 _______
-## Using the start_notebook script 
-Note: the *start_notebook* scripting system will be deprecated in 2022 and replaced with the newer *galyleo* script
-
-### Set up a SECURE (HTTPS) Jupyter Notebook environment on Expanse:
-
-SDSC recommends that you install the *Miniconda* Jupyter notebook environment on its HPC systems and that you create a Conda Virtual Environment. The tutorial below provides full instructions on how to do this.
-* [Running Notebooks on Expanse](https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html)
-* [Setting up a Conda Virtual Environment](https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html#software-prerequisites)
-
-Once your notebook environment is working, follow the steps below:
-
-### Log onto Expanse
-For more help, see https://github.com/sdsc-hpc-training-org/basic_skills/tree/master/connecting-to-hpc-systems
-```
-ssh -Y -l <username> login.expanse.sdsc.edu
-```
-
+### Running CONDA Environments and Jupyter Notebook on Expanse<a name="conda">
+* see the CIML Summer Institute material: [Session 3.3 CONDA Environments and Jupyter Notebook on Expanse: Scalable & Reproducible Data Exploration and ML](https://github.com/ciml-org/ciml-summer-institute-2023/tree/main/3.3_conda_environments_and_jupyter_notebook_on_expanse)
 ______
-### Using Example Notebooks<a name="ntbk-ex">
+
+
+###  Example Notebooks<a name="ntbk-ex">
 Clone the notebook example repository, or use one you have already created
 * [SDSC HPC Notebook Examples](https://github.com/sdsc-hpc-training-org/notebook-examples)
 ```
 git clone https://github.com/sdsc-hpc-training-org/notebook-examples.git
 ```
 
-## Launch the secure notebook Using the *Satellite Reverse Proxy Service*
-```
-start-notebook
-```
-For more information on using ```start-notebook``` including configuration and installation, see https://comet-notebooks-101.readthedocs.io/en/comet/methods/reverseProxy.html
+* Launch the secure notebook Using the Galyleo command
 
 
