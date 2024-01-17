@@ -32,11 +32,10 @@ ssh -Y -l <username> expanse.sdsc.edu
  * You can request an interactive session using the srun command. The following example will request one regular compute node, 4 cores,  in the debug partition for 30 minutes.
 
 ```
-srun --partition=debug --qos=debug-normal --pty   --nodes=1 --ntasks-per-node=128 --mem=248 -t 00:30:00 --wait=0 --export=ALL --account=<<ACCT>> /bin/bash
-```
+srun --partition=debug  --pty --account=<<project>> --nodes=1 --ntasks-per-node=4 --mem=8G -t 00:30:00 --wait=0 --export=ALL /bin/bash```
 
 * Wait for your node to be allocated.
-* This may take a long time, depending on how busy the system is.
+* This may take a while, depending on how busy the system is.
 * When you have your node, you will get a message like this:
 
  ```
@@ -85,8 +84,7 @@ This works the same way, but you need to access the GPU nodes
 The command below will launch the command ```srun```
 
 ```
-srun -t 00:30:00 --partition=gpu-shared --nodes=1 --ntasks-per-node=7 \
-     --gres=gpu:p100:1 --reservation=sccgpures --pty --wait=0 /bin/bash
+srun --partition=gpu-debug --pty --account=<<project>> --ntasks-per-node=10 --nodes=1 --mem=96G --gpus=1 -t 00:30:00 --wait=0 --export=ALL /bin/bash
 ```
 
 The SLURM launch command below to obtain an interactive node with access to 1 K80 GPU on the shared GPU nodes for 3h. You can also execute this command directly on the command line:
