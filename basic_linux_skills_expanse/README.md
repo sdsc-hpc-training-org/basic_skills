@@ -29,7 +29,7 @@ Using Unix commands, we can learn a lot about the machine we are logged onto. So
 
 ```
 [username@login02 ~]$ date
-Tue Jul 17 18:54:37 PDT 2018
+Tue Jan 16 20:20:23 PST 2024
 [username@login02 ~]$ hostname
 login02
 [username@login02 ~]$ whoami
@@ -79,12 +79,12 @@ Another important environment variable is the home directory variable, the \"til
 ```
 You can create your own environment variables:
 ```
-[username@login02 ~]$ MY_NAME="Mary Thomas"
+[username@login02 ~]$ MY_NAME="Super User"
 [username@login02 ~]$ echo $MY_NAME
-Mary Thomas
+Super User
 ```
 
-Unix has the concept of users and groups. Users can be in more than one group. To see which groups you are a member of, use the `group` command:
+Unix has the concept of users and groups. Groups are used to control access to resources (files, applications, etc.) and help establish a secure envionment Users can be in more than one group. To see which groups you are a member of, use the `group` command:
 ```
 [username@login02 OPENMP]$ groups
 abc123 pet heart scicom-docs grdclus webwrt scwpf ...
@@ -115,11 +115,11 @@ In Unix, sometimes it is hard tell if a file is also a directory. To see file de
 ```
 [username@login02 ~]$ ls -l
 -rw-r--r-- 1 username abc123 1543 Jul 17 21:04 filelisting.txt
-drwxr-xr-x 3 username abc123   3 Jun 22  2017 intel
--rwx------ 1 username abc123 101 Jun 27  2017 loadgccomgnuenv.sh
--rwx------ 1 username abc123  77 Oct 16  2017 loadgnuenv.sh
--rwxr-xr-x 1 username abc123 125 Oct 16  2017 loadintelenv.sh
-drwxr-xr-x 2 username abc123   4 Jun 30  2017 tools
+drwxr-xr-x 3 username abc123   3 Jun 22  2023 intel
+-rwx------ 1 username abc123 101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------ 1 username abc123  77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x 1 username abc123 125 Oct 16  2023 loadintelenv.sh
+drwxr-xr-x 2 username abc123   4 Jun 30  2023 tools
 ```
 You can combine the two commands above and use it to see the full directory and file information:
 ```
@@ -127,20 +127,20 @@ You can combine the two commands above and use it to see the full directory and 
 total 166
 drwx------   7 username abc123    23 Jul 17 19:33 .
 drwxr-xr-x 143 root    root       0 Jul 17 20:01 ..
--rw-r--r--   1 username abc123  2487 Jun 23  2017 .alias
+-rw-r--r--   1 username abc123  2487 Jun 23  2023 .alias
 -rw-------   1 username abc123 14247 Jul 17 12:11 .bash_history
--rw-r--r--   1 username abc123    18 Jun 19  2017 .bash_logout
--rw-r--r--   1 username abc123   176 Jun 19  2017 .bash_profile
+-rw-r--r--   1 username abc123    18 Jun 19  2023 .bash_logout
+-rw-r--r--   1 username abc123   176 Jun 19  2023 .bash_profile
 -rw-r--r--   1 username abc123   159 Jul 17 18:24 .bashrc
-drwx------   3 username abc123     3 Oct 23  2017 .config
+drwx------   3 username abc123     3 Oct 23  2023 .config
 -rw-r--r--   1 username abc123  1543 Jul 17 21:04 filelisting.txt
--rw-r--r--   1 username abc123  1641 Jun 22  2017 .gccomrc
--rw-r--r--   1 username abc123   245 Jun 28  2017 .gitconfig
-drwxr-xr-x   3 username abc123     3 Jun 22  2017 intel
--rw-r--r--   1 username abc123   171 Jun 19  2017 .kshrc
--rwx------   1 username abc123   101 Jun 27  2017 loadgccomgnuenv.sh
--rwx------   1 username abc123    77 Oct 16  2017 loadgnuenv.sh
--rwxr-xr-x   1 username abc123   125 Oct 16  2017 loadintelenv.sh
+-rw-r--r--   1 username abc123  1641 Jun 22  2023 .gccomrc
+-rw-r--r--   1 username abc123   245 Jun 28  2023 .gitconfig
+drwxr-xr-x   3 username abc123     3 Jun 22  2023 intel
+-rw-r--r--   1 username abc123   171 Jun 19  2023 .kshrc
+-rwx------   1 username abc123   101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------   1 username abc123    77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x   1 username abc123   125 Oct 16  2023 loadintelenv.sh
 [snip extra lines]
 ```
 There are several things to notice in the above listing: the first column of data is information about the file "permissions\", which controls who can see/read/modify what files (`r`=read, `w`=write,`x`=execute,`-`=no permission); the next 2 columns are the username and groupID; the 3rd and 4th columns are the size and date. This is discussed in more detail in the [Permissions](#permissions) section below. Also, note that two files have `dots` for their names: in unix the "dot" is a component of a filename. When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an `ls` will not normally show. But also, the single dot, `.` represents the current working directory, and the double dots, `..` represent the directory above. You use these as arguments to unix commands dealing with directories.
@@ -150,12 +150,12 @@ To create directories, use the `mkdir`, make directory command:
 [username@login02 ~]$ mkdir testdir
 [username@login02 ~]$ ls -l
 total 12
-drwxr-xr-x 3 username abc123   3 Jun 22  2017 intel
--rwx------ 1 username abc123 101 Jun 27  2017 loadgccomgnuenv.sh
--rwx------ 1 username abc123  77 Oct 16  2017 loadgnuenv.sh
--rwxr-xr-x 1 username abc123 125 Oct 16  2017 loadintelenv.sh
+drwxr-xr-x 3 username abc123   3 Jun 22  2023 intel
+-rwx------ 1 username abc123 101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------ 1 username abc123  77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x 1 username abc123 125 Oct 16  2023 loadintelenv.sh
 drwxr-xr-x 2 username abc123   2 Jul 17 20:49 testdir
-drwxr-xr-x 2 username abc123   4 Jun 30  2017 tools
+drwxr-xr-x 2 username abc123   4 Jun 30  2023 tools
 ```
 To move into that directory, use the `cd`, change directory command:
 ```
@@ -174,12 +174,12 @@ From this directory, you can use the `..` command to see the contents of the dir
 total 22
 drwxr-xr-x 4 username abc123    5 Jul 17 20:43 expanse-examples
 -rw-r--r-- 1 username abc123 1543 Jul 17 21:04 filelisting.txt
-drwxr-xr-x 3 username abc123    3 Jun 22  2017 intel
--rwx------ 1 username abc123  101 Jun 27  2017 loadgccomgnuenv.sh
--rwx------ 1 username abc123   77 Oct 16  2017 loadgnuenv.sh
--rwxr-xr-x 1 username abc123  125 Oct 16  2017 loadintelenv.sh
+drwxr-xr-x 3 username abc123    3 Jun 22  2023 intel
+-rwx------ 1 username abc123  101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------ 1 username abc123   77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x 1 username abc123  125 Oct 16  2023 loadintelenv.sh
 drwxr-xr-x 2 username abc123    4 Jul 17 20:53 testdir
-drwxr-xr-x 2 username abc123    4 Jun 30  2017 tools
+drwxr-xr-x 2 username abc123    4 Jun 30  2023 tools
 ```
 
 [Back to Top](#top)
@@ -245,10 +245,10 @@ First, we will make a folder to hold expanse examples and then `cd` into that ne
 total 166
 drwxr-x---   8 username abc123    24 Jul 17 20:20 .
 drwxr-xr-x 139 root    root       0 Jul 17 20:17 ..
--rw-r--r--   1 username abc123  2487 Jun 23  2017 .alias
+-rw-r--r--   1 username abc123  2487 Jun 23  2023 .alias
 -rw-------   1 username abc123 14247 Jul 17 12:11 .bash_history
--rw-r--r--   1 username abc123    18 Jun 19  2017 .bash_logout
--rw-r--r--   1 username abc123   176 Jun 19  2017 .bash_profile
+-rw-r--r--   1 username abc123    18 Jun 19  2023 .bash_logout
+-rw-r--r--   1 username abc123   176 Jun 19  2023 .bash_profile
 -rw-r--r--   1 username abc123   159 Jul 17 18:24 .bashrc
 drwxr-xr-x   2 username abc123     2 Jul 17 20:20 expanse-examples
 [snip extra lines]
@@ -404,7 +404,7 @@ drwxr-xr-x 4 username abc123      5 Jul 17 20:43 ..
 <hr>
 
 ## <a name="permissions">Permissions</a>
-In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a group member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
+In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a 2023 member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
 
 ```
 [username@login02 OPENMP]$ ls -l hello_openmp
@@ -417,10 +417,10 @@ The order of the markers are grouped into 4 fields:
 `-` `rwx` `r-x` `r-x`
 Field 1 == directory, a `d` or `-` means directory or not a directory
 Field 2 == owner permissions 'rwx' means the owner can read, write, and exectute
-Field 3 == group permissions 'rwx' means the owner can read and exectute, but not modify
+Field 3 == 2023 permissions 'rwx' means the owner can read and exectute, but not modify
 Field 4 == other/world permissions 'r-x' means the others can read and exectute, but not modiry
 
-To change the file access permissions, use the `chmod` command. In the example below, only user username has permission to edit (`rw-`) the files, members of the group abc123 and others have read only permission (`--`). There are several ways to modify permissions, we will use the binary representation where the rwx status represents a binary number 2^n, where n is the position of the permission starting from the right. For example:
+To change the file access permissions, use the `chmod` command. In the example below, only user username has permission to edit (`rw-`) the files, members of the 2023 abc123 and others have read only permission (`--`). There are several ways to modify permissions, we will use the binary representation where the rwx status represents a binary number 2^n, where n is the position of the permission starting from the right. For example:
 ```
   r-- = 2^2 + 0 + 0 = 4 + 0 + 0 = 4
   rw- = 2^2 + 2^1 + 0 = 4 + 2 + 0 = 6
@@ -428,7 +428,7 @@ To change the file access permissions, use the `chmod` command. In the example b
   rwx = 2^2 + 2^1 + 2^0 = 4 + 2 + 1 = 7
 ```
 
-In the example below, we will set read and write permissions to the owner and the group, and limit the other/world group to read only:
+In the example below, we will set read and write permissions to the owner and the group, and limit the other/world 2023 to read only:
 ```
 [username@login02 OPENMP]$ ls -l
 total 479
@@ -451,7 +451,7 @@ drwxr-xr-x 2 username abc123      2 Jul 17 21:53 direxample
 -rw-rw---- 1 username abc123    347 Apr 22  2015 openmp-slurm-shared.sb
 
 ```
-In the example above, we use the star wildcard, \" \* \" to represent all the files in the directory (See the section on wildcards below). We can use the wildcard to **change the group** of some of the files. For example, to change the group of only the \*.out files:
+In the example above, we use the star wildcard, \" \* \" to represent all the files in the directory (See the section on wildcards below). We can use the wildcard to **change the group** of some of the files. For example, to change the 2023 of only the \*.out files:
 
 ```
 [username@login02 OPENMP]$ groups
