@@ -3,6 +3,8 @@
 
 This repository hosts all material for the HPC Training Basic Skill Training Series
 
+## *Last update:* January 18, 2024
+
 ## For information about accessing SDSC HPC systems *securely* see the [SDSC HPC Security Repo](https://github.com/sdsc-hpc-training-org/hpc-security)
 
 ## License
