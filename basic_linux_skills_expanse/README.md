@@ -18,9 +18,9 @@ Notes:
 
 <a name="top">**Examples::**
 * [Basic Environment](#basic-env)
-* [Files](#files)
 * [Directories and Navigation](#dirs-and-nav)
 * [Copying directories](#copydir)
+* [Files](#files)
 * [Permissions](#permissions)
 * [Wildcards](#wildcards)
 * [Common Utilities](#common-utilities)
