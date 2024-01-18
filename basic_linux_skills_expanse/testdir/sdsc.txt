@@ -1,0 +1,10 @@
+The San Diego Supercomputer Center (SDSC) was established as one of the nation’s first supercomputer centers under a cooperative agreement by the National Science Foundation (NSF) in collaboration with UC San Diego and General Atomics (GA) Technologies. SDSC first opened its doors on November 14, 1985.
+
+For more than 35 years, it has grown and stewarded its national reputation as a pioneer and leader in high-performance and data-intensive computing and cyberinfrastructure. Located on the campus of UC San Diego, SDSC provides resources, services and expertise to the national research community including industry and academia.
+
+Cyberinfrastructure refers to an accessible, integrated network of computer-based resources and expertise, focused on accelerating scientific inquiry and discovery. With Voyager and Expanse, SDSC’s latest supercomputing resources, the center supports hundreds of multidisciplinary programs spanning a wide range of science themes—from earth sciences and biology to astrophysics, bioinformatics and health IT.
+
+SDSC participates in Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) and was a partner in eXtreme Science and Engineering Discovery Environment (XSEDE), two of the most advanced collections of integrated digital resources and services in the world.
+
+For general inquiries and comments: info@sdsc.edu
+SDSC website: www.sdsc.edu

@@ -1,0 +1,6 @@
+total 80
+drwxr-xr-x  2 mthomas use300   5 Jan 17 23:49 .
+drwxr-x--- 51 mthomas use300  93 Jan 17 23:46 ..
+-rw-r--r--  1 mthomas use300   0 Jan 17 23:49 dirlist.txt
+-rw-r--r--  1 mthomas use300 322 Jan 17 23:42 filelisting.txt
+-rw-r--r--  1 mthomas use300   0 Jan 17 23:42 newfile.txt
