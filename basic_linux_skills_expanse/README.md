@@ -553,15 +553,6 @@ SDSC website: www.sdsc.edu
 [Back to Top](#top)
 <hr>
 
-## <a name="common-utilities">Other Common Utilities</a>
-Other utilities to add to tutorial: less, sort, tar, gzip ,and pigz
-
-```
-
-
-
-[Back to Top](#top)
-<hr>
 
 
 ## <a name="permissions">Permissions</a>
