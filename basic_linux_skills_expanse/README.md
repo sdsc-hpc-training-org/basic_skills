@@ -18,8 +18,9 @@ Notes:
 
 <a name="top">**Examples::**
 * [Basic Environment](#basic-env)
-* [Directories and Navigation](#dirs-and-nav)
 * [Files](#files)
+* [Directories and Navigation](#dirs-and-nav)
+* [Copying directories](#copydir)
 * [Permissions](#permissions)
 * [Wildcards](#wildcards)
 * [Common Utilities](#common-utilities)
@@ -97,6 +98,54 @@ abc123 pet heart scicom-docs grdclus webwrt scwpf ...
 [Back to Top](#top)
 <hr>
 
+## <a name="files">Manipulating Files</a>
+
+This section will show you how to manipulate files: copying, listing, deleting and renaming
+Continuing with the `testdir` we created above, we can create files in many ways. One is to use the `touch` commmand, which will create a file with no contents:
+```
+[username@login02 testdir]$ touch myfile1.txt
+[username@login02 testdir]$ touch myfile2.txt
+[username@login02 testdir]$ ls -l
+total 21
+drwxr-xr-x 2 username abc123  4 Jul 17 20:53 .
+drwxr-x--- 9 username abc123 25 Jul 17 20:49 ..
+-rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile2.txt
+```
+
+To copy a file from another directory  to the current directory, use the full path. In this example, we will copy the _filelisting.txt_ file from the directory above, using the `..` (\"dot-dot\") variable for the directory location:
+
+```java
+[username@login02 testdir]$ cp ../filelisting.txt .
+[username@login02 testdir]$ ls -l
+total 11
+-rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile2.txt
+```
+
+To rename a file, use the `mv` (move) command:
+
+```java
+[username@login02 testdir]$ mv myfile2.txt newfile.txt
+[username@login02 testdir]$ ls -l
+total 11
+-rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
+```
+To delete a file, use the `rm` (remove command):
+
+```java
+[username@login02 testdir]$ rm myfile1.txt
+[username@login02 testdir]$  ls -l
+total 10
+-rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
+```
+
+[Back to Top](#top)
+<hr>
 ## <a name="dirs-and-nav">Directories and Navigation</a>
 In unix, everything is a file, which can be confusing at first. The locations for where files are stored are also called directories (which is equivalent to folders). To find out where you are in the system, use the `pwd` command, which prints the full path to the current/working directory:
 ```
@@ -286,56 +335,7 @@ drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
 [Back to Top](#top)
 <hr>
 
-## <a name="files">Manipulating Files</a>
-
-This section will show you how to manipulate files: copying, listing, deleting and renaming
-Continuing with the `testdir` we created above, we can create files in many ways. One is to use the `touch` commmand, which will create a file with no contents:
-```
-[username@login02 testdir]$ touch myfile1.txt
-[username@login02 testdir]$ touch myfile2.txt
-[username@login02 testdir]$ ls -l
-total 21
-drwxr-xr-x 2 username abc123  4 Jul 17 20:53 .
-drwxr-x--- 9 username abc123 25 Jul 17 20:49 ..
--rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile2.txt
-```
-
-To copy a file from another directory  to the current directory, use the full path. In this example, we will copy the _filelisting.txt_ file from the directory above, using the `..` (\"dot-dot\") variable for the directory location:
-
-```java
-[username@login02 testdir]$ cp ../filelisting.txt .
-[username@login02 testdir]$ ls -l
-total 11
--rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile2.txt
-```
-
-To rename a file, use the `mv` (move) command:
-
-```java
-[username@login02 testdir]$ mv myfile2.txt newfile.txt
-[username@login02 testdir]$ ls -l
-total 11
--rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
-```
-To delete a file, use the `rm` (remove command):
-
-```java
-[username@login02 testdir]$ rm myfile1.txt
-[username@login02 testdir]$  ls -l
-total 10
--rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
-```
-
-[Back to Top](#top)
-<hr>
-
-### Copying directories
+## <a name="copydir">Copying directories</a>
 
 A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Expanse, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. Suppose you are interested in working with one of the files or directories in the /share/apps/examples/ directory.
 
