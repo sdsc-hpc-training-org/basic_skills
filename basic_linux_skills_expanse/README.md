@@ -78,9 +78,9 @@ It is often useful to print out (or use) environment variables. To print them ou
 ```
 Another important environment variable is the home directory variable, the \"tilde\" character:  `~`
 ```
-[username@login02 testdir]$ echo ~
+[username@login02 ~]$ echo ~
 /home/username
-[username@login02 testdir]$
+[username@login02 ~]$
 ```
 You can create your own environment variables:
 ```
@@ -98,11 +98,207 @@ abc123 pet heart scicom-docs grdclus webwrt scwpf ...
 [Back to Top](#top)
 <hr>
 
+
+
+## Directories and Navigation<a name="dirs-and-nav"></a>
+
+In unix, everything is a file, which can be confusing at first. The locations for where files are stored   are called directories (which is equivalent to folders), and are also viewed as files by the operating system. To find out where you are in the system, use the `pwd` command (print working directory), which prints the full path to the directory you are currently in:
+```
+[username@login02 ~]$ pwd
+/home/username
+```
+To see what are the contents of the current directory are, use the file listing command `ls`
+```
+[username@login02 ~]$ ls
+filelisting.txt intel   loadgccomgnuenv.sh  loadgnuenv.sh	loadintelenv.sh  tools
+```
+In every Unix directory, there are \"hidden\" files (just like on Macs and Windows machines), to see them, run the `ls -a` command:
+```
+[username@login02 ~]$ ls -a
+.	.bash_history  .bashrc	 .gitconfig  loadgccomgnuenv.sh  .ncviewrc     .ssh	 .vimrc
+..	.bash_logout   .config filelisting.txt	 intel	     loadgnuenv.sh	 .petscconfig  tools	 .Xauthority
+.alias	.bash_profile    .kshrc      loadintelenv.sh	 .slurm        .viminfo
+```
+In Unix, sometimes it is hard tell if a file is a directory. To see file details (including timestamp and size), run the `ls -l` command:
+```
+[username@login02 ~]$ ls -l
+-rw-r--r-- 1 username abc123 322 Jul 17 21:04 filelisting.txt
+drwxr-xr-x 3 username abc123   3 Jun 22  2023 intel
+-rwx------ 1 username abc123 101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------ 1 username abc123  77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x 1 username abc123 125 Oct 16  2023 loadintelenv.sh
+drwxr-xr-x 2 username abc123   4 Jun 30  2023 tools
+```
+You can combine the two commands above and use it to see the full directory and file information:
+```
+[username@login02 ~]$ ls -al
+total 166
+drwx------   7 username abc123    23 Jul 17 19:33 .
+drwxr-xr-x 143 root    root       0 Jul 17 20:01 ..
+-rw-r--r--   1 username abc123  2487 Jun 23  2023 .alias
+-rw-------   1 username abc123 14247 Jul 17 12:11 .bash_history
+-rw-r--r--   1 username abc123    18 Jun 19  2023 .bash_logout
+-rw-r--r--   1 username abc123   176 Jun 19  2023 .bash_profile
+-rw-r--r--   1 username abc123   159 Jul 17 18:24 .bashrc
+drwx------   3 username abc123     3 Oct 23  2023 .config
+-rw-r--r--   1 username abc123  322 Jul 17 21:04 filelisting.txt
+-rw-r--r--   1 username abc123  1641 Jun 22  2023 .gccomrc
+-rw-r--r--   1 username abc123   245 Jun 28  2023 .gitconfig
+drwxr-xr-x   3 username abc123     3 Jun 22  2023 intel
+-rw-r--r--   1 username abc123   171 Jun 19  2023 .kshrc
+-rwx------   1 username abc123   101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------   1 username abc123    77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x   1 username abc123   125 Oct 16  2023 loadintelenv.sh
+[snip extra lines]
+```
+There are several things to notice in the above listing: the first column of data is information about the file "permissions\", which controls who can see/read/modify what files (`r`=read, `w`=write,`x`=execute,`-`=no permission); the next 2 columns are the username and groupID; the 3rd and 4th columns are the size and date. This is discussed in more detail in the [Permissions](#permissions) section below. Also, note that two files have `dots` for their names: in unix the "dot" is a component of a filename. When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an `ls` will not normally show. But also, the single dot, `.` represents the current working directory, and the double dots, `..` represent the directory above. You use these as arguments to unix commands dealing with directories.
+
+There are simple Linux commands to create and remove directories, and to populate the directories.
+To create a directory, use the `mkdir`, make directory command (more about directories in the sections below):
+```
+[username@login02 ~]$ mkdir testdir
+[username@login02 ~]$ ls -l
+total 12
+drwxr-xr-x 3 username abc123   3 Jun 22  2023 intel
+-rwx------ 1 username abc123 101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------ 1 username abc123  77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x 1 username abc123 125 Oct 16  2023 loadintelenv.sh
+drwxr-xr-x 2 username abc123   2 Jul 17 20:49 testdir
+drwxr-xr-x 2 username abc123   4 Jun 30  2023 tools
+```
+To move into that directory, use the `cd`, change directory command:
+```
+[username@login02 ~]$ cd testdir/
+[username@login02 testdir]$ ls -al
+total 20
+drwxr-xr-x 2 username abc123  2 Jul 17 20:49 .
+drwxr-x--- 9 username abc123 25 Jul 17 20:49 ..
+[username@login02 testdir]$
+```
+From this directory, you can use the `..` command to see the contents of the directory above:
+
+```
+[username@login02 testdir]$ ls -l ..
+[username@login02 testdir]$ /bin/ls -l ..
+total 22
+drwxr-xr-x 4 username abc123    5 Jul 17 20:43 expanse-examples
+-rw-r--r-- 1 username abc123 322 Jul 17 21:04 filelisting.txt
+drwxr-xr-x 3 username abc123    3 Jun 22  2023 intel
+-rwx------ 1 username abc123  101 Jun 27  2023 loadgccomgnuenv.sh
+-rwx------ 1 username abc123   77 Oct 16  2023 loadgnuenv.sh
+-rwxr-xr-x 1 username abc123  125 Oct 16  2023 loadintelenv.sh
+drwxr-xr-x 2 username abc123    4 Jul 17 20:53 testdir
+drwxr-xr-x 2 username abc123    4 Jun 30  2023 tools
+```
+To remove files and directories there are different mechanisms, depending on whether or not the directory is empty or contains files. For this example, we create a new directory, `testdir2`, we'll create three directories using the `mkdir` command, populate some testfiles using the `touch` command, and then try to delete the directories using either the `rmdir` or `rm` commands.
+```
+[mthomas@login01 testdir]$cd ..
+[mthomas@login01 testdir]$ mkdir testdir2
+[mthomas@login01 testdir]$ cd testdir2
+[mthomas@login01 testdir2]$ mkdir dir1
+[mthomas@login01 testdir2]$ mkdir dir2
+[mthomas@login01 testdir2]$ mkdir dir3
+[mthomas@login01 testdir2]$ ll
+total 71
+drwxr-xr-x  5 mthomas use300  5 Jan 17 22:11 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir1
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
+```
+Next, create some testfiles using the `touch` command:
+```
+[mthomas@login01 testdir2]$ touch f1
+[mthomas@login01 testdir2]$ touch f2
+[mthomas@login01 testdir2]$ touch f3
+[mthomas@login01 testdir2]$ touch dir2/file1
+[mthomas@login01 testdir2]$ touch dir2/file2
+[mthomas@login01 testdir2]$ touch dir2/file3
+[mthomas@login01 testdir2]$ ls -al
+total 90
+drwxr-xr-x  5 mthomas use300  8 Jan 17 22:23 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f3
+[mthomas@login01 testdir2]$ ls -al dir2
+total 3
+drwxr-xr-x 2 mthomas use300 5 Jan 17 22:17 .
+drwxr-xr-x 4 mthomas use300 4 Jan 17 22:12 ..
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file1
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file2
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:17 file3
+```
+For a file, we use the remove, `rm` command:
+```
+[mthomas@login01 testdir2]$ 
+[mthomas@login01 testdir2]$ rm f3
+[mthomas@login01 testdir2]$ ll -al
+total 72
+drwxr-xr-x  5 mthomas use300  7 Jan 17 22:31 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
+
+```
+For an *empty* directory, we can use the `rmdir` command:
+```
+[mthomas@login01 testdir2]$ ls -al dir1
+total 1
+drwxr-xr-x 2 mthomas use300 2 Jan 17 22:11 .
+drwxr-xr-x 5 mthomas use300 5 Jan 17 22:11 ..
+[mthomas@login01 testdir2]$ rm dir1
+rm: cannot remove 'dir1': Is a directory
+[mthomas@login01 testdir2]$ rmdir dir1
+[mthomas@login01 testdir2]$ ll
+total 71
+drwxr-xr-x  4 mthomas use300  4 Jan 17 22:12 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
+
+```
+If the directory has contents (files or subdirectories), you use the 'rm' command with arguments to *force* the removal of the directory and all of its contents:
+```
+[mthomas@login01 testdir2]$ ll dir3
+total 3
+drwxr-xr-x 2 mthomas use300 5 Jan 17 22:18 .
+drwxr-xr-x 5 mthomas use300 7 Jan 17 22:31 ..
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file31
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file32
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file33
+[mthomas@login01 testdir2]$ rmdir dir3
+rmdir: failed to remove 'dir3': Directory not empty
+[mthomas@login01 testdir2]$ rm dir3
+rm: cannot remove 'dir3': Is a directory
+[mthomas@login01 testdir2]$ rm -f dir3
+rm: cannot remove 'dir3': Is a directory
+[mthomas@login01 testdir2]$ rm -rf dir3
+[mthomas@login01 testdir2]$ ls -al
+total 72
+drwxr-xr-x  4 mthomas use300  6 Jan 17 23:01 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
+```
+
+[Back to Top](#top)
+<hr>
+
 ## <a name="files">Manipulating Files</a>
 
-This section will show you how to manipulate files: copying, listing, deleting and renaming
-Continuing with the `testdir` we created above, we can create files in many ways. One is to use the `touch` commmand, which will create a file with no contents:
+This section will show you more ways to manipulate files: copying, listing, deleting and renaming, and examining contents
+In the section above, we created files using the `touch` commmand, which will create a file with no contents. First we'll return to the first `testdir` using the `full directory path`:
 ```
+[mthomas@login01 testdir2]$ cd /home/mthomas/testdir
 [username@login02 testdir]$ touch myfile1.txt
 [username@login02 testdir]$ touch myfile2.txt
 [username@login02 testdir]$ ls -l
@@ -143,200 +339,10 @@ total 10
 -rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
 -rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
 ```
+You can examine the contents of a file by using several Linux commands. 
 
 [Back to Top](#top)
 <hr>
-
-## Directories and Navigation<a name="dirs-and-nav"></a>
-
-In unix, everything is a file, which can be confusing at first. The locations for where files are stored are also called directories (which is equivalent to folders). To find out where you are in the system, use the `pwd` command, which prints the full path to the current/working directory:
-```
-[username@login02 ~]$ pwd
-/home/username
-```
-To see what are the contents of the directory, use the file listing command `ls`
-```
-[username@login02 ~]$ ls
-filelisting.txt intel   loadgccomgnuenv.sh  loadgnuenv.sh	loadintelenv.sh  tools
-```
-In every Unix directory, there are \"hidden\" files (just like on Macs and Windows machines), to see them, run the `ls -a` command:
-```
-[username@login02 ~]$ ls -a
-.	.bash_history  .bashrc	 .gitconfig  loadgccomgnuenv.sh  .ncviewrc     .ssh	 .vimrc
-..	.bash_logout   .config filelisting.txt	 intel	     loadgnuenv.sh	 .petscconfig  tools	 .Xauthority
-.alias	.bash_profile    .kshrc      loadintelenv.sh	 .slurm        .viminfo
-```
-In Unix, sometimes it is hard tell if a file is also a directory. To see file details (including timestamp and size), run the `ls -l` command:
-```
-[username@login02 ~]$ ls -l
--rw-r--r-- 1 username abc123 1543 Jul 17 21:04 filelisting.txt
-drwxr-xr-x 3 username abc123   3 Jun 22  2023 intel
--rwx------ 1 username abc123 101 Jun 27  2023 loadgccomgnuenv.sh
--rwx------ 1 username abc123  77 Oct 16  2023 loadgnuenv.sh
--rwxr-xr-x 1 username abc123 125 Oct 16  2023 loadintelenv.sh
-drwxr-xr-x 2 username abc123   4 Jun 30  2023 tools
-```
-You can combine the two commands above and use it to see the full directory and file information:
-```
-[username@login02 ~]$ ls -al
-total 166
-drwx------   7 username abc123    23 Jul 17 19:33 .
-drwxr-xr-x 143 root    root       0 Jul 17 20:01 ..
--rw-r--r--   1 username abc123  2487 Jun 23  2023 .alias
--rw-------   1 username abc123 14247 Jul 17 12:11 .bash_history
--rw-r--r--   1 username abc123    18 Jun 19  2023 .bash_logout
--rw-r--r--   1 username abc123   176 Jun 19  2023 .bash_profile
--rw-r--r--   1 username abc123   159 Jul 17 18:24 .bashrc
-drwx------   3 username abc123     3 Oct 23  2023 .config
--rw-r--r--   1 username abc123  1543 Jul 17 21:04 filelisting.txt
--rw-r--r--   1 username abc123  1641 Jun 22  2023 .gccomrc
--rw-r--r--   1 username abc123   245 Jun 28  2023 .gitconfig
-drwxr-xr-x   3 username abc123     3 Jun 22  2023 intel
--rw-r--r--   1 username abc123   171 Jun 19  2023 .kshrc
--rwx------   1 username abc123   101 Jun 27  2023 loadgccomgnuenv.sh
--rwx------   1 username abc123    77 Oct 16  2023 loadgnuenv.sh
--rwxr-xr-x   1 username abc123   125 Oct 16  2023 loadintelenv.sh
-[snip extra lines]
-```
-There are several things to notice in the above listing: the first column of data is information about the file "permissions\", which controls who can see/read/modify what files (`r`=read, `w`=write,`x`=execute,`-`=no permission); the next 2 columns are the username and groupID; the 3rd and 4th columns are the size and date. This is discussed in more detail in the [Permissions](#permissions) section below. Also, note that two files have `dots` for their names: in unix the "dot" is a component of a filename. When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an `ls` will not normally show. But also, the single dot, `.` represents the current working directory, and the double dots, `..` represent the directory above. You use these as arguments to unix commands dealing with directories.
-
-There are simple Linux commands to create and remove directories, and to populate the directories.
-To create a directory, use the `mkdir`, make directory command:
-```
-[username@login02 ~]$ mkdir testdir
-[username@login02 ~]$ ls -l
-total 12
-drwxr-xr-x 3 username abc123   3 Jun 22  2023 intel
--rwx------ 1 username abc123 101 Jun 27  2023 loadgccomgnuenv.sh
--rwx------ 1 username abc123  77 Oct 16  2023 loadgnuenv.sh
--rwxr-xr-x 1 username abc123 125 Oct 16  2023 loadintelenv.sh
-drwxr-xr-x 2 username abc123   2 Jul 17 20:49 testdir
-drwxr-xr-x 2 username abc123   4 Jun 30  2023 tools
-```
-To move into that directory, use the `cd`, change directory command:
-```
-[username@login02 ~]$ cd testdir/
-[username@login02 testdir]$ ls -al
-total 20
-drwxr-xr-x 2 username abc123  2 Jul 17 20:49 .
-drwxr-x--- 9 username abc123 25 Jul 17 20:49 ..
-[username@login02 testdir]$
-```
-From this directory, you can use the `..` command to see the contents of the directory above:
-
-```
-[username@login02 testdir]$ ls -l ..
-[username@login02 testdir]$ /bin/ls -l ..
-total 22
-drwxr-xr-x 4 username abc123    5 Jul 17 20:43 expanse-examples
--rw-r--r-- 1 username abc123 1543 Jul 17 21:04 filelisting.txt
-drwxr-xr-x 3 username abc123    3 Jun 22  2023 intel
--rwx------ 1 username abc123  101 Jun 27  2023 loadgccomgnuenv.sh
--rwx------ 1 username abc123   77 Oct 16  2023 loadgnuenv.sh
--rwxr-xr-x 1 username abc123  125 Oct 16  2023 loadintelenv.sh
-drwxr-xr-x 2 username abc123    4 Jul 17 20:53 testdir
-drwxr-xr-x 2 username abc123    4 Jun 30  2023 tools
-```
-To remove files and directories there are different mechanisms, depending on whether or not the directory is empty or contains files. For this example, we'll create three directories using the `mkdir` command, populate some testfiles using the `touch` command, and then try to delete the directories using either the `rmdir` or `rm` commands.
-```
-[mthomas@login01 testdir]$ mkdir dir1
-[mthomas@login01 testdir]$ mkdir dir2
-[mthomas@login01 testdir]$ mkdir dir3
-[mthomas@login01 testdir]$ ll
-total 71
-drwxr-xr-x  5 mthomas use300  5 Jan 17 22:11 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir1
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
-```
-Next, create some testfiles using the `touch` command:
-```
-[mthomas@login01 testdir]$ touch f1
-[mthomas@login01 testdir]$ touch f2
-[mthomas@login01 testdir]$ touch f3
-[mthomas@login01 testdir]$ touch dir2/file1
-[mthomas@login01 testdir]$ touch dir2/file2
-[mthomas@login01 testdir]$ touch dir2/file3
-[mthomas@login01 testdir]$ ls -al
-total 90
-drwxr-xr-x  5 mthomas use300  8 Jan 17 22:23 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f3
-[mthomas@login01 testdir]$ ls -al dir2
-total 3
-drwxr-xr-x 2 mthomas use300 5 Jan 17 22:17 .
-drwxr-xr-x 4 mthomas use300 4 Jan 17 22:12 ..
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file1
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file2
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:17 file3
-```
-For a file, we use the remove, `rm` command:
-```
-[mthomas@login01 testdir]$ 
-[mthomas@login01 testdir]$ rm f3
-[mthomas@login01 testdir]$ ll -al
-total 72
-drwxr-xr-x  5 mthomas use300  7 Jan 17 22:31 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
-
-```
-For an *empty* directory, we can use the `rmdir` command:
-```
-[mthomas@login01 testdir]$ ls -al dir1
-total 1
-drwxr-xr-x 2 mthomas use300 2 Jan 17 22:11 .
-drwxr-xr-x 5 mthomas use300 5 Jan 17 22:11 ..
-[mthomas@login01 testdir]$ rm dir1
-rm: cannot remove 'dir1': Is a directory
-[mthomas@login01 testdir]$ rmdir dir1
-[mthomas@login01 testdir]$ ll
-total 71
-drwxr-xr-x  4 mthomas use300  4 Jan 17 22:12 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
-
-```
-If the directory has contents (files or subdirectories), you use the 'rm' command with arguments to *force* the removal of the directory and all of its contents:
-```
-[mthomas@login01 testdir]$ ll dir3
-total 3
-drwxr-xr-x 2 mthomas use300 5 Jan 17 22:18 .
-drwxr-xr-x 5 mthomas use300 7 Jan 17 22:31 ..
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file31
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file32
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file33
-[mthomas@login01 testdir]$ rmdir dir3
-rmdir: failed to remove 'dir3': Directory not empty
-[mthomas@login01 testdir]$ rm dir3
-rm: cannot remove 'dir3': Is a directory
-[mthomas@login01 testdir]$ rm -f dir3
-rm: cannot remove 'dir3': Is a directory
-[mthomas@login01 testdir]$ rm -rf dir3
-[mthomas@login01 testdir]$ ls -al
-total 72
-drwxr-xr-x  4 mthomas use300  6 Jan 17 23:01 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
-```
-
-[Back to Top](#top)
-<hr>
-
 ## <a name="copydir">Copying directories</a>
 
 A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Expanse, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. Suppose you are interested in working with one of the files or directories in the /share/apps/examples/ directory.
