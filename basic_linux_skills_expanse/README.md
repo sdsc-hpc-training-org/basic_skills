@@ -484,7 +484,7 @@ To copy a file from another directory  to the current directory, use the full pa
 [username@login02 testdir]$ cp ../filelisting.txt .
 [username@login02 testdir]$ ls -l
 total 11
--rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 username abc123 322 Jul 17 21:09 filelisting.txt
 -rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
 -rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile2.txt
 ```
@@ -501,14 +501,57 @@ total 11
 ```
 To delete a file, use the `rm` (remove command):
 
-```java
+```
 [username@login02 testdir]$ rm myfile1.txt
 [username@login02 testdir]$  ls -l
 total 10
 -rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
 -rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
 ```
-You can examine the contents of a file by using several Linux commands. 
+You can examine the contents of a file by using several Linux commands. First, we'll create a small file for testing:
+```
+[mthomas@login01 testdir]$ ls -al > dirlist.txt
+[mthomas@login01 testdir]$ ls -al
+total 88
+drwxr-xr-x  2 mthomas use300   5 Jan 17 23:49 .
+drwxr-x--- 51 mthomas use300  93 Jan 17 23:46 ..
+-rw-r--r--  1 mthomas use300 284 Jan 17 23:49 dirlist.txt
+-rw-r--r--  1 mthomas use300 322 Jan 17 23:42 filelisting.txt
+-rw-r--r--  1 mthomas use300   0 Jan 17 23:42 newfile.txt
+```
+
+To print out the contents of the entire file, use the `cat` command (cat - concatenate files and print on the standard output):
+```
+ 
+[mthomas@login01 testdir]$ cat dirlist.txt 
+total 80
+drwxr-xr-x  2 mthomas use300   5 Jan 17 23:49 .
+drwxr-x--- 51 mthomas use300  93 Jan 17 23:46 ..
+-rw-r--r--  1 mthomas use300   0 Jan 17 23:49 dirlist.txt
+-rw-r--r--  1 mthomas use300 322 Jan 17 23:42 filelisting.txt
+-rw-r--r--  1 mthomas use300   0 Jan 17 23:42 newfile.txt
+
+```
+The contents of a file may be too large to see at one time, to see how large it is we can run the `wc`, word count command:
+```
+[mthomas@login01 testdir]$ cat filelisting.txt | wc
+     45      45     322
+```
+The output says that the file has 45 lines, with 45 words and 322 characters.
+We might want to look at the beginning (head) or end (tail):
+```
+[mthomas@login01 testdir]$ head -n 3 filelisting.txt 
+abaqus
+abinit
+alphafold
+[mthomas@login01 testdir]$ tail -n 4 filelisting.txt 
+vasp-ase
+visit
+wannier90
+xpmem
+```
+
+
 
 [Back to Top](#top)
 <hr>
