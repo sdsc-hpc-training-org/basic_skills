@@ -146,7 +146,9 @@ total 10
 
 [Back to Top](#top)
 <hr>
-## <a name="dirs-and-nav">Directories and Navigation</a>
+
+## Directories and Navigation<a name="dirs-and-nav"></a>
+
 In unix, everything is a file, which can be confusing at first. The locations for where files are stored are also called directories (which is equivalent to folders). To find out where you are in the system, use the `pwd` command, which prints the full path to the current/working directory:
 ```
 [username@login02 ~]$ pwd
