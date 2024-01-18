@@ -293,57 +293,7 @@ drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
 [Back to Top](#top)
 <hr>
 
-## <a name="files">Manipulating Files</a>
-
-This section will show you more ways to manipulate files: copying, listing, deleting and renaming, and examining contents
-In the section above, we created files using the `touch` commmand, which will create a file with no contents. First we'll return to the first `testdir` using the `full directory path`:
-```
-[mthomas@login01 testdir2]$ cd /home/mthomas/testdir
-[username@login02 testdir]$ touch myfile1.txt
-[username@login02 testdir]$ touch myfile2.txt
-[username@login02 testdir]$ ls -l
-total 21
-drwxr-xr-x 2 username abc123  4 Jul 17 20:53 .
-drwxr-x--- 9 username abc123 25 Jul 17 20:49 ..
--rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile2.txt
-```
-
-To copy a file from another directory  to the current directory, use the full path. In this example, we will copy the _filelisting.txt_ file from the directory above, using the `..` (\"dot-dot\") variable for the directory location:
-
-```java
-[username@login02 testdir]$ cp ../filelisting.txt .
-[username@login02 testdir]$ ls -l
-total 11
--rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile2.txt
-```
-
-To rename a file, use the `mv` (move) command:
-
-```java
-[username@login02 testdir]$ mv myfile2.txt newfile.txt
-[username@login02 testdir]$ ls -l
-total 11
--rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
-```
-To delete a file, use the `rm` (remove command):
-
-```java
-[username@login02 testdir]$ rm myfile1.txt
-[username@login02 testdir]$  ls -l
-total 10
--rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
--rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
-```
-You can examine the contents of a file by using several Linux commands. 
-
-[Back to Top](#top)
-<hr>
-## <a name="copydir">Copying directories</a>
+## Copying directories<a name="copydir"></a>
 
 A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Expanse, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. Suppose you are interested in working with one of the files or directories in the /share/apps/examples/ directory.
 
@@ -511,6 +461,58 @@ drwxr-xr-x 4 username abc123      5 Jul 17 20:43 ..
 
 [Back to Top](#top)
 <hr>
+
+## <a name="files">Manipulating Files</a>
+
+This section will show you more ways to manipulate files: copying, listing, deleting and renaming, and examining contents
+In the section above, we created files using the `touch` commmand, which will create a file with no contents. First we'll return to the first `testdir` using the `full directory path`:
+```
+[mthomas@login01 testdir2]$ cd /home/mthomas/testdir
+[username@login02 testdir]$ touch myfile1.txt
+[username@login02 testdir]$ touch myfile2.txt
+[username@login02 testdir]$ ls -l
+total 21
+drwxr-xr-x 2 username abc123  4 Jul 17 20:53 .
+drwxr-x--- 9 username abc123 25 Jul 17 20:49 ..
+-rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 username abc123  0 Jul 17 20:53 myfile2.txt
+```
+
+To copy a file from another directory  to the current directory, use the full path. In this example, we will copy the _filelisting.txt_ file from the directory above, using the `..` (\"dot-dot\") variable for the directory location:
+
+```java
+[username@login02 testdir]$ cp ../filelisting.txt .
+[username@login02 testdir]$ ls -l
+total 11
+-rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile2.txt
+```
+
+To rename a file, use the `mv` (move) command:
+
+```java
+[username@login02 testdir]$ mv myfile2.txt newfile.txt
+[username@login02 testdir]$ ls -l
+total 11
+-rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
+```
+To delete a file, use the `rm` (remove command):
+
+```java
+[username@login02 testdir]$ rm myfile1.txt
+[username@login02 testdir]$  ls -l
+total 10
+-rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
+```
+You can examine the contents of a file by using several Linux commands. 
+
+[Back to Top](#top)
+<hr>
+
 
 ## <a name="permissions">Permissions</a>
 In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a 2023 member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
