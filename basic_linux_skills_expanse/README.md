@@ -7,15 +7,15 @@ When you log on to Expanse, your computer operating system will be a Linux or Un
 
 Basic Linux skills are necessary to complete the hands-on exercises. If it’s been a while since you’ve worked in a Linux environment, be sure to reacquaint yourself with the following topic (many of which are demonstrated below)s: copying, listing, deleting and renaming files; using wildcards; navigating directories; changing file permissions; setting environment variables; using common utilities (grep, cat, less, head, sort, tar, gzip). A nice tutorial can be found here http://www.ee.surrey.ac.uk/Teaching/Unix/. You should also be comfortable with one of the standard Linux editors, such as vim, emacs, or nano.
 
-You should also be comfortable with one of the standard Linux editors, such as `vim`, `emacs`, or `nano`.
-
 Notes:
 * For the examples below, we are using the `bash` shell, which is the default shell for new accounts on Expanse. For the purposes of following SDSC tutorials and exercises, please do not change the shell.
 * For any Linux command, you can find out what it does by asking for help. The syntax is usually
   * `command` --help  
   * man `command`  --> invokes a user guide or manual
   * search the web using google or some other search engine
-
+* In Linux/Unix, everything is a file: a text file, a directory, even the output for a command
+* Linux/Unix is case sensitive.
+  
 <a name="top">**Examples::**
 * [Basic Environment](#basic-env)
 * [Directories and Navigation](#dirs-and-nav)
@@ -192,102 +192,102 @@ drwxr-xr-x 2 username abc123    4 Jun 30  2023 tools
 ```
 To remove files and directories there are different mechanisms, depending on whether or not the directory is empty or contains files. For this example, we create a new directory, `testdir2`, we'll create three directories using the `mkdir` command, populate some testfiles using the `touch` command, and then try to delete the directories using either the `rmdir` or `rm` commands.
 ```
-[mthomas@login01 testdir]$cd ..
-[mthomas@login01 testdir]$ mkdir testdir2
-[mthomas@login01 testdir]$ cd testdir2
-[mthomas@login01 testdir2]$ mkdir dir1
-[mthomas@login01 testdir2]$ mkdir dir2
-[mthomas@login01 testdir2]$ mkdir dir3
-[mthomas@login01 testdir2]$ ll
+[username@login01 testdir]$cd ..
+[username@login01 testdir]$ mkdir testdir2
+[username@login01 testdir]$ cd testdir2
+[username@login01 testdir2]$ mkdir dir1
+[username@login01 testdir2]$ mkdir dir2
+[username@login01 testdir2]$ mkdir dir3
+[username@login01 testdir2]$ ll
 total 71
-drwxr-xr-x  5 mthomas use300  5 Jan 17 22:11 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir1
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
+drwxr-xr-x  5 username use300  5 Jan 17 22:11 .
+drwxr-x--- 50 username use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 username use300  2 Jan 17 22:11 dir1
+drwxr-xr-x  2 username use300  2 Jan 17 22:11 dir2
+drwxr-xr-x  2 username use300  2 Jan 17 22:11 dir3
 ```
 Next, create some testfiles using the `touch` command:
 ```
-[mthomas@login01 testdir2]$ touch f1
-[mthomas@login01 testdir2]$ touch f2
-[mthomas@login01 testdir2]$ touch f3
-[mthomas@login01 testdir2]$ touch dir2/file1
-[mthomas@login01 testdir2]$ touch dir2/file2
-[mthomas@login01 testdir2]$ touch dir2/file3
-[mthomas@login01 testdir2]$ ls -al
+[username@login01 testdir2]$ touch f1
+[username@login01 testdir2]$ touch f2
+[username@login01 testdir2]$ touch f3
+[username@login01 testdir2]$ touch dir2/file1
+[username@login01 testdir2]$ touch dir2/file2
+[username@login01 testdir2]$ touch dir2/file3
+[username@login01 testdir2]$ ls -al
 total 90
-drwxr-xr-x  5 mthomas use300  8 Jan 17 22:23 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f3
-[mthomas@login01 testdir2]$ ls -al dir2
+drwxr-xr-x  5 username use300  8 Jan 17 22:23 .
+drwxr-x--- 50 username use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 username use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 username use300  5 Jan 17 22:17 dir2
+drwxr-xr-x  2 username use300  5 Jan 17 22:18 dir3
+-rw-r--r--  1 username use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 username use300  0 Jan 17 22:23 f2
+-rw-r--r--  1 username use300  0 Jan 17 22:23 f3
+[username@login01 testdir2]$ ls -al dir2
 total 3
-drwxr-xr-x 2 mthomas use300 5 Jan 17 22:17 .
-drwxr-xr-x 4 mthomas use300 4 Jan 17 22:12 ..
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file1
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file2
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:17 file3
+drwxr-xr-x 2 username use300 5 Jan 17 22:17 .
+drwxr-xr-x 4 username use300 4 Jan 17 22:12 ..
+-rw-r--r-- 1 username use300 0 Jan 17 22:16 file1
+-rw-r--r-- 1 username use300 0 Jan 17 22:16 file2
+-rw-r--r-- 1 username use300 0 Jan 17 22:17 file3
 ```
 For a file, we use the remove, `rm` command:
 ```
-[mthomas@login01 testdir2]$ 
-[mthomas@login01 testdir2]$ rm f3
-[mthomas@login01 testdir2]$ ll -al
+[username@login01 testdir2]$ 
+[username@login01 testdir2]$ rm f3
+[username@login01 testdir2]$ ll -al
 total 72
-drwxr-xr-x  5 mthomas use300  7 Jan 17 22:31 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
+drwxr-xr-x  5 username use300  7 Jan 17 22:31 .
+drwxr-x--- 50 username use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 username use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 username use300  5 Jan 17 22:17 dir2
+drwxr-xr-x  2 username use300  5 Jan 17 22:18 dir3
+-rw-r--r--  1 username use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 username use300  0 Jan 17 22:23 f2
 
 ```
 For an *empty* directory, we can use the `rmdir` command:
 ```
-[mthomas@login01 testdir2]$ ls -al dir1
+[username@login01 testdir2]$ ls -al dir1
 total 1
-drwxr-xr-x 2 mthomas use300 2 Jan 17 22:11 .
-drwxr-xr-x 5 mthomas use300 5 Jan 17 22:11 ..
-[mthomas@login01 testdir2]$ rm dir1
+drwxr-xr-x 2 username use300 2 Jan 17 22:11 .
+drwxr-xr-x 5 username use300 5 Jan 17 22:11 ..
+[username@login01 testdir2]$ rm dir1
 rm: cannot remove 'dir1': Is a directory
-[mthomas@login01 testdir2]$ rmdir dir1
-[mthomas@login01 testdir2]$ ll
+[username@login01 testdir2]$ rmdir dir1
+[username@login01 testdir2]$ ll
 total 71
-drwxr-xr-x  4 mthomas use300  4 Jan 17 22:12 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
-drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
+drwxr-xr-x  4 username use300  4 Jan 17 22:12 .
+drwxr-x--- 50 username use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 username use300  2 Jan 17 22:11 dir2
+drwxr-xr-x  2 username use300  2 Jan 17 22:11 dir3
 
 ```
 If the directory has contents (files or subdirectories), you use the 'rm' command with arguments to *force* the removal of the directory and all of its contents:
 ```
-[mthomas@login01 testdir2]$ ll dir3
+[username@login01 testdir2]$ ll dir3
 total 3
-drwxr-xr-x 2 mthomas use300 5 Jan 17 22:18 .
-drwxr-xr-x 5 mthomas use300 7 Jan 17 22:31 ..
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file31
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file32
--rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file33
-[mthomas@login01 testdir2]$ rmdir dir3
+drwxr-xr-x 2 username use300 5 Jan 17 22:18 .
+drwxr-xr-x 5 username use300 7 Jan 17 22:31 ..
+-rw-r--r-- 1 username use300 0 Jan 17 22:18 file31
+-rw-r--r-- 1 username use300 0 Jan 17 22:18 file32
+-rw-r--r-- 1 username use300 0 Jan 17 22:18 file33
+[username@login01 testdir2]$ rmdir dir3
 rmdir: failed to remove 'dir3': Directory not empty
-[mthomas@login01 testdir2]$ rm dir3
+[username@login01 testdir2]$ rm dir3
 rm: cannot remove 'dir3': Is a directory
-[mthomas@login01 testdir2]$ rm -f dir3
+[username@login01 testdir2]$ rm -f dir3
 rm: cannot remove 'dir3': Is a directory
-[mthomas@login01 testdir2]$ rm -rf dir3
-[mthomas@login01 testdir2]$ ls -al
+[username@login01 testdir2]$ rm -rf dir3
+[username@login01 testdir2]$ ls -al
 total 72
-drwxr-xr-x  4 mthomas use300  6 Jan 17 23:01 .
-drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
-drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
--rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
+drwxr-xr-x  4 username use300  6 Jan 17 23:01 .
+drwxr-x--- 50 username use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 username use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 username use300  5 Jan 17 22:17 dir2
+-rw-r--r--  1 username use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 username use300  0 Jan 17 22:23 f2
 ```
 
 [Back to Top](#top)
@@ -467,7 +467,7 @@ drwxr-xr-x 4 username abc123      5 Jul 17 20:43 ..
 This section will show you more ways to manipulate files: copying, listing, deleting and renaming, and examining contents
 In the section above, we created files using the `touch` commmand, which will create a file with no contents. First we'll return to the first `testdir` using the `full directory path`:
 ```
-[mthomas@login01 testdir2]$ cd /home/mthomas/testdir
+[username@login01 testdir2]$ cd /home/username/testdir
 [username@login02 testdir]$ touch myfile1.txt
 [username@login02 testdir]$ touch myfile2.txt
 [username@login02 testdir]$ ls -l
@@ -507,48 +507,76 @@ To delete a file, use the `rm` (remove command):
 total 10
 -rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
 -rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
--rw-r--r-- 1 mthomas use300 1410 Jan 18 00:00 sdsc.txt
+-rw-r--r-- 1 username use300 1410 Jan 18 00:00 sdsc.txt
 ```
 You can examine the contents of a file by using several Linux commands. First, we'll create a small file for testing:
 ```
-[mthomas@login01 testdir]$ ls -al > dirlist.txt
-[mthomas@login01 testdir]$ ls -al
+[username@login01 testdir]$ ls -al > dirlist.txt
+[username@login01 testdir]$ ls -al
 total 88
-drwxr-xr-x  2 mthomas use300   5 Jan 17 23:49 .
-drwxr-x--- 51 mthomas use300  93 Jan 17 23:46 ..
--rw-r--r--  1 mthomas use300 284 Jan 17 23:49 dirlist.txt
--rw-r--r--  1 mthomas use300 322 Jan 17 23:42 filelisting.txt
--rw-r--r--  1 mthomas use300   0 Jan 17 23:42 newfile.txt
--rw-r--r-- 1 mthomas use300 1410 Jan 18 00:00 sdsc.txt
+drwxr-xr-x  2 username use300   5 Jan 17 23:49 .
+drwxr-x--- 51 username use300  93 Jan 17 23:46 ..
+-rw-r--r--  1 username use300 284 Jan 17 23:49 dirlist.txt
+-rw-r--r--  1 username use300 322 Jan 17 23:42 filelisting.txt
+-rw-r--r--  1 username use300   0 Jan 17 23:42 newfile.txt
+-rw-r--r-- 1 username use300 1410 Jan 18 00:00 sdsc.txt
 ```
 
 To print out the contents of the entire file, use the `cat` command (cat - concatenate files and print on the standard output):
 ```
- 
-[mthomas@login01 testdir]$ cat dirlist.txt 
-total 80
-drwxr-xr-x  2 mthomas use300   5 Jan 17 23:49 .
-drwxr-x--- 51 mthomas use300  93 Jan 17 23:46 ..
--rw-r--r--  1 mthomas use300   0 Jan 17 23:49 dirlist.txt
--rw-r--r--  1 mthomas use300 322 Jan 17 23:42 filelisting.txt
--rw-r--r--  1 mthomas use300   0 Jan 17 23:42 newfile.txt
--rw-r--r-- 1 mthomas use300 1410 Jan 18 00:00 sdsc.txt
+[username@login01 testdir]$ cat sdsc.txt
+The San Diego Supercomputer Center (SDSC) was established as one of the nation’s first supercomputer centers under a cooperative agreement by the National Science Foundation (NSF) in collaboration with UC San Diego and General Atomics (GA) Technologies. SDSC first opened its doors on November 14, 1985.
+
+For more than 35 years, it has grown and stewarded its national reputation as a pioneer and leader in high-performance and data-intensive computing and cyberinfrastructure. Located on the campus of UC San Diego, SDSC provides resources, services and expertise to the national research community including industry and academia.
+
+Cyberinfrastructure refers to an accessible, integrated network of computer-based resources and expertise, focused on accelerating scientific inquiry and discovery. With Voyager and Expanse, SDSC’s latest supercomputing resources, the center supports hundreds of multidisciplinary programs spanning a wide range of science themes—from earth sciences and biology to astrophysics, bioinformatics and health IT.
+
+SDSC participates in Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) and was a partner in eXtreme Science and Engineering Discovery Environment (XSEDE), two of the most advanced collections of integrated digital resources and services in the world.
+
+For general inquiries and comments: info@sdsc.edu
+SDSC website: www.sdsc.edu
+
 ```
 The contents of a file may be too large to see at one time, to see how large it is we can run the `wc`, word count command:
 ```
-[mthomas@login01 testdir]$ wc ../README.md 
+[username@login01 testdir]$ wc ../README.md 
   644  4531 30519 ../README.md
 ```
 The output says that README file has 644 lines, 4531 words, and 30519 characters.
 We might want to look at the beginning (head) or end (tail):
 ```
-[mthomas@login01 testdir]$ head -n 1 sdsc.txt 
+[username@login01 testdir]$ head -n 1 sdsc.txt 
 The San Diego Supercomputer Center (SDSC) was established as one of the nation’s first supercomputer centers under a cooperative agreement by the National Science Foundation (NSF) in collaboration with UC San Diego and General Atomics (GA) Technologies. SDSC first opened its doors on November 14, 1985.
-[mthomas@login01 testdir]$
-[mthomas@login01 testdir]$ tail -n 2 sdsc.txt 
+[username@login01 testdir]$
+[username@login01 testdir]$ tail -n 2 sdsc.txt 
 For general inquiries and comments: info@sdsc.edu
 SDSC website: www.sdsc.edu
 ```
+
+You can reorder the contents of a file using the `sort` command:
+```
+[mthomas@login01 testdir]$ sort sdsc.txt
+Cyberinfrastructure refers to an accessible, integrated network of computer-based resources and expertise, focused on accelerating scientific inquiry and discovery. With Voyager and Expanse, SDSC’s latest supercomputing resources, the center supports hundreds of multidisciplinary programs spanning a wide range of science themes—from earth sciences and biology to astrophysics, bioinformatics and health IT.
+For general inquiries and comments: info@sdsc.edu
+For more than 35 years, it has grown and stewarded its national reputation as a pioneer and leader in high-performance and data-intensive computing and cyberinfrastructure. Located on the campus of UC San Diego, SDSC provides resources, services and expertise to the national research community including industry and academia.
+SDSC participates in Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) and was a partner in eXtreme Science and Engineering Discovery Environment (XSEDE), two of the most advanced collections of integrated digital resources and services in the world.
+SDSC website: www.sdsc.edu
+The San Diego Supercomputer Center (SDSC) was established as one of the nation’s first supercomputer centers under a cooperative agreement by the National Science Foundation (NSF) in collaboration with UC San Diego and General Atomics (GA) Technologies. SDSC first opened its doors on November 14, 1985.
+```
+The `sort` command is useful for sorting through a long file and reording data.
+
+To search a file for a string you can use the `grep` command:
+
+```
+[mthomas@login01 testdir]$ grep -ni SDSC sdsc.txt 
+1:The San Diego Supercomputer Center (SDSC) was established as one of the nation’s first supercomputer centers under a cooperative agreement by the National Science Foundation (NSF) in collaboration with UC San Diego and General Atomics (GA) Technologies. SDSC first opened its doors on November 14, 1985.
+3:For more than 35 years, it has grown and stewarded its national reputation as a pioneer and leader in high-performance and data-intensive computing and cyberinfrastructure. Located on the campus of UC San Diego, SDSC provides resources, services and expertise to the national research community including industry and academia.
+5:Cyberinfrastructure refers to an accessible, integrated network of computer-based resources and expertise, focused on accelerating scientific inquiry and discovery. With Voyager and Expanse, SDSC’s latest supercomputing resources, the center supports hundreds of multidisciplinary programs spanning a wide range of science themes—from earth sciences and biology to astrophysics, bioinformatics and health IT.
+7:SDSC participates in Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) and was a partner in eXtreme Science and Engineering Discovery Environment (XSEDE), two of the most advanced collections of integrated digital resources and services in the world.
+9:For general inquiries and comments: info@sdsc.edu
+10:SDSC website: www.sdsc.edu
+```
+In the command above, we used the `grep -ni` argument to get the line number, and to ignore case. 
 
 [Back to Top](#top)
 <hr>
