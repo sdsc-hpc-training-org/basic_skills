@@ -507,6 +507,7 @@ To delete a file, use the `rm` (remove command):
 total 10
 -rw-r--r-- 1 username abc123 1543 Jul 17 21:09 filelisting.txt
 -rw-r--r-- 1 username abc123    0 Jul 17 20:53 newfile.txt
+-rw-r--r-- 1 mthomas use300 1410 Jan 18 00:00 sdsc.txt
 ```
 You can examine the contents of a file by using several Linux commands. First, we'll create a small file for testing:
 ```
@@ -518,6 +519,7 @@ drwxr-x--- 51 mthomas use300  93 Jan 17 23:46 ..
 -rw-r--r--  1 mthomas use300 284 Jan 17 23:49 dirlist.txt
 -rw-r--r--  1 mthomas use300 322 Jan 17 23:42 filelisting.txt
 -rw-r--r--  1 mthomas use300   0 Jan 17 23:42 newfile.txt
+-rw-r--r-- 1 mthomas use300 1410 Jan 18 00:00 sdsc.txt
 ```
 
 To print out the contents of the entire file, use the `cat` command (cat - concatenate files and print on the standard output):
@@ -530,25 +532,30 @@ drwxr-x--- 51 mthomas use300  93 Jan 17 23:46 ..
 -rw-r--r--  1 mthomas use300   0 Jan 17 23:49 dirlist.txt
 -rw-r--r--  1 mthomas use300 322 Jan 17 23:42 filelisting.txt
 -rw-r--r--  1 mthomas use300   0 Jan 17 23:42 newfile.txt
-
+-rw-r--r-- 1 mthomas use300 1410 Jan 18 00:00 sdsc.txt
 ```
 The contents of a file may be too large to see at one time, to see how large it is we can run the `wc`, word count command:
 ```
-[mthomas@login01 testdir]$ cat filelisting.txt | wc
-     45      45     322
+[mthomas@login01 testdir]$ wc ../README.md 
+  644  4531 30519 ../README.md
 ```
-The output says that the file has 45 lines, with 45 words and 322 characters.
+The output says that README file has 644 lines, 4531 words, and 30519 characters.
 We might want to look at the beginning (head) or end (tail):
 ```
-[mthomas@login01 testdir]$ head -n 3 filelisting.txt 
-abaqus
-abinit
-alphafold
-[mthomas@login01 testdir]$ tail -n 4 filelisting.txt 
-vasp-ase
-visit
-wannier90
-xpmem
+[mthomas@login01 testdir]$ head -n 1 sdsc.txt 
+The San Diego Supercomputer Center (SDSC) was established as one of the nation’s first supercomputer centers under a cooperative agreement by the National Science Foundation (NSF) in collaboration with UC San Diego and General Atomics (GA) Technologies. SDSC first opened its doors on November 14, 1985.
+[mthomas@login01 testdir]$
+[mthomas@login01 testdir]$ tail -n 2 sdsc.txt 
+For general inquiries and comments: info@sdsc.edu
+SDSC website: www.sdsc.edu
+```
+
+[Back to Top](#top)
+<hr>
+
+## <a name="common-utilities">Other Common Utilities</a>
+Other utilities to add to tutorial: less, sort, tar, gzip ,and pigz
+
 ```
 
 
@@ -558,7 +565,7 @@ xpmem
 
 
 ## <a name="permissions">Permissions</a>
-In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a 2023 member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
+In the section we will look breifly at how to set file permissions. Before you can change the file permissions, you need to own it or have permission as a 2023 member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
 
 ```
 [username@login02 OPENMP]$ ls -l hello_openmp
@@ -640,5 +647,6 @@ In the example below, we use the star wildcard to list all files ending in `.out
 [Back to Top](#top)
 <hr>
 
-## <a name="common-utilities">Common Utilities</a>
- common utilities: grep, cat, less, head, sort, tar, gzip ,and pigz
+## <a name="common-utilities">Other Utilities</a>
+ Other
+ utilities: grep,  sort, tar, gzip ,and pigz
