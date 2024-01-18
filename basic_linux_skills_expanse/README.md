@@ -145,7 +145,8 @@ drwxr-xr-x   3 username abc123     3 Jun 22  2023 intel
 ```
 There are several things to notice in the above listing: the first column of data is information about the file "permissions\", which controls who can see/read/modify what files (`r`=read, `w`=write,`x`=execute,`-`=no permission); the next 2 columns are the username and groupID; the 3rd and 4th columns are the size and date. This is discussed in more detail in the [Permissions](#permissions) section below. Also, note that two files have `dots` for their names: in unix the "dot" is a component of a filename. When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an `ls` will not normally show. But also, the single dot, `.` represents the current working directory, and the double dots, `..` represent the directory above. You use these as arguments to unix commands dealing with directories.
 
-To create directories, use the `mkdir`, make directory command:
+There are simple Linux commands to create and remove directories, and to populate the directories.
+To create a directory, use the `mkdir`, make directory command:
 ```
 [username@login02 ~]$ mkdir testdir
 [username@login02 ~]$ ls -l
@@ -180,6 +181,29 @@ drwxr-xr-x 3 username abc123    3 Jun 22  2023 intel
 -rwxr-xr-x 1 username abc123  125 Oct 16  2023 loadintelenv.sh
 drwxr-xr-x 2 username abc123    4 Jul 17 20:53 testdir
 drwxr-xr-x 2 username abc123    4 Jun 30  2023 tools
+```
+To remove directories there are two mechanisms, depending on whether or not the directory is empty or contains files. For this example, we'll create three directories using the `mkdir` command, populate some testfiles using the `touch` command, and then try to delete the directories.
+
+For an empty directory, use the `rmdir` command:
+```
+[mthomas@login01 testdir]$ ls -al dir1
+total 1
+drwxr-xr-x 2 mthomas use300 2 Jan 17 22:11 .
+drwxr-xr-x 5 mthomas use300 5 Jan 17 22:11 ..
+[mthomas@login01 testdir]$ rm dir1
+rm: cannot remove 'dir1': Is a directory
+[mthomas@login01 testdir]$ rmdir dir1
+[mthomas@login01 testdir]$ ll
+total 71
+drwxr-xr-x  4 mthomas use300  4 Jan 17 22:12 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
+
+```
+If the directory has contents (files or subdirectories), you use the 'rm' command with arguments to force the removal of the directory and all of its contents:
+```
+fulldir
 ```
 
 [Back to Top](#top)
