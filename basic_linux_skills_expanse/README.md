@@ -3,7 +3,7 @@
 
 [//]: # ( Comment2 )
 
-When you log on to Expanse, your computer operating system will be a Unix shell. \"_A Unix shell is a command-line interpreter or shell that provides a traditional Unix-like command line user interface. This environment is very different from the easy to use GUI interfaces we have all become used in the Windows and MacOS systems_\" (https://en.wikipedia.org/wiki/Unix_shell).
+When you log on to Expanse, your computer operating system will be a Linux or Unix shell. \"_A Unix shell is a command-line interpreter or shell that provides a traditional Unix-like command line user interface. This environment is very different from the easy to use GUI interfaces we have all become used in the Windows and MacOS systems_\" (https://en.wikipedia.org/wiki/Unix_shell).
 
 Basic Linux skills are necessary to complete the hands-on exercises. If it’s been a while since you’ve worked in a Linux environment, be sure to reacquaint yourself with the following topic (many of which are demonstrated below)s: copying, listing, deleting and renaming files; using wildcards; navigating directories; changing file permissions; setting environment variables; using common utilities (grep, cat, less, head, sort, tar, gzip). A nice tutorial can be found here http://www.ee.surrey.ac.uk/Teaching/Unix/. You should also be comfortable with one of the standard Linux editors, such as vim, emacs, or nano.
 
@@ -11,6 +11,10 @@ You should also be comfortable with one of the standard Linux editors, such as `
 
 Notes:
 * For the examples below, we are using the `bash` shell, which is the default shell for new accounts on Expanse. For the purposes of following SDSC tutorials and exercises, please do not change the shell.
+* For any Linux command, you can find out what it does by asking for help. The syntax is usually
+  * `command` --help  
+  * man `command`  --> invokes a user guide or manual
+  * search the web using google or some other search engine
 
 <a name="top">**Examples::**
 * [Basic Environment](#basic-env)
@@ -182,9 +186,47 @@ drwxr-xr-x 3 username abc123    3 Jun 22  2023 intel
 drwxr-xr-x 2 username abc123    4 Jul 17 20:53 testdir
 drwxr-xr-x 2 username abc123    4 Jun 30  2023 tools
 ```
-To remove directories there are two mechanisms, depending on whether or not the directory is empty or contains files. For this example, we'll create three directories using the `mkdir` command, populate some testfiles using the `touch` command, and then try to delete the directories.
+To remove files and directories there are different mechanisms, depending on whether or not the directory is empty or contains files. For this example, we'll create three directories using the `mkdir` command, populate some testfiles using the `touch` command, and then try to delete the directories using either the `rmdir` or `rm` commands.
+```
+[mthomas@login01 testdir]$ mkdir dir1
+[mthomas@login01 testdir]$ mkdir dir2
+[mthomas@login01 testdir]$ mkdir dir3
+[mthomas@login01 testdir]$ ll
+total 71
+drwxr-xr-x  5 mthomas use300  5 Jan 17 22:11 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir1
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
+drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
+```
+Next, create some testfiles using the `touch` command:
+```
+[mthomas@login01 testdir]$ touch f1
+[mthomas@login01 testdir]$ touch f2
+[mthomas@login01 testdir]$ touch f3
+[mthomas@login01 testdir]$ touch dir2/file1
+[mthomas@login01 testdir]$ touch dir2/file2
+[mthomas@login01 testdir]$ touch dir2/file3
+[mthomas@login01 testdir]$ ls -al
+total 90
+drwxr-xr-x  5 mthomas use300  8 Jan 17 22:23 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f3
+[mthomas@login01 testdir]$ ls -al dir2
+total 3
+drwxr-xr-x 2 mthomas use300 5 Jan 17 22:17 .
+drwxr-xr-x 4 mthomas use300 4 Jan 17 22:12 ..
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file1
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file2
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:17 file3
+```
 
-For an empty directory, use the `rmdir` command:
+For an empty directory, we can use the `rmdir` command:
 ```
 [mthomas@login01 testdir]$ ls -al dir1
 total 1
