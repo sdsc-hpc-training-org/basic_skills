@@ -225,8 +225,22 @@ drwxr-xr-x 4 mthomas use300 4 Jan 17 22:12 ..
 -rw-r--r-- 1 mthomas use300 0 Jan 17 22:16 file2
 -rw-r--r-- 1 mthomas use300 0 Jan 17 22:17 file3
 ```
+For a file, we use the remove, `rm` command:
+```
+[mthomas@login01 testdir]$ 
+[mthomas@login01 testdir]$ rm f3
+[mthomas@login01 testdir]$ ll -al
+total 72
+drwxr-xr-x  5 mthomas use300  7 Jan 17 22:31 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:18 dir3
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
 
-For an empty directory, we can use the `rmdir` command:
+```
+For an *empty* directory, we can use the `rmdir` command:
 ```
 [mthomas@login01 testdir]$ ls -al dir1
 total 1
@@ -243,9 +257,30 @@ drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir2
 drwxr-xr-x  2 mthomas use300  2 Jan 17 22:11 dir3
 
 ```
-If the directory has contents (files or subdirectories), you use the 'rm' command with arguments to force the removal of the directory and all of its contents:
+If the directory has contents (files or subdirectories), you use the 'rm' command with arguments to *force* the removal of the directory and all of its contents:
 ```
-fulldir
+[mthomas@login01 testdir]$ ll dir3
+total 3
+drwxr-xr-x 2 mthomas use300 5 Jan 17 22:18 .
+drwxr-xr-x 5 mthomas use300 7 Jan 17 22:31 ..
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file31
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file32
+-rw-r--r-- 1 mthomas use300 0 Jan 17 22:18 file33
+[mthomas@login01 testdir]$ rmdir dir3
+rmdir: failed to remove 'dir3': Directory not empty
+[mthomas@login01 testdir]$ rm dir3
+rm: cannot remove 'dir3': Is a directory
+[mthomas@login01 testdir]$ rm -f dir3
+rm: cannot remove 'dir3': Is a directory
+[mthomas@login01 testdir]$ rm -rf dir3
+[mthomas@login01 testdir]$ ls -al
+total 72
+drwxr-xr-x  4 mthomas use300  6 Jan 17 23:01 .
+drwxr-x--- 50 mthomas use300 91 Jan 17 22:01 ..
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:23 dir1
+drwxr-xr-x  2 mthomas use300  5 Jan 17 22:17 dir2
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f1
+-rw-r--r--  1 mthomas use300  0 Jan 17 22:23 f2
 ```
 
 [Back to Top](#top)
