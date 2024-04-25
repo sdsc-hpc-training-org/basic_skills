@@ -28,12 +28,11 @@ ssh -Y -l <username> expanse.sdsc.edu
 <hr>
  
 ## Request an interactive CPU node from the command line:  <a name="interactive-node-command-line"></a>
- * You can request an interactive session using the srun command. The following example will request one regular compute node, 4 cores,  in the debug partition for 30 minutes.
-
+* You can request an interactive session using the The SLURM launch ```srun``` command.
+* The following example will request one regular compute node, 4 cores,  in the debug partition for 30 minutes.
 
 ```
-srun --partition=debug  --pty --account=<<project>> --nodes=1 --ntasks-per-node=4 \
-    --mem=8G -t 00:30:00 --wait=0 --export=ALL /bin/bash
+srun --partition=debug  --pty --account=<<project>> --nodes=1 --ntasks-per-node=4 --mem=8G -t 00:30:00 --wait=0 --export=ALL /bin/bash
 ```
 
 * Wait for your node to be allocated.
@@ -46,7 +45,7 @@ srun: job 13469789 has been allocated resources
 [user@exp-9-55 ~]$  
  ```
  
-*Notice that you are logged onto a different node than the login node.
+* Notice that you are logged onto a different node than the login node.
 * Run some commands to learn about the node:
 
  ```
@@ -73,41 +72,35 @@ KiB Swap:        0 total,        0 free,        0 used. 12866142+avail Mem
     9 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh                               
    10 root      20   0       0      0      0 S   0.0  0.0   4:00.35 rcu_sched       
 ```
-At this point, you can edit, compile, run code, including MPI, OpenMP, or jupyter notebooks.
-For an example of running a notebook, see the __How to Run Notebooks on Expanse__ tutorial:
-https://github.com/sdsc-hpc-training/basic_skills/tree/master/how_to_run_notebooks_on_expanse
+
+* At this point, you can edit, compile, run code, including MPI, OpenMP, or jupyter notebooks.
+* For an example of running a notebook, see the __How to Run Notebooks on Expanse__ tutorial:
+  * https://github.com/sdsc-hpc-training/basic_skills/tree/master/how_to_run_notebooks_on_expanse
 
 [Back to Top](#top)
 <hr>
  
 ## Obtain interactive shared GPU node on SDSC Expanse <a name="interactive-gpu-command-line"></a>
-This works the same way, but you need to access the GPU nodes
-
-The command below will launch the command ```srun```
-
+* This works the same way, but you need to access the GPU nodes
+* The SLURM launch command below will obtain an interactive node with access to 1 K80 GPU on the shared GPU nodes for 3h. You can also execute this command directly on the command line:
 ```
-srun --partition=gpu-debug --pty --account=<<project>> --ntasks-per-node=10 --nodes=1 --mem=96G --gpus=1 -t 00:30:00 --wait=0 --export=ALL /bin/bash
+srun --partition=gpu-shared --reservation=gputraining --nodes=1 --ntasks-per-node=6 --gres=gpu:k80:1  -t 03:00:00 --pty --wait=0 /bin/bash
 ```
 
-The SLURM launch command below to obtain an interactive node with access to 1 K80 GPU on the shared GPU nodes for 3h. You can also execute this command directly on the command line:
-```
-srun --partition=gpu-shared --reservation=gputraining \
-     --nodes=1 --ntasks-per-node=6 --gres=gpu:k80:1 \
-     -t 03:00:00 --pty --wait=0 /bin/bash
-```
-It may take some time to get the interactive node.
+* It may take some time to get the interactive node.
+* Load the CUDA and PGI compiler modules
 
-Load the CUDA and PGI compiler modules
 ```
 module purge
 module load gnutools
 module load cuda
 module load pgi
 ```
-If you get a license error when executing the PGI compilers, execute the following:
+* If you get a license error when executing the PGI compilers, execute the following:
 
 ```
 export LM_LICENSE_FILE=40200@elprado.sdsc.edu:$LM_LICENSE_FILE
 ```
+
 [Back to Top](#top)
 <hr>
