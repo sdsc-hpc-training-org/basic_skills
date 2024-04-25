@@ -1,6 +1,7 @@
 # Using Jupyter Notebooks on the SDSC Expanse Cluster
 **By** [Mary Thomas, SDSC](https://www.sdsc.edu/research/researcher_spotlight/thomas_mary.html)
-**Updated:**  Janaury 28, 2022
+
+**Updated:**  April 24, 2024
 
 ## [Contents](#top)
 * [Using the galyleo script](#galyleo)
