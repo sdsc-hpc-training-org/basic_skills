@@ -5,7 +5,6 @@ Make sure your local system or laptop can run git.
 
 ## Suggested On-line Tutorials
 
-* [SI19 GitHub Tutorial Session[(https://github.com/sdsc/sdsc-summer-institute-2020)
 * [https://swcarpentry.github.io/git-novice/](https://swcarpentry.github.io/git-novice/)
 
 
@@ -20,15 +19,13 @@ Make sure your local system or laptop can run git.
 
 
 ## Create a GitHub Account: <a name="git-acct"></a>
-See:  see https://github.com/join 
-If you do not currently have a [GitHub](https://github.com/) account, you must 
-obtain one prior to attending the Summer Institute. Working with  
-`git` and GitHub will be covered in both
-introductory and advanced training sessions on these tools.
+* See:  see https://github.com/join 
+* If you do not currently have a [GitHub](https://github.com/) account, you must obtain one prior to attending the SDSC training activities.
+* Working with  `git` and GitHub will be covered in both introductory and advanced training sessions on these tools.
 
 ## Install Git on Local System <a name="git-install"></a>
 
-To learn the basics of setting up GitHub, see this guide:  [https://help.github.com/en/articles/set-up-git](https://help.github.com/en/articles/set-up-git). 
+* To learn the basics of setting up GitHub, see this guide:  [https://help.github.com/en/articles/set-up-git](https://help.github.com/en/articles/set-up-git). 
 
 ### Install `git` on Linux:<a name="git-install-linux"></a>
 
