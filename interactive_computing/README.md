@@ -30,8 +30,11 @@ ssh -Y -l <username> expanse.sdsc.edu
 ## Request an interactive CPU node from the command line:  <a name="interactive-node-command-line"></a>
  * You can request an interactive session using the srun command. The following example will request one regular compute node, 4 cores,  in the debug partition for 30 minutes.
 
+
 ```
-srun --partition=debug  --pty --account=<<project>> --nodes=1 --ntasks-per-node=4 --mem=8G -t 00:30:00 --wait=0 --export=ALL /bin/bash```
+srun --partition=debug  --pty --account=<<project>> --nodes=1 --ntasks-per-node=4 \
+    --mem=8G -t 00:30:00 --wait=0 --export=ALL /bin/bash
+```
 
 * Wait for your node to be allocated.
 * This may take a while, depending on how busy the system is.
