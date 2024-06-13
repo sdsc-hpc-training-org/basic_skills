@@ -74,8 +74,9 @@ KiB Swap:        0 total,        0 free,        0 used. 12866142+avail Mem
 ```
 
 * At this point, you can edit, compile, run code, including MPI, OpenMP, or jupyter notebooks.
-* For an example of running a notebook, see the __How to Run Notebooks on Expanse__ tutorial:
+* For an example of running a notebook, see the the following tutorial:
   * https://github.com/sdsc-hpc-training/basic_skills/tree/master/how_to_run_notebooks_on_expanse
+* For a collection of test notebooks, see: https://github.com/sdsc-hpc-training-org/notebook-examples-expanse
 
 [Back to Top](#top)
 <hr>
