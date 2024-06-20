@@ -670,6 +670,6 @@ In the example below, we use the star wildcard to list all files ending in `.out
 [Back to Top](#top)
 <hr>
 
-## <a name="common-utilities">Other Utilities</a>
- Other
- utilities: grep,  sort, tar, gzip ,and pigz
+## <a name="common-utilities">Other Utilities to Learj: </a>
+* grep,  sort, tar, gzip ,and pigz
+
