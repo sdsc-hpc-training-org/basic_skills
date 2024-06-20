@@ -1,5 +1,5 @@
 
-# HPC Basic_Skills
+# 2.0 HPC Basic Skills
 
 This repository hosts all material for the HPC Training Basic Skill Training Series
 
